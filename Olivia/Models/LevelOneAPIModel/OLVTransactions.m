@@ -7,7 +7,7 @@
 
 #import "OLVTransactions.h"
 #import "OLVTransactions.h"
-
+#import "OLVTransaction.h"
 
 NSString *const kOLVTransactionsError = @"error";
 NSString *const kOLVTransactionsTransactions = @"transactions";
@@ -43,11 +43,11 @@ NSString *const kOLVTransactionsTransactions = @"transactions";
     if ([receivedOLVTransactions isKindOfClass:[NSArray class]]) {
         for (NSDictionary *item in (NSArray *)receivedOLVTransactions) {
             if ([item isKindOfClass:[NSDictionary class]]) {
-                [parsedOLVTransactions addObject:[OLVTransactions modelObjectWithDictionary:item]];
+                [parsedOLVTransactions addObject:[OLVTransaction modelObjectWithDictionary:item]];
             }
        }
     } else if ([receivedOLVTransactions isKindOfClass:[NSDictionary class]]) {
-       [parsedOLVTransactions addObject:[OLVTransactions modelObjectWithDictionary:(NSDictionary *)receivedOLVTransactions]];
+       [parsedOLVTransactions addObject:[OLVTransaction modelObjectWithDictionary:(NSDictionary *)receivedOLVTransactions]];
     }
 
     self.transactions = [NSArray arrayWithArray:parsedOLVTransactions];

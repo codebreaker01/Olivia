@@ -7,7 +7,7 @@
 
 #import "OLVAccounts.h"
 #import "OLVAccounts.h"
-
+#import "OLVAccount.h"
 
 NSString *const kOLVAccountsAccounts = @"accounts";
 NSString *const kOLVAccountsError = @"error";
@@ -42,15 +42,15 @@ NSString *const kOLVAccountsError = @"error";
     if ([receivedOLVAccounts isKindOfClass:[NSArray class]]) {
         for (NSDictionary *item in (NSArray *)receivedOLVAccounts) {
             if ([item isKindOfClass:[NSDictionary class]]) {
-                [parsedOLVAccounts addObject:[OLVAccounts modelObjectWithDictionary:item]];
+                [parsedOLVAccounts addObject:[OLVAccount modelObjectWithDictionary:item]];
             }
        }
     } else if ([receivedOLVAccounts isKindOfClass:[NSDictionary class]]) {
-       [parsedOLVAccounts addObject:[OLVAccounts modelObjectWithDictionary:(NSDictionary *)receivedOLVAccounts]];
+       [parsedOLVAccounts addObject:[OLVAccount modelObjectWithDictionary:(NSDictionary *)receivedOLVAccounts]];
     }
 
     self.accounts = [NSArray arrayWithArray:parsedOLVAccounts];
-            self.error = [self objectOrNilForKey:kOLVAccountsError fromDictionary:dict];
+    self.error = [self objectOrNilForKey:kOLVAccountsError fromDictionary:dict];
 
     }
     

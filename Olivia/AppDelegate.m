@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "WebServiceHelper.h"
+
+#import "OLVUserInfo.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[WebServiceHelper sharedInstance] loginWithUsername:@"hackdoc@levelmoney.com"
+                                                password:@"hackathon1"
+                                                 success:^(id response) {
+                                                     
+                                                     [[OLVUserInfo sharedInfo] clearUserInfo];
+                                                     
+                                                     [[WebServiceHelper sharedInstance] getAllTransactions:^(NSArray *transactions) {
+                                                         
+                                                         [OLVUserInfo sharedInfo].allTransactions = transactions;
+                                                         [[WebServiceHelper sharedInstance] getProjectedTransactions:[NSDate date]
+                                                                                                             success:^(NSArray *transactions) {
+                                                                                                                 [OLVUserInfo sharedInfo].projectedTransactions = transactions;
+                                                                                                             }
+                                                                                                             failure:nil];
+                                                                                                   }
+                                                                                                   failure:nil];
+                                                 }
+                                                 failure:^(id response, NSError *error) {
+                                                     
+                                                 }];
+    
+    
     return YES;
 }
 

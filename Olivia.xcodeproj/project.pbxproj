@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00813AF290248FA4771F7ADB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B244CF65A3D3881B0B08E9E /* libPods.a */; };
+		0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB7E1AAAE54500956B9B /* OLVUserInfo.m */; };
 		075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DAD1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAF1AA992C900187CC6 /* OLVAccount.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		01D4F950170B3743D5AD368C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		0705FB7D1AAAE54500956B9B /* OLVUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVUserInfo.h; sourceTree = "<group>"; };
+		0705FB7E1AAAE54500956B9B /* OLVUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVUserInfo.m; sourceTree = "<group>"; };
 		075F5DAA1AA9929E00187CC6 /* OLVAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccounts.h; sourceTree = "<group>"; };
 		075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVAccounts.m; sourceTree = "<group>"; };
 		075F5DAE1AA992C900187CC6 /* OLVAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccount.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				075F5DB71AA9939800187CC6 /* OLVTransaction.m */,
 				075F5DBA1AA99D3A00187CC6 /* OLVSimilarTransactions.h */,
 				075F5DBB1AA99D3A00187CC6 /* OLVSimilarTransactions.m */,
+				0705FB7D1AAAE54500956B9B /* OLVUserInfo.h */,
+				0705FB7E1AAAE54500956B9B /* OLVUserInfo.m */,
 			);
 			path = LevelOneAPIModel;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */,
 				075F5DBC1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */,
 				075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */,
+				0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */,
 				07EC9E261AA9244200ECDBE9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
