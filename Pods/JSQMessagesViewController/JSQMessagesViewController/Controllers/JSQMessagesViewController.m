@@ -105,7 +105,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 + (UINib *)nib
 {
     return [UINib nibWithNibName:NSStringFromClass([JSQMessagesViewController class])
-                          bundle:[NSBundle bundleForClass:[self class]]];
+                          bundle:[NSBundle bundleForClass:[JSQMessagesViewController class]]];
 }
 
 + (instancetype)messagesViewController
@@ -337,6 +337,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     if (self.automaticallyScrollsToMostRecentMessage) {
         [self scrollToBottomAnimated:animated];
     }
+    self.showTypingIndicator = NO;
 }
 
 - (void)finishReceivingMessage

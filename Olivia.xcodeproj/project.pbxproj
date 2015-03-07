@@ -35,12 +35,14 @@
 		075F5DBD1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DBB1AA99D3A00187CC6 /* OLVSimilarTransactions.m */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
-		07EC9E2C1AA9244200ECDBE9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E2B1AA9244200ECDBE9 /* ViewController.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
 		07EC9E341AA9244200ECDBE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E321AA9244200ECDBE9 /* LaunchScreen.xib */; };
 		07EC9E401AA9244200ECDBE9 /* OliviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E3F1AA9244200ECDBE9 /* OliviaTests.m */; };
 		07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E4C1AA985DB00ECDBE9 /* WebServiceHelper.m */; };
 		413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413043211AAA5A7400834A89 /* ApiAIHelper.m */; };
+		41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */; };
+		41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */; };
+		41C61ADF1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C61ADD1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib */; };
 		9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC1D87E025034EB9431C0D6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -97,8 +99,6 @@
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07EC9E271AA9244200ECDBE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07EC9E281AA9244200ECDBE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		07EC9E2A1AA9244200ECDBE9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		07EC9E2B1AA9244200ECDBE9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07EC9E301AA9244200ECDBE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07EC9E331AA9244200ECDBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		07EC9E391AA9244200ECDBE9 /* OliviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OliviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +111,11 @@
 		413043201AAA5A7400834A89 /* ApiAIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAIHelper.h; sourceTree = "<group>"; };
 		413043211AAA5A7400834A89 /* ApiAIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAIHelper.m; sourceTree = "<group>"; };
 		413043251AAA786800834A89 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		41C61AD51AAB844C00BE4626 /* OLVBubbleChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVBubbleChatModel.h; sourceTree = "<group>"; };
+		41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVBubbleChatModel.m; sourceTree = "<group>"; };
+		41C61ADB1AAB852C00BE4626 /* OLVBubbleMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVBubbleMessageViewController.h; sourceTree = "<group>"; };
+		41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVBubbleMessageViewController.m; sourceTree = "<group>"; };
+		41C61ADD1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OLVBubbleMessageViewController.xib; sourceTree = "<group>"; };
 		851A4E16C8CAEBF8936C6E7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,8 +171,8 @@
 		0705FBA11AAB706600956B9B /* PresentViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0705FB9D1AAB705D00956B9B /* OLVPresentViewController.m */,
 				0705FB9C1AAB705D00956B9B /* OLVPresentViewController.h */,
+				0705FB9D1AAB705D00956B9B /* OLVPresentViewController.m */,
 				0705FB9E1AAB705D00956B9B /* OLVPresentViewController.xib */,
 			);
 			name = PresentViewController;
@@ -194,6 +199,7 @@
 		075F5DA01AA9912600187CC6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				41C61AD41AAB841800BE4626 /* BubbleMessageModel */,
 				075F5DA91AA9929900187CC6 /* LevelOneAPIModel */,
 			);
 			path = Models;
@@ -302,14 +308,13 @@
 		413043231AAA5A9900834A89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41C61AD31AAB840400BE4626 /* BubbleMessageController */,
 				0705FBA11AAB706600956B9B /* PresentViewController */,
 				0705FBA71AAB709900956B9B /* OliviaViewController */,
 				0705FB901AAB6FDB00956B9B /* PastViewController */,
 				0705FB961AAB701500956B9B /* EstimateViewController */,
 				0705FBA81AAB724C00956B9B /* OLVNavigationManager.h */,
 				0705FBA91AAB724C00956B9B /* OLVNavigationManager.m */,
-				07EC9E2A1AA9244200ECDBE9 /* ViewController.h */,
-				07EC9E2B1AA9244200ECDBE9 /* ViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -328,6 +333,25 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		41C61AD31AAB840400BE4626 /* BubbleMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				41C61ADB1AAB852C00BE4626 /* OLVBubbleMessageViewController.h */,
+				41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */,
+				41C61ADD1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib */,
+			);
+			name = BubbleMessageController;
+			sourceTree = "<group>";
+		};
+		41C61AD41AAB841800BE4626 /* BubbleMessageModel */ = {
+			isa = PBXGroup;
+			children = (
+				41C61AD51AAB844C00BE4626 /* OLVBubbleChatModel.h */,
+				41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */,
+			);
+			name = BubbleMessageModel;
 			sourceTree = "<group>";
 		};
 		6954A1C74F3D40B02F3353F9 /* Frameworks */ = {
@@ -437,6 +461,7 @@
 				0705FBA01AAB705D00956B9B /* OLVPresentViewController.xib in Resources */,
 				0705FB9B1AAB703300956B9B /* OLVEstimateViewController.xib in Resources */,
 				0705FB951AAB701000956B9B /* OLVPastViewController.xib in Resources */,
+				41C61ADF1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib in Resources */,
 				0705FBA61AAB709100956B9B /* OLVOliviaViewController.xib in Resources */,
 				07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */,
 				0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */,
@@ -512,9 +537,9 @@
 				0705FB881AAAF12300956B9B /* OLVDay.m in Sources */,
 				07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */,
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,
-				07EC9E2C1AA9244200ECDBE9 /* ViewController.m in Sources */,
 				0705FB9A1AAB703300956B9B /* OLVEstimateViewController.m in Sources */,
 				0705FBAA1AAB724C00956B9B /* OLVNavigationManager.m in Sources */,
+				41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */,
 				07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */,
 				075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */,
 				075F5DBC1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */,
@@ -524,6 +549,7 @@
 				0705FB891AAAF12300956B9B /* OLVDayBalances.m in Sources */,
 				0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */,
 				0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */,
+				41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */,
 				07EC9E261AA9244200ECDBE9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
