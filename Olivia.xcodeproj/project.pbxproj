@@ -12,6 +12,7 @@
 		0705FB881AAAF12300956B9B /* OLVDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB831AAAF12300956B9B /* OLVDay.m */; };
 		0705FB891AAAF12300956B9B /* OLVDayBalances.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB851AAAF12300956B9B /* OLVDayBalances.m */; };
 		0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB871AAAF12300956B9B /* OLVDays.m */; };
+		0705FB8E1AAB6F0500956B9B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB8D1AAB6F0500956B9B /* SWRevealViewController.m */; };
 		075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DAD1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAF1AA992C900187CC6 /* OLVAccount.m */; };
@@ -55,6 +56,8 @@
 		0705FB851AAAF12300956B9B /* OLVDayBalances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVDayBalances.m; sourceTree = "<group>"; };
 		0705FB861AAAF12300956B9B /* OLVDays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVDays.h; sourceTree = "<group>"; };
 		0705FB871AAAF12300956B9B /* OLVDays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVDays.m; sourceTree = "<group>"; };
+		0705FB8C1AAB6F0500956B9B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		0705FB8D1AAB6F0500956B9B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		075F5DAA1AA9929E00187CC6 /* OLVAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccounts.h; sourceTree = "<group>"; };
 		075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVAccounts.m; sourceTree = "<group>"; };
 		075F5DAE1AA992C900187CC6 /* OLVAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccount.h; sourceTree = "<group>"; };
@@ -108,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0705FB8B1AAB6F0500956B9B /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0705FB8C1AAB6F0500956B9B /* SWRevealViewController.h */,
+				0705FB8D1AAB6F0500956B9B /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		075F5DA01AA9912600187CC6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +256,7 @@
 		6954A1C74F3D40B02F3353F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0705FB8B1AAB6F0500956B9B /* SWRevealViewController */,
 				0705FB801AAAF06800956B9B /* ElastiCode.framework */,
 				0BC1D87E025034EB9431C0D6 /* Pods.framework */,
 			);
@@ -413,6 +426,7 @@
 			files = (
 				413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */,
 				075F5DB41AA9935900187CC6 /* OLVTransactions.m in Sources */,
+				0705FB8E1AAB6F0500956B9B /* SWRevealViewController.m in Sources */,
 				0705FB881AAAF12300956B9B /* OLVDay.m in Sources */,
 				07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */,
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,

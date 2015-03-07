@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,8 +19,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQO-gA-33o" userLabel="Voice Request Button" customClass="AIVoiceRequestButton">
                                 <rect key="frame" x="525" y="525" width="75" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="g2W-tC-Dtw"/>
-                                    <constraint firstAttribute="width" constant="75" id="qL5-nO-GxM"/>
+                                    <constraint firstAttribute="width" constant="75" id="WEB-Mr-rbM"/>
+                                    <constraint firstAttribute="height" constant="75" id="f8C-Lu-Evg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
@@ -35,8 +34,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="rQO-gA-33o" secondAttribute="trailing" constant="-16" id="hmZ-LY-EeK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rQO-gA-33o" secondAttribute="bottom" id="oMK-Lh-85i"/>
+                            <constraint firstAttribute="trailing" secondItem="rQO-gA-33o" secondAttribute="trailing" id="i9q-HU-I8z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rQO-gA-33o" secondAttribute="bottom" id="uyl-vs-NlY"/>
                         </constraints>
                     </view>
                     <connections>
