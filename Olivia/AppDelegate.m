@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "WebServiceHelper.h"
 #import "OLVUserInfo.h"
+#import "WebServiceHelper.h"
+#import "OLVNavigationManager.h"
 
 #import <ApiAI/ApiAI.h>
 #import <APiAI/AIDefaultConfiguration.h>
@@ -54,6 +55,13 @@
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
     [self setupAPIAI];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+
+    self.window.rootViewController = [[OLVNavigationManager sharedManager] setUpViewControllersLayout];
+    [self.window makeKeyAndVisible];
+    return YES;
     
     return YES;
 }

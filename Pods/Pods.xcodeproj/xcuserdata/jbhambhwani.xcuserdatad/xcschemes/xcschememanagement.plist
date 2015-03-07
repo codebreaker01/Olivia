@@ -8,21 +8,49 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-ApiAI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-BEMSimpleLineGraph.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-CWLSynthesizeSingleton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-JSQMessagesViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Pods-Wit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -37,12 +65,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>232B1AAF2C400270A1D602E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>688408CFFBF91007D20E0FD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7082749C139DEA8510202A2B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>796E961D38563BA37DB14795</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B33BFBE7AA54DA2166370B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +100,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BDBA6D4BAA05A3BB0C2348E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C001072D6672842A8AD6C25D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C4CC004C5B9C550F76F087E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C9066C3CF37F129C4C6BD3F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3DBBACE1F4C448FEB2409B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E53F4C49E076E4E2C8A86900</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0B912087B4874B21A0DD31C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
