@@ -29,14 +29,17 @@ PODS:
   - ApiAI/UIKit (0.0.7):
     - ApiAI/Default
   - CWLSynthesizeSingleton (1.0.0)
+  - Wit (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - ApiAI
+  - Wit (~> 4.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   ApiAI: cb402cbb4a6a70c14196e0c6053806496eb7b653
   CWLSynthesizeSingleton: 6bf23e662713ad65ee7348ba9ef73e6e87a2626d
+  Wit: 0142bccd57796f389a777aac6970933a52492514
 
 COCOAPODS: 0.36.0.rc.1

@@ -51,9 +51,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'ApiAI.framework'
   install_framework 'CWLSynthesizeSingleton.framework'
+  install_framework 'Wit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'ApiAI.framework'
   install_framework 'CWLSynthesizeSingleton.framework'
+  install_framework 'Wit.framework'
 fi
