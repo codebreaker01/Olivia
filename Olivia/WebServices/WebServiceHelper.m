@@ -18,17 +18,19 @@
 
 
 static NSString * const kLevelOneBaseURL = @"https://api.levelmoney.com/api/v2/hackathon";
-static NSString * const kNexmosBaseURL = @"";
+static NSString * const kNexmosBaseURL = @"https://api.nexmo.com";
 static NSString * const kApiAiBaseURL = @"";
 
-static NSString const * levelOneAPIToken = @"HackathonApiToken";
+static NSString * const levelOneAPIToken = @"HackathonApiToken";
+static NSString * const nexmoAPIKey = @"1138ea81";
+static NSString * const nexmoAPISecretKey = @"d38b93f1";
 
 @interface WebServiceHelper ()
 
 @property (nonatomic) AFURLSessionManager *levelOneSessionManager;
 @property (nonatomic) NSInteger uid;
 @property (nonatomic) NSString *token;
-
+@property (nonatomic) NSString *nexmoRequestId;
 
 @end
 
@@ -248,6 +250,69 @@ static NSString const * levelOneAPIToken = @"HackathonApiToken";
                   failure(task,error);
               }
           }];
+}
+
+#pragma mark - Nexmo API's
+
+- (void)sendSMSToVerifyPhoneNumber:(NSString *)phonenumber sucess:(SuccessBlock)success failure:(FailureBlock)failure {
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:[NSString stringWithFormat:@"%@/verify/json", kNexmosBaseURL]
+       parameters:@{ @"api_key" : nexmoAPIKey, @"api_secret" : nexmoAPISecretKey, @"number" : phonenumber, @"brand" : @"Olivia" }
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              self.nexmoRequestId = responseObject[@"request_id"];
+              if (success) {
+                  success(responseObject);
+              }
+          }
+          failure:^(NSURLSessionDataTask *task, NSError *error) {
+              if (failure) {
+                  failure(task, error);
+              }
+          }];
+
+}
+
+- (void)checkVerificationPhoneNumber:(NSString *)phonenumber withCode:(NSString *)code sucess:(SuccessBlock)success failure:(FailureBlock)failure {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:[NSString stringWithFormat:@"%@/verify/check/json", kNexmosBaseURL]
+       parameters:@{ @"api_key" : nexmoAPIKey, @"api_secret" : nexmoAPISecretKey, @"request_id" : self.nexmoRequestId, @"code" : code}
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              if (responseObject[@"status"] == 0) {
+                  if (success) {
+                      success(responseObject);
+                  }
+              }
+          }
+          failure:^(NSURLSessionDataTask *task, NSError *error) {
+              if (failure) {
+                  failure(task, error);
+              }
+          }];
+    
+}
+
+- (void)sendSMS:(NSString *)phonenumber text:(NSString *)text {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer  = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:@"https://rest.nexmo.com/sms/json"
+      parameters:@{ @"api_key" : nexmoAPIKey, @"api_secret" : nexmoAPISecretKey, @"from" : @"12402240159", @"to" : phonenumber, @"text" : text }
+         success:^(NSURLSessionDataTask *task, id responseObject) {
+             
+         }
+         failure:^(NSURLSessionDataTask *task, NSError *error) {
+             
+         }];
 }
 
 @end

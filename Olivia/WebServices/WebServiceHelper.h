@@ -24,4 +24,9 @@ typedef void (^FailureBlock)(id,NSError *);
 - (void)getSimilarTransactions:(NSArray *)transactions success:(SuccessBlock)success failure:(FailureBlock)failure;
 - (void)getDayBalances:(NSDate *)date success:(SuccessBlock)success failure:(FailureBlock)failure;
 
+// Nexmo API to send SMS
+- (void)sendSMSToVerifyPhoneNumber:(NSString *)phonenumber sucess:(SuccessBlock)success failure:(FailureBlock)failure;
+- (void)checkVerificationPhoneNumber:(NSString *)phonenumber withCode:(NSString *)code sucess:(SuccessBlock)success failure:(FailureBlock)failure;
+- (void)sendSMS:(NSString *)phonenumber text:(NSString *)text;
+
 @end
