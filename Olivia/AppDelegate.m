@@ -8,18 +8,20 @@
 
 #import "AppDelegate.h"
 #import "WebServiceHelper.h"
-
 #import "OLVUserInfo.h"
 
-@interface AppDelegate ()
+#import <ApiAI/ApiAI.h>
+#import <APiAI/AIDefaultConfiguration.h>
+#import <AVFoundation/AVFoundation.h>
 
+@interface AppDelegate ()
+@property(nonatomic, strong) ApiAI *apiAI;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [[WebServiceHelper sharedInstance] loginWithUsername:@"hackdoc@levelmoney.com"
                                                 password:@"hackathon1"
                                                  success:^(id response) {
@@ -41,6 +43,11 @@
                                                      
                                                  }];
     
+    // Override point for customization after application launch.
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
+    [self setupAPIAI];
     
     return YES;
 }
@@ -65,6 +72,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupAPIAI {
+    // Define API.AI configuration here.
+    id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
+    configuration.clientAccessToken = kAPIClientAccessToken;
+    configuration.subscriptionKey = kAPISubscriptionKey;
+    
+    self.apiAI.configuration = configuration;
 }
 
 @end
