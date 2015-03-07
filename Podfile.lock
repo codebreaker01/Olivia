@@ -28,18 +28,27 @@ PODS:
     - CWLSynthesizeSingleton
   - ApiAI/UIKit (0.0.7):
     - ApiAI/Default
+  - BEMSimpleLineGraph (3.3)
   - CWLSynthesizeSingleton (1.0.0)
+  - JSQMessagesViewController (6.1.3):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - Wit (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - ApiAI
+  - BEMSimpleLineGraph
+  - JSQMessagesViewController
   - Wit (~> 4.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   ApiAI: cb402cbb4a6a70c14196e0c6053806496eb7b653
+  BEMSimpleLineGraph: 0ec77f0a2d3e8e448118bbb26963b72f94f1d618
   CWLSynthesizeSingleton: 6bf23e662713ad65ee7348ba9ef73e6e87a2626d
+  JSQMessagesViewController: e93a288a9662d4519c95a28a8c0eec10beae1bfc
+  JSQSystemSoundPlayer: 55528c699a283aae2220d3ae7b8b527d2ecef4b4
   Wit: 0142bccd57796f389a777aac6970933a52492514
 
 COCOAPODS: 0.36.0.rc.1
