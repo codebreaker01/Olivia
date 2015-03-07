@@ -23,6 +23,8 @@
 		0705FBA61AAB709100956B9B /* OLVOliviaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBA41AAB709100956B9B /* OLVOliviaViewController.xib */; };
 		0705FBAA1AAB724C00956B9B /* OLVNavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FBA91AAB724C00956B9B /* OLVNavigationManager.m */; };
 		0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */; };
+		0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */; };
+		0705FBB11AAB991500956B9B /* estimate-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB01AAB991500956B9B /* estimate-icon@3x.png */; };
 		075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DAD1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAF1AA992C900187CC6 /* OLVAccount.m */; };
@@ -82,6 +84,8 @@
 		0705FBA81AAB724C00956B9B /* OLVNavigationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVNavigationManager.h; sourceTree = "<group>"; };
 		0705FBA91AAB724C00956B9B /* OLVNavigationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVNavigationManager.m; sourceTree = "<group>"; };
 		0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-icon@3x.png"; sourceTree = "<group>"; };
+		0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-graph-icon@3x.png"; sourceTree = "<group>"; };
+		0705FBB01AAB991500956B9B /* estimate-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "estimate-icon@3x.png"; sourceTree = "<group>"; };
 		075F5DAA1AA9929E00187CC6 /* OLVAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccounts.h; sourceTree = "<group>"; };
 		075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVAccounts.m; sourceTree = "<group>"; };
 		075F5DAE1AA992C900187CC6 /* OLVAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccount.h; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 		0705FBAB1AAB7DB500956B9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0705FBB01AAB991500956B9B /* estimate-icon@3x.png */,
+				0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */,
 				0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */,
 			);
 			path = Resources;
@@ -438,6 +444,8 @@
 				0705FB9B1AAB703300956B9B /* OLVEstimateViewController.xib in Resources */,
 				0705FB951AAB701000956B9B /* OLVPastViewController.xib in Resources */,
 				0705FBA61AAB709100956B9B /* OLVOliviaViewController.xib in Resources */,
+				0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */,
+				0705FBB11AAB991500956B9B /* estimate-icon@3x.png in Resources */,
 				07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */,
 				0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */,
 			);
