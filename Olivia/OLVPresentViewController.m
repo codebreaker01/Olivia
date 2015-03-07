@@ -7,6 +7,7 @@
 //
 
 #import "OLVPresentViewController.h"
+#import "SWRevealViewController.h"
 
 @interface OLVPresentViewController ()
 
@@ -16,12 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = NSLocalizedString(@"Olivia", nil);
+    
+    SWRevealViewController *revealController = [self revealViewController];
+    
+    
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+    
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"list-icon"]
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    
+    self.navigationItem.leftBarButtonItem = revealButtonItem;
+    
+    UIBarButtonItem *rightRevealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"list-icon"]
+                                                                              style:UIBarButtonItemStylePlain target:revealController action:@selector(rightRevealToggle:)];
+    
+    self.navigationItem.rightBarButtonItem = rightRevealButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

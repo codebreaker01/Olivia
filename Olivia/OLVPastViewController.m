@@ -7,6 +7,7 @@
 //
 
 #import "OLVPastViewController.h"
+#import "SWRevealViewController.h"
 
 @interface OLVPastViewController ()
 
@@ -16,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
