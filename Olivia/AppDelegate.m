@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
+@import AVFoundation;
+#import <ApiAI/ApiAI.h>
+#import <APiAI/AIDefaultConfiguration.h>
 
 @interface AppDelegate ()
-
+@property(nonatomic, strong) ApiAI *apiAI;
 @end
 
 @implementation AppDelegate
@@ -17,6 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
+    [self setupAPIAI];
+    
     return YES;
 }
 
@@ -40,6 +48,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupAPIAI {
+    // Define API.AI configuration here.
+    id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
+    configuration.clientAccessToken = kAPIClientAccessToken;
+    configuration.subscriptionKey = kAPISubscriptionKey;
+    
+    self.apiAI.configuration = configuration;
 }
 
 @end

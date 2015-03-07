@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00813AF290248FA4771F7ADB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B244CF65A3D3881B0B08E9E /* libPods.a */; };
 		075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DAD1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAF1AA992C900187CC6 /* OLVAccount.m */; };
@@ -26,6 +25,8 @@
 		07EC9E341AA9244200ECDBE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E321AA9244200ECDBE9 /* LaunchScreen.xib */; };
 		07EC9E401AA9244200ECDBE9 /* OliviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E3F1AA9244200ECDBE9 /* OliviaTests.m */; };
 		07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E4C1AA985DB00ECDBE9 /* WebServiceHelper.m */; };
+		413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413043211AAA5A7400834A89 /* ApiAIHelper.m */; };
+		9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC1D87E025034EB9431C0D6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,10 @@
 		07EC9E4B1AA985DB00ECDBE9 /* WebServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceHelper.h; sourceTree = "<group>"; };
 		07EC9E4C1AA985DB00ECDBE9 /* WebServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceHelper.m; sourceTree = "<group>"; };
 		07EC9E4E1AA98C1000ECDBE9 /* Olivia-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Olivia-Prefix.pch"; sourceTree = "<group>"; };
-		4B244CF65A3D3881B0B08E9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BC1D87E025034EB9431C0D6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		413043201AAA5A7400834A89 /* ApiAIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAIHelper.h; sourceTree = "<group>"; };
+		413043211AAA5A7400834A89 /* ApiAIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAIHelper.m; sourceTree = "<group>"; };
+		413043251AAA786800834A89 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		851A4E16C8CAEBF8936C6E7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00813AF290248FA4771F7ADB /* libPods.a in Frameworks */,
+				9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,16 +141,12 @@
 		07EC9E221AA9244200ECDBE9 /* Olivia */ = {
 			isa = PBXGroup;
 			children = (
+				41B2B0001AAAC72D0059781D /* View */,
+				413043241AAA5AB800834A89 /* API */,
+				413043231AAA5A9900834A89 /* Controller */,
 				075F5DA01AA9912600187CC6 /* Models */,
-				07EC9E4A1AA985BD00ECDBE9 /* WebServices */,
-				07EC9E271AA9244200ECDBE9 /* AppDelegate.h */,
-				07EC9E281AA9244200ECDBE9 /* AppDelegate.m */,
-				07EC9E2A1AA9244200ECDBE9 /* ViewController.h */,
-				07EC9E2B1AA9244200ECDBE9 /* ViewController.m */,
-				07EC9E2D1AA9244200ECDBE9 /* Main.storyboard */,
-				07EC9E301AA9244200ECDBE9 /* Images.xcassets */,
-				07EC9E321AA9244200ECDBE9 /* LaunchScreen.xib */,
 				07EC9E231AA9244200ECDBE9 /* Supporting Files */,
+				07EC9E4A1AA985BD00ECDBE9 /* WebServices */,
 			);
 			path = Olivia;
 			sourceTree = "<group>";
@@ -154,6 +154,11 @@
 		07EC9E231AA9244200ECDBE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				413043251AAA786800834A89 /* Constants.h */,
+				07EC9E271AA9244200ECDBE9 /* AppDelegate.h */,
+				07EC9E281AA9244200ECDBE9 /* AppDelegate.m */,
+				07EC9E301AA9244200ECDBE9 /* Images.xcassets */,
+				07EC9E321AA9244200ECDBE9 /* LaunchScreen.xib */,
 				07EC9E241AA9244200ECDBE9 /* Info.plist */,
 				07EC9E251AA9244200ECDBE9 /* main.m */,
 				07EC9E4E1AA98C1000ECDBE9 /* Olivia-Prefix.pch */,
@@ -187,10 +192,36 @@
 			path = WebServices;
 			sourceTree = "<group>";
 		};
+		413043231AAA5A9900834A89 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07EC9E2A1AA9244200ECDBE9 /* ViewController.h */,
+				07EC9E2B1AA9244200ECDBE9 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		413043241AAA5AB800834A89 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				413043201AAA5A7400834A89 /* ApiAIHelper.h */,
+				413043211AAA5A7400834A89 /* ApiAIHelper.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		41B2B0001AAAC72D0059781D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07EC9E2D1AA9244200ECDBE9 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		6954A1C74F3D40B02F3353F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B244CF65A3D3881B0B08E9E /* libPods.a */,
+				0BC1D87E025034EB9431C0D6 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +247,7 @@
 				07EC9E1D1AA9244200ECDBE9 /* Frameworks */,
 				07EC9E1E1AA9244200ECDBE9 /* Resources */,
 				89485C3885299B54FB3F0657 /* Copy Pods Resources */,
+				51185F9B1D14DB14323261F3 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +335,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		51185F9B1D14DB14323261F3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		874B069CCC104708DC99D7FE /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */,
 				075F5DB41AA9935900187CC6 /* OLVTransactions.m in Sources */,
 				07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */,
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,

@@ -1,0 +1,6 @@
+framework module CWLSynthesizeSingleton {
+  umbrella header "Pods-CWLSynthesizeSingleton-umbrella.h"
+
+  export *
+  module * { export * }
+}
