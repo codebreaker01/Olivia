@@ -66,9 +66,33 @@
 #define COCOAPODS_VERSION_MINOR_ApiAI_UIKit 0
 #define COCOAPODS_VERSION_PATCH_ApiAI_UIKit 7
 
+// BEMSimpleLineGraph
+#define COCOAPODS_POD_AVAILABLE_BEMSimpleLineGraph
+#define COCOAPODS_VERSION_MAJOR_BEMSimpleLineGraph 3
+#define COCOAPODS_VERSION_MINOR_BEMSimpleLineGraph 3
+#define COCOAPODS_VERSION_PATCH_BEMSimpleLineGraph 0
+
 // CWLSynthesizeSingleton
 #define COCOAPODS_POD_AVAILABLE_CWLSynthesizeSingleton
 #define COCOAPODS_VERSION_MAJOR_CWLSynthesizeSingleton 1
 #define COCOAPODS_VERSION_MINOR_CWLSynthesizeSingleton 0
 #define COCOAPODS_VERSION_PATCH_CWLSynthesizeSingleton 0
+
+// JSQMessagesViewController
+#define COCOAPODS_POD_AVAILABLE_JSQMessagesViewController
+#define COCOAPODS_VERSION_MAJOR_JSQMessagesViewController 6
+#define COCOAPODS_VERSION_MINOR_JSQMessagesViewController 1
+#define COCOAPODS_VERSION_PATCH_JSQMessagesViewController 3
+
+// JSQSystemSoundPlayer
+#define COCOAPODS_POD_AVAILABLE_JSQSystemSoundPlayer
+#define COCOAPODS_VERSION_MAJOR_JSQSystemSoundPlayer 2
+#define COCOAPODS_VERSION_MINOR_JSQSystemSoundPlayer 0
+#define COCOAPODS_VERSION_PATCH_JSQSystemSoundPlayer 1
+
+// Wit
+#define COCOAPODS_POD_AVAILABLE_Wit
+#define COCOAPODS_VERSION_MAJOR_Wit 4
+#define COCOAPODS_VERSION_MINOR_Wit 0
+#define COCOAPODS_VERSION_PATCH_Wit 0
 

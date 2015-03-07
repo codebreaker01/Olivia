@@ -5,3 +5,7 @@ use_frameworks!
 
 pod 'AFNetworking', '~> 2.0'
 pod 'ApiAI'
+pod 'Wit', '~> 4.0.0'
+pod 'JSQMessagesViewController'
+pod 'BEMSimpleLineGraph'
+
