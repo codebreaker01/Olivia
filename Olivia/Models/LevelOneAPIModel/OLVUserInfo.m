@@ -24,6 +24,7 @@
     self.allTransactions = nil;
     self.accounts = nil;
     self.projectedTransactions = nil;
+    self.dayBalances = nil;
 }
 
 @end

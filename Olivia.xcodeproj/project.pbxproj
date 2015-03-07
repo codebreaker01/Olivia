@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB7E1AAAE54500956B9B /* OLVUserInfo.m */; };
 		0705FB811AAAF06800956B9B /* ElastiCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0705FB801AAAF06800956B9B /* ElastiCode.framework */; };
+		0705FB881AAAF12300956B9B /* OLVDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB831AAAF12300956B9B /* OLVDay.m */; };
+		0705FB891AAAF12300956B9B /* OLVDayBalances.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB851AAAF12300956B9B /* OLVDayBalances.m */; };
+		0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705FB871AAAF12300956B9B /* OLVDays.m */; };
 		075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DAD1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAF1AA992C900187CC6 /* OLVAccount.m */; };
@@ -46,6 +49,12 @@
 		0705FB7D1AAAE54500956B9B /* OLVUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVUserInfo.h; sourceTree = "<group>"; };
 		0705FB7E1AAAE54500956B9B /* OLVUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVUserInfo.m; sourceTree = "<group>"; };
 		0705FB801AAAF06800956B9B /* ElastiCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ElastiCode.framework; sourceTree = "<group>"; };
+		0705FB821AAAF12300956B9B /* OLVDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVDay.h; sourceTree = "<group>"; };
+		0705FB831AAAF12300956B9B /* OLVDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVDay.m; sourceTree = "<group>"; };
+		0705FB841AAAF12300956B9B /* OLVDayBalances.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVDayBalances.h; sourceTree = "<group>"; };
+		0705FB851AAAF12300956B9B /* OLVDayBalances.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVDayBalances.m; sourceTree = "<group>"; };
+		0705FB861AAAF12300956B9B /* OLVDays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVDays.h; sourceTree = "<group>"; };
+		0705FB871AAAF12300956B9B /* OLVDays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVDays.m; sourceTree = "<group>"; };
 		075F5DAA1AA9929E00187CC6 /* OLVAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccounts.h; sourceTree = "<group>"; };
 		075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVAccounts.m; sourceTree = "<group>"; };
 		075F5DAE1AA992C900187CC6 /* OLVAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccount.h; sourceTree = "<group>"; };
@@ -110,6 +119,12 @@
 		075F5DA91AA9929900187CC6 /* LevelOneAPIModel */ = {
 			isa = PBXGroup;
 			children = (
+				0705FB821AAAF12300956B9B /* OLVDay.h */,
+				0705FB831AAAF12300956B9B /* OLVDay.m */,
+				0705FB841AAAF12300956B9B /* OLVDayBalances.h */,
+				0705FB851AAAF12300956B9B /* OLVDayBalances.m */,
+				0705FB861AAAF12300956B9B /* OLVDays.h */,
+				0705FB871AAAF12300956B9B /* OLVDays.m */,
 				075F5DAE1AA992C900187CC6 /* OLVAccount.h */,
 				075F5DAF1AA992C900187CC6 /* OLVAccount.m */,
 				075F5DAA1AA9929E00187CC6 /* OLVAccounts.h */,
@@ -398,6 +413,7 @@
 			files = (
 				413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */,
 				075F5DB41AA9935900187CC6 /* OLVTransactions.m in Sources */,
+				0705FB881AAAF12300956B9B /* OLVDay.m in Sources */,
 				07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */,
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,
 				07EC9E2C1AA9244200ECDBE9 /* ViewController.m in Sources */,
@@ -405,7 +421,9 @@
 				075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */,
 				075F5DBC1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */,
 				075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */,
+				0705FB891AAAF12300956B9B /* OLVDayBalances.m in Sources */,
 				0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */,
+				0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */,
 				07EC9E261AA9244200ECDBE9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

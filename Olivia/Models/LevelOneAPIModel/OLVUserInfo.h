@@ -16,5 +16,6 @@
 @property (nonatomic) NSArray *allTransactions;
 @property (nonatomic) NSArray *accounts;
 @property (nonatomic) NSArray *projectedTransactions;
+@property (nonatomic) NSArray *dayBalances;
 
 @end

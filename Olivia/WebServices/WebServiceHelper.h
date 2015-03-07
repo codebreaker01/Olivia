@@ -22,5 +22,6 @@ typedef void (^FailureBlock)(id,NSError *);
 - (void)getAllTransactions:(SuccessBlock)success failure:(FailureBlock)failure;
 - (void)getProjectedTransactions:(NSDate *)date success:(SuccessBlock)success failure:(FailureBlock)failure;
 - (void)getSimilarTransactions:(NSArray *)transactions success:(SuccessBlock)success failure:(FailureBlock)failure;
+- (void)getDayBalances:(NSDate *)date success:(SuccessBlock)success failure:(FailureBlock)failure;
 
 @end

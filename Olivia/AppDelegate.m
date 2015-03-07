@@ -38,10 +38,13 @@
                                                                                                              failure:nil];
                                                                                                    }
                                                                                                    failure:nil];
+                                                     [[WebServiceHelper sharedInstance] getDayBalances:[NSDate date]
+                                                                                               success:^(NSArray *dayBalances) {
+                                                                                                             [OLVUserInfo sharedInfo].dayBalances = dayBalances;
+                                                                                                         }
+                                                                                                         failure:nil];
                                                  }
-                                                 failure:^(id response, NSError *error) {
-                                                     
-                                                 }];
+                                                 failure:nil];
     
     // Override point for customization after application launch.
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];

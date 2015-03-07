@@ -7,10 +7,11 @@
 //
 
 #import "OLVAccounts.h"
+#import "OLVUserInfo.h"
+#import "OLVDayBalances.h"
 #import "OLVTransaction.h"
 #import "OLVTransactions.h"
 #import "OLVSimilarTransactions.h"
-#import "OLVUserInfo.h"
 
 #import "WebServiceHelper.h"
 #import <AFNetworking/AFNetworking.h>
@@ -172,6 +173,37 @@ static NSString const * levelOneAPIToken = @"HackathonApiToken";
               }
               if (success) {
                   success(transactions.transactions);
+              }
+          }
+          failure:^(NSURLSessionDataTask *task, NSError *error) {
+              if (failure) {
+                  failure(task,error);
+              }
+          }];
+}
+
+- (void)getDayBalances:(NSDate *)date success:(SuccessBlock)success failure:(FailureBlock)failure {
+    
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:date];
+    NSInteger year = [components year];
+    NSInteger month = [components month];
+    
+    NSMutableDictionary *requestParams = [NSMutableDictionary new];
+    [requestParams setObject:[NSNumber numberWithInteger:year] forKey:@"year"];
+    [requestParams setObject:[NSNumber numberWithInteger:month] forKey:@"month"];
+    [requestParams addEntriesFromDictionary:[self tokenDictionary]];
+    
+    AFHTTPSessionManager *manager = [self manager];
+    [manager POST:[NSString stringWithFormat:@"%@/balances",kLevelOneBaseURL]
+       parameters:requestParams
+          success:^(NSURLSessionDataTask *task, id responseObject) {
+              OLVDayBalances *dayBalances;
+              if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                  dayBalances = [OLVDayBalances modelObjectWithDictionary:responseObject];
+              }
+              if (success) {
+                  success(dayBalances.days);
               }
           }
           failure:^(NSURLSessionDataTask *task, NSError *error) {
