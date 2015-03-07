@@ -36,6 +36,10 @@
     SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
     revealController.delegate = self;
     
+    revealController.rearViewRevealWidth  = [UIScreen mainScreen].bounds.size.width * 0.85;
+    revealController.rightViewRevealWidth = [UIScreen mainScreen].bounds.size.width * 0.85;
+    revealController.frontViewShadowOpacity = 0.25;
+    
     OLVEstimateViewController *estimateViewController = [[OLVEstimateViewController alloc] init];
     revealController.rightViewController = estimateViewController;
     

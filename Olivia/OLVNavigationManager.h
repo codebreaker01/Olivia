@@ -14,5 +14,4 @@
 + (instancetype)sharedManager;
 - (SWRevealViewController *)setUpViewControllersLayout;
 
-
 @end
