@@ -19,8 +19,8 @@ typedef void (^parseSuccessBlock) (id response);
 static NSString * const kNameOlivia = @"Olivia";
 static NSString * const kNameUser = @"User";
 
-static NSString * const kIDOlivia = @"053496-4509-289";
-static NSString * const kIDUSer = @"468-768355-23123";
+static NSString * const kIDOlivia = @"Olivia";
+static NSString * const kIDUSer = @"User";
 
 #endif
 

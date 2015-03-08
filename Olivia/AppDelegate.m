@@ -14,6 +14,7 @@
 #import <ApiAI/ApiAI.h>
 #import <APiAI/AIDefaultConfiguration.h>
 #import <AVFoundation/AVFoundation.h>
+#import "ApiAIHelper.h"
 
 @interface AppDelegate ()
 @property(nonatomic, strong) ApiAI *apiAI;
@@ -90,10 +91,10 @@
 
 - (void)setupAPIAI {
     // Define API.AI configuration here.
+    self.apiAI = [ApiAI sharedApiAI];
     id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
     configuration.clientAccessToken = kAPIClientAccessToken;
     configuration.subscriptionKey = kAPISubscriptionKey;
-    
     self.apiAI.configuration = configuration;
 }
 

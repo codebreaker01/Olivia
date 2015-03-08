@@ -260,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				0705FBAB1AAB7DB500956B9B /* Resources */,
-				41B2B0001AAAC72D0059781D /* View */,
 				413043241AAA5AB800834A89 /* API */,
 				413043231AAA5A9900834A89 /* Controller */,
 				075F5DA01AA9912600187CC6 /* Models */,
@@ -332,13 +331,6 @@
 				413043211AAA5A7400834A89 /* ApiAIHelper.m */,
 			);
 			name = API;
-			sourceTree = "<group>";
-		};
-		41B2B0001AAAC72D0059781D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		41C61AD31AAB840400BE4626 /* BubbleMessageController */ = {

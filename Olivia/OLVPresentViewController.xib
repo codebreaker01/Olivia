@@ -11,10 +11,32 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="303" y="357"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
+                    <rect key="frame" x="524" y="526" width="76" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="76" id="2y5-Iv-9Ev"/>
+                        <constraint firstAttribute="height" constant="76" id="ueA-EG-vcm"/>
+                    </constraints>
+                    <state key="normal" image="MicBlack-60">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="activateOlivia:" destination="-1" eventType="touchUpInside" id="2Sw-yg-1nA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.16470588235294117" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
+                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>
+            </constraints>
+            <point key="canvasLocation" x="190" y="219"/>
         </view>
     </objects>
+    <resources>
+        <image name="MicBlack-60" width="60" height="60"/>
+    </resources>
 </document>

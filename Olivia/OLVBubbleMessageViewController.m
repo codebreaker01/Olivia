@@ -9,16 +9,15 @@
 #import "OLVBubbleMessageViewController.h"
 #import "OLVBubbleChatModel.h"
 #import <ApiAI/ApiAI.h>
-#import <ApiAI/AIVoiceRequestButton.h>
 #import <ApiAI/AIVoiceRequest.h>
 #import "ApiAIHelper.h"
-#import <ApiAI/AIVoiceRequest.h>
 
 @interface OLVBubbleMessageViewController ()
 @property (strong, nonatomic) OLVBubbleChatModel *model;
 @property (nonatomic, strong) ApiAI *apiAI;
 @property (nonatomic, strong) AIVoiceRequest *currentVoiceRequest;
 @property (nonatomic, strong) UIActivityIndicatorView *activity;
+@property (nonatomic, strong) UIButton *micButton;
 @property (nonatomic) BOOL isListening;
 @property (nonatomic) NSInteger buttonSize;
 @end
@@ -58,13 +57,15 @@
     [askButton sizeToFit];
     self.inputToolbar.contentView.rightBarButtonItem = askButton;
     
-    UIButton *micButton = [[UIButton alloc] init];
-    [micButton setImage:[UIImage imageNamed:@"Olivia-Small"] forState:UIControlStateNormal];
-    [micButton addTarget:self action:@selector(toggleListening) forControlEvents:UIControlEventTouchUpInside];
-    self.inputToolbar.contentView.leftBarButtonItem = micButton;
+    self.micButton = [[UIButton alloc] init];
+    [self.micButton setImage:[UIImage imageNamed:@"MicBlack-Small-40"] forState:UIControlStateNormal];
+    [self.micButton addTarget:self action:@selector(toggleListening) forControlEvents:UIControlEventTouchUpInside];
+    self.inputToolbar.contentView.leftBarButtonItem = self.micButton;
 
     self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.inputToolbar.contentView addSubview:self.activity];
+    
+    self.collectionView.contentInset = UIEdgeInsetsMake(22, 0, 0, 0);
     
     self.apiAI = [ApiAI sharedApiAI];
 }
@@ -102,11 +103,21 @@
 - (void)parseText:(NSString *)text {
     __weak typeof(self) weakSelf = self;
     [[ApiAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
-        [weakSelf addMessage:[response description] byUserID:kIDUSer];
+        [weakSelf addMessage:[response description] byUserID:kIDOlivia];
     }];
 }
 
 #pragma mark - Actions
+- (void)toggleListening {
+    if (self.isListening) {
+        self.isListening = NO;
+        [self stopListening];
+    } else {
+        self.isListening = YES;
+        [self startListening];
+    }
+}
+
 - (void)addMessage:(NSString *)message byUserID:(NSString *)userID {
     // Show a typing indicator temporarily
     self.showTypingIndicator = YES;
@@ -129,16 +140,6 @@
                                 date:[NSDate date]];
         }
     });
-}
-
-- (void)toggleListening {
-    if (self.isListening) {
-        self.isListening = NO;
-        [self stopListening];
-    } else {
-        self.isListening = YES;
-        [self startListening];
-    }
 }
 
 # pragma mark - OLVBubbleMessageViewControllerDelegate
@@ -171,6 +172,11 @@
     [self.model.messages addObject:message];
     
     [self finishSendingMessageAnimated:YES];
+    
+    // Send the text to Voice to text API (input type = text), when user types or 
+    if ([senderId isEqualToString:kIDUSer]) {
+        [self parseText:text];
+    }
 }
 
 - (void)didPressAccessoryButton:(UIButton *)sender
@@ -408,16 +414,18 @@
     __weak typeof(self) weakSelf = self;
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
-        [weakSelf addMessage:[request description] byUserID:kIDUSer];
-        [weakSelf changeStateToStop];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf addMessage:[request description] byUserID:kIDUSer];
+        [strongSelf changeStateToStop];
     } failure:^(AIRequest *request, NSError *error) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:[error localizedDescription]
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
         [alertView show];
-        [weakSelf changeStateToStop];
+        [strongSelf changeStateToStop];
     }];
     
     self.currentVoiceRequest = request;
@@ -433,6 +441,7 @@
 - (void)changeStateToListening
 {
     [self.activity startAnimating];
+    self.inputToolbar.tintColor = [UIColor redColor];
 }
 
 - (void)changeStateToStop

@@ -10,6 +10,10 @@
 #import <ApiAI/ApiAI.h>
 #import <ApiAI/AITextRequest.h>
 
+@interface ApiAIHelper()
+@property (strong, nonatomic) AITextRequest *request;
+@end
+
 @implementation ApiAIHelper
 
 + (instancetype)sharedInstance {
@@ -21,20 +25,19 @@
     return currentInstance;
 }
 
-
 - (void)parseText:(NSString *)text withResultBlock:(parseSuccessBlock)succesBlock {
     ApiAI *apiai = [ApiAI sharedApiAI];
     
-    AITextRequest *request = (AITextRequest *)[apiai requestWithType:AIRequestTypeText];
-    request.query = @[text];
+    self.request = (AITextRequest *)[apiai requestWithType:AIRequestTypeText];
+    self.request.query = @[text];
     
-    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
+    [self.request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         succesBlock(response);
     } failure:^(AIRequest *request, NSError *error) {
-
+        NSLog(@"-----------------Request errored out!-------------------");
     }];
     
-    [apiai enqueue:request];
+    [apiai enqueue:self.request];
 }
 
 @end

@@ -36,7 +36,6 @@
                                                                               style:UIBarButtonItemStylePlain target:revealController action:@selector(rightRevealToggle:)];
     
     self.navigationItem.rightBarButtonItem = rightRevealButtonItem;
-    [self presentOliviaVC];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,11 +52,12 @@
 }
 */
 
-- (void)presentOliviaVC {
+#pragma mark - User Actions
+- (IBAction)activateOlivia:(id)sender {
     OLVBubbleMessageViewController *bubbleMessageVC = [[OLVBubbleMessageViewController alloc] init];
     bubbleMessageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentViewController:bubbleMessageVC animated:YES completion:nil];
+    [self.navigationController presentViewController:bubbleMessageVC animated:YES completion:nil];
 }
 
 @end
