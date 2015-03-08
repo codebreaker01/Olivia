@@ -47,7 +47,7 @@
     OLVBubbleMessageViewController *bubbleMessageVC = [[OLVBubbleMessageViewController alloc] init];
     bubbleMessageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self.navigationController presentViewController:bubbleMessageVC animated:YES completion:nil];
+    [self.revealViewController.frontViewController presentViewController:bubbleMessageVC animated:YES completion:nil];
     bubbleMessageVC.delegateModal = self;
 }
 

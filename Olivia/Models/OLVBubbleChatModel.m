@@ -30,8 +30,8 @@
         JSQMessagesAvatarImage *userImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"user-60"]
                                                                                        diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
         
-        self.avatars = @{ kIDOlivia : olvImage,
-                          kIDUSer : userImage};
+        // self.avatars = @{ kIDOlivia : olvImage,
+        //                  kIDUSer : userImage};
         
         self.users = @{ kIDOlivia : kNameOlivia,
                         kIDUSer : kNameUser};
@@ -44,8 +44,8 @@
          */
         JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
         
-        self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
-        self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
+        self.outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleRedColor]];
+        self.incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleBlueColor]];
     }
     
     return self;
