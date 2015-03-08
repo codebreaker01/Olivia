@@ -35,6 +35,20 @@
     self.monthlyIncome = 6500;
 }
 
+- (void)addGoal:(OLVGoals *)goal
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.goals];
+    [array addObject:goal];
+    self.goals = array;
+}
+
+- (void)addRecurringBills:(OLVRecurringBill *)bill
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.recurringBills];
+    [array addObject:bill];
+    self.recurringBills = array;
+}
+
 - (void)fakeGoals {
     
     OLVGoals *goal1 = [[OLVGoals alloc] init];
@@ -59,20 +73,36 @@
 - (void)fakeRecurringBills {
     
     OLVRecurringBill *bill1 = [[OLVRecurringBill alloc] init];
-    bill1.merchant = @"Trip to Spain";
-    bill1.amount = 5000;
+    bill1.merchant = @"GIEKO Insurance";
+    bill1.amount = 200;
     
     OLVRecurringBill *bill2 = [[OLVRecurringBill alloc] init];
-    bill1.merchant = @"Buy Apple Watch";
-    bill1.amount = 350;
+    bill1.merchant = @"Mortgage";
+    bill1.amount = 2500;
     
     OLVRecurringBill *bill3 = [[OLVRecurringBill alloc] init];
-    bill1.merchant = @"Go to Haiwaii";
-    bill1.amount = 2000;
+    bill1.merchant = @"PGE";
+    bill1.amount = 45;
+
+    OLVRecurringBill *bill4 = [[OLVRecurringBill alloc] init];
+    bill1.merchant = @"Comcast";
+    bill1.amount = 60;
     
-    self.recurringBills = @[bill1, bill2, bill3];   
+    self.recurringBills = @[bill1, bill2, bill3, bill4];
 }
 
+- (double)whatsLeftAmount {
+    
+    double monthlyIncome = self.monthlyIncome;
+    for (OLVGoals *goal in self.goals) {
+        monthlyIncome = monthlyIncome - goal.amount/goal.timePeriod;
+    }
+    
+    for (OLVRecurringBill *recurringBill in self.recurringBills) {
+        monthlyIncome = monthlyIncome - recurringBill.amount;
+    }
+    return monthlyIncome;
+}
 
 - (double)getIncomeForMonth:(NSDate *)date {
     
