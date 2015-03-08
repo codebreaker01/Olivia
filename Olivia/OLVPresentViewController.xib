@@ -55,7 +55,7 @@
                         <constraint firstAttribute="width" constant="50" id="sBf-v3-Ycy"/>
                         <constraint firstAttribute="height" constant="50" id="vrB-cB-ejO"/>
                     </constraints>
-                    <state key="normal" image="MicBlack-60">
+                    <state key="normal" image="white-mike-small@3x.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -119,11 +119,11 @@
             <constraints>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerY" secondItem="MH3-Yw-smy" secondAttribute="centerY" id="1lU-I3-C3L"/>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="5O6-Fw-h0W"/>
+                <constraint firstAttribute="centerX" secondItem="L6K-7l-hvp" secondAttribute="centerX" id="61E-l0-WW5"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bBi-KZ-nwv" secondAttribute="bottom" id="E0k-lN-Fyf"/>
                 <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="134" id="Egh-l0-cdp">
                     <variation key="widthClass=compact" constant="154"/>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="MeQ-eN-On2"/>
                 <constraint firstItem="M5q-na-idN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="TdS-ZP-jRk"/>
                 <constraint firstAttribute="centerX" secondItem="M5q-na-idN" secondAttribute="centerX" id="UQG-Y1-0sg"/>
@@ -133,7 +133,9 @@
                 <constraint firstAttribute="trailing" secondItem="bBi-KZ-nwv" secondAttribute="trailing" id="aTB-Lp-Bv8"/>
                 <constraint firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="b18-e7-Roh"/>
                 <constraint firstAttribute="centerX" secondItem="7fp-6L-xSD" secondAttribute="centerX" id="jWn-0W-I9C"/>
-                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>
+                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F">
+                    <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                </constraint>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
@@ -156,6 +158,7 @@
                     <exclude reference="5O6-Fw-h0W"/>
                     <exclude reference="MeQ-eN-On2"/>
                     <exclude reference="jWn-0W-I9C"/>
+                    <exclude reference="61E-l0-WW5"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -184,12 +187,13 @@
                     <include reference="YVi-3X-XYF"/>
                     <include reference="Ygj-yZ-RcQ"/>
                     <include reference="aTB-Lp-Bv8"/>
+                    <include reference="61E-l0-WW5"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="190" y="219"/>
         </view>
     </objects>
     <resources>
-        <image name="MicBlack-60" width="60" height="60"/>
+        <image name="white-mike-small@3x.png" width="84" height="149"/>
     </resources>
 </document>

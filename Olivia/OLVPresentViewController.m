@@ -93,8 +93,8 @@
         
     }];
     
-    [UIView animateWithDuration:0.5 delay:0
-         usingSpringWithDamping:0.75 initialSpringVelocity:5
+    [UIView animateWithDuration:1 delay:0
+         usingSpringWithDamping:0.8 initialSpringVelocity:1
                         options:0 animations:^{
                             if (amountPercentage < 1.0 && amountPercentage > 0) {
                                 self.topContraintForSpentView.constant = amountPercentage * (self.view.bounds.size.height + 63);
