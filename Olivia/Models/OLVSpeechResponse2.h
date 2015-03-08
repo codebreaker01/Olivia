@@ -11,6 +11,8 @@
 @interface OLVSpeechResponse2 : NSObject
 
 @property (strong, nonatomic, readonly) NSString *intent;
+@property (strong, nonatomic, readonly) NSString *amount;
+@property (strong, nonatomic, readonly) NSString *service;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

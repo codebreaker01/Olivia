@@ -14,6 +14,8 @@ static NSString * const kIntent = @"intent";
 
 @interface OLVSpeechResponse2()
 @property (strong, nonatomic, readwrite) NSString *intent;
+@property (strong, nonatomic, readwrite) NSString *amount;
+@property (strong, nonatomic, readwrite) NSString *service;
 @end
 
 @implementation OLVSpeechResponse2
@@ -38,11 +40,18 @@ static NSString * const kIntent = @"intent";
         double confidence = [[self objectOrNilForKey:@"confidence" fromDictionary:dict] doubleValue];
         if (confidence >= kConfidenceMin) {
             self.intent = [self objectOrNilForKey:kIntent fromDictionary:dict];
+            NSArray *amountArray = dict[@"entities"][@"amount_of_money"];
+            if (amountArray) {
+                self.amount = [amountArray objectAtIndex:0][@"value"];
+            }
+            NSArray *serviceArray = dict[@"entities"][@"service"];
+            if (serviceArray) {
+                self.service = [serviceArray objectAtIndex:0][@"value"];
+            }
         }
     }
     
     return self;
-    
 }
 
 - (NSDictionary *)dictionaryRepresentation {

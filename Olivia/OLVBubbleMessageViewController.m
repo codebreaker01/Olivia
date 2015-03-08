@@ -21,12 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *crossButton;
 @end
 
-//[[WitAIHelper sharedInstance] parseText:@"Set the temperature to 70 degrees at 10 PM" withResultBlock:^(id result){
-//    OLVSpeechResponse2 *speechRespone = [OLVSpeechResponse2 modelObjectWithDictionary:result];
-//    NSLog(@"Intent : %@",speechRespone.intent);
-//    NSLog(@"Wit Ai Result - %@",result);
-//}];
-
 @implementation OLVBubbleMessageViewController
 
 #pragma mark - View lifecycle
@@ -226,7 +220,14 @@
             if ([response isKindOfClass:[NSDictionary class]]) {
                 NSDictionary *responseDict = (NSDictionary *)response;
                 OLVSpeechResponse2 *speechResponse = [OLVSpeechResponse2 modelObjectWithDictionary:responseDict];
-                [weakSelf addMessage:speechResponse.intent byUserID:kIDOlivia];
+                NSString *intent = speechResponse.intent;
+                NSString *service = speechResponse.service;
+                NSString *amount = speechResponse.amount;
+                if (intent && [intent isEqualToString:kIntentRecurringExpense] && service && amount) {
+                    NSString *oliviaSpeak = [NSString stringWithFormat:@"I am Looking for \"%@\" transactions around %@ in your past transactions", service, amount];
+                    [weakSelf addMessage:oliviaSpeak byUserID:kIDOlivia];
+                    [self triggerTransactionSearch];
+                }
             }
         }];
     }
@@ -246,6 +247,10 @@
     [UIView animateWithDuration:0.5 animations:^{
         [self.micButton setBackgroundColor:[UIColor clearColor]];
     }];
+}
+
+- (void)triggerTransactionSearch {
+    
 }
 
 # pragma mark - OLVBubbleMessageViewControllerDelegate
