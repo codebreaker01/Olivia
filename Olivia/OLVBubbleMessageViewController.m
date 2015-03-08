@@ -204,6 +204,7 @@
                 NSString *intent = speechResponse.intent;
                 NSString *service = speechResponse.service;
                 NSString *amount = speechResponse.amount;
+                NSString *date = speechResponse.date;
                 if (intent && [intent isEqualToString:kIntentRecurringExpense] && service && amount) {
                     NSString *oliviaSpeak = [NSString stringWithFormat:@"I am Looking for \"%@\" transactions around $%@ in your past transactions", service, amount];
                     [weakSelf addMessage:oliviaSpeak byUserID:kIDOlivia];
@@ -211,6 +212,10 @@
                 }
                 if (intent && [intent isEqualToString:kIntentConfirmation]) {
                     [weakSelf addMessage:@"Consider it done!" byUserID:kIDOlivia];
+                }
+                if (intent && [intent isEqualToString:kIntentReminder]) {
+                    NSString *reminderMessage = [NSString stringWithFormat:@"I will remind you to pay %@ on %@ next",service,date];
+                    [weakSelf addMessage:reminderMessage byUserID:kIDOlivia];
                 }
             }
         }];

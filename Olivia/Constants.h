@@ -24,6 +24,7 @@ static NSString * const kIDUSer = @"User";
 
 static NSString * const kIntentRecurringExpense  = @"addRecurringExpense";
 static NSString * const kIntentConfirmation  = @"confirmation";
+static NSString * const kIntentReminder  = @"addReminder";
 
 #endif
 
