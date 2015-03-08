@@ -40,7 +40,7 @@
     
     revealController.rearViewRevealWidth  = [UIScreen mainScreen].bounds.size.width * 0.85;
     revealController.rightViewRevealWidth = [UIScreen mainScreen].bounds.size.width * 0.85;
-    revealController.frontViewShadowOpacity = 0.25;
+    revealController.frontViewShadowOpacity = 0.4;
     
     revealController.rightViewController = rightNavigationController;
     

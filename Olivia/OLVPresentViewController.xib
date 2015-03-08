@@ -58,18 +58,18 @@
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Left?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5q-na-idN">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Left?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5q-na-idN">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="57" id="uMX-Tq-IA3">
-                            <variation key="widthClass=compact" constant="30"/>
+                            <variation key="widthClass=compact" constant="45"/>
                         </constraint>
                         <constraint firstAttribute="width" constant="121" id="ubc-4j-Jpx">
-                            <variation key="widthClass=compact" constant="140"/>
+                            <variation key="widthClass=compact" constant="300"/>
                         </constraint>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="42"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -115,8 +115,8 @@
             <constraints>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerY" secondItem="MH3-Yw-smy" secondAttribute="centerY" id="1lU-I3-C3L"/>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="5O6-Fw-h0W"/>
-                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="Egh-l0-cdp">
-                    <variation key="widthClass=compact" constant="134"/>
+                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="134" id="Egh-l0-cdp">
+                    <variation key="widthClass=compact" constant="154"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
                 <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="LFs-wJ-r4p"/>

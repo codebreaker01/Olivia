@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Olivia", nil);
+//    self.title = NSLocalizedString(@"Olivia", nil);
     
     SWRevealViewController *revealController = [self revealViewController];
     
@@ -48,6 +48,31 @@
     self.pieChart.layer.cornerRadius = 100;
     self.pieChart.backgroundColor = PNGreen;
     self.whatsLeftLabel.alpha = 0.0;
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    
+//    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                    [UIColor whiteColor],NSForegroundColorAttributeName,
+//                                    [UIColor whiteColor],NSBackgroundColorAttributeName,
+//                                    [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0f],NSFontAttributeName,
+//                                    nil];
+//    
+//    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
+    
+    UIImage* logoImage = [UIImage imageNamed:@"white-app-icon-small"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.view.backgroundColor = UIColorFromRGB(0x2498D6);
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)login {

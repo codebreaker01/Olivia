@@ -56,6 +56,9 @@
 		079F87751AABFDB500283B68 /* OLVTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079F87731AABFDB500283B68 /* OLVTransactionsViewController.xib */; };
 		079F87781AAC00E500283B68 /* OLVGoals.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F87771AAC00E500283B68 /* OLVGoals.m */; };
 		079F877B1AAC042500283B68 /* OLVRecurringBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F877A1AAC042500283B68 /* OLVRecurringBill.m */; };
+		079F877D1AAC503A00283B68 /* white-app-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F877C1AAC503900283B68 /* white-app-icon@3x.png */; };
+		079F877F1AAC5C5E00283B68 /* black-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F877E1AAC5C5E00283B68 /* black-app-icon.png */; };
+		079F87831AAC6C9E00283B68 /* white-app-icon-small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
@@ -151,6 +154,9 @@
 		079F87771AAC00E500283B68 /* OLVGoals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVGoals.m; sourceTree = "<group>"; };
 		079F87791AAC042500283B68 /* OLVRecurringBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVRecurringBill.h; sourceTree = "<group>"; };
 		079F877A1AAC042500283B68 /* OLVRecurringBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVRecurringBill.m; sourceTree = "<group>"; };
+		079F877C1AAC503900283B68 /* white-app-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-app-icon@3x.png"; sourceTree = "<group>"; };
+		079F877E1AAC5C5E00283B68 /* black-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-app-icon.png"; sourceTree = "<group>"; };
+		079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-app-icon-small@3x.png"; sourceTree = "<group>"; };
 		07EC9E201AA9244200ECDBE9 /* Olivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC9E241AA9244200ECDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -258,7 +264,10 @@
 		0705FBAB1AAB7DB500956B9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */,
 				0705FBB21AAB9FB300956B9B /* Fonts */,
+				079F877C1AAC503900283B68 /* white-app-icon@3x.png */,
+				079F877E1AAC5C5E00283B68 /* black-app-icon.png */,
 				0705FBB01AAB991500956B9B /* estimate-icon@3x.png */,
 				0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */,
 				0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */,
@@ -607,8 +616,11 @@
 				0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */,
 				0705FBC81AAB9FB300956B9B /* OpenSans-Semibold.ttf in Resources */,
 				0705FBC51AAB9FB300956B9B /* OpenSans-Light.ttf in Resources */,
+				079F877D1AAC503A00283B68 /* white-app-icon@3x.png in Resources */,
 				0705FBB11AAB991500956B9B /* estimate-icon@3x.png in Resources */,
+				079F87831AAC6C9E00283B68 /* white-app-icon-small@3x.png in Resources */,
 				0705FBBF1AAB9FB300956B9B /* Apache License.txt in Resources */,
+				079F877F1AAC5C5E00283B68 /* black-app-icon.png in Resources */,
 				07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */,
 				0705FBC91AAB9FB300956B9B /* OpenSans-SemiboldItalic.ttf in Resources */,
 				0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */,

@@ -47,7 +47,7 @@
                                         <constraint firstAttribute="width" constant="146" id="g48-jP-VA7"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="20"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -68,7 +68,7 @@
                                         <constraint firstAttribute="height" constant="40" id="kWO-P9-nJc"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="42"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -81,6 +81,26 @@
                                         </mask>
                                     </variation>
                                 </label>
+                                <view alpha="0.29999999999999966" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGL-u5-Nje">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="VGv-X4-ioI"/>
+                                        <constraint firstAttribute="width" constant="200" id="pnK-xo-tqe"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="VGv-X4-ioI"/>
+                                            <exclude reference="pnK-xo-tqe"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="VGv-X4-ioI"/>
+                                            <include reference="pnK-xo-tqe"/>
+                                        </mask>
+                                    </variation>
+                                </view>
                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iM3-Pk-4Oh">
                                     <rect key="frame" x="20" y="125" width="400" height="335"/>
                                     <subviews>
@@ -105,7 +125,7 @@
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="sJL-JN-8GI"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -120,14 +140,16 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvL-6D-3QZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income (Aggregated)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvL-6D-3QZ">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="aJD-Vy-vzo"/>
-                                                <constraint firstAttribute="width" constant="85" id="cWN-gv-H2Q"/>
+                                                <constraint firstAttribute="width" constant="85" id="cWN-gv-H2Q">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                                                </constraint>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -142,14 +164,16 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75m-gW-aCN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense (Aggregated)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75m-gW-aCN">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="QDq-7o-Ile"/>
-                                                <constraint firstAttribute="width" constant="58" id="nK4-uQ-79g"/>
+                                                <constraint firstAttribute="width" constant="58" id="nK4-uQ-79g">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                                                </constraint>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -170,7 +194,7 @@
                                                 <constraint firstAttribute="height" constant="22" id="xpV-sj-L8W"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -184,7 +208,7 @@
                                             </variation>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="h1k-i4-lGd" firstAttribute="leading" secondItem="iM3-Pk-4Oh" secondAttribute="leading" id="5jn-IG-GA4"/>
                                         <constraint firstAttribute="height" constant="335" id="8cv-CS-hff"/>
@@ -270,46 +294,59 @@
                                     </variation>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="iM3-Pk-4Oh" firstAttribute="leading" secondItem="k10-5q-Vh1" secondAttribute="leading" id="AD8-UB-7ko"/>
+                                <constraint firstItem="wGL-u5-Nje" firstAttribute="top" secondItem="S9R-9U-wia" secondAttribute="bottom" constant="20" id="Izb-5N-31L"/>
                                 <constraint firstAttribute="centerX" secondItem="qKR-Gz-EkS" secondAttribute="centerX" id="OXh-CP-HRG"/>
                                 <constraint firstItem="S9R-9U-wia" firstAttribute="top" secondItem="qKR-Gz-EkS" secondAttribute="bottom" constant="8" id="TJN-Mc-wXo"/>
                                 <constraint firstAttribute="trailing" secondItem="S9R-9U-wia" secondAttribute="trailing" constant="10" id="WhH-El-705"/>
+                                <constraint firstAttribute="centerX" secondItem="wGL-u5-Nje" secondAttribute="centerX" id="XEL-bp-7tN"/>
                                 <constraint firstItem="S9R-9U-wia" firstAttribute="centerX" secondItem="qKR-Gz-EkS" secondAttribute="centerX" id="aBI-jR-pxi"/>
                                 <constraint firstAttribute="trailing" secondItem="iM3-Pk-4Oh" secondAttribute="trailing" id="b7x-ys-sFe"/>
                                 <constraint firstItem="qKR-Gz-EkS" firstAttribute="top" secondItem="k10-5q-Vh1" secondAttribute="top" constant="20" id="cTw-vv-ntE"/>
                                 <constraint firstItem="S9R-9U-wia" firstAttribute="leading" secondItem="k10-5q-Vh1" secondAttribute="leading" constant="10" id="kQX-j8-oYy"/>
-                                <constraint firstItem="iM3-Pk-4Oh" firstAttribute="top" secondItem="S9R-9U-wia" secondAttribute="bottom" constant="20" id="rfb-5C-NNO"/>
+                                <constraint firstItem="iM3-Pk-4Oh" firstAttribute="top" secondItem="S9R-9U-wia" secondAttribute="bottom" constant="85" id="rfb-5C-NNO"/>
                             </constraints>
                             <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="wGL-u5-Nje"/>
+                                </mask>
                                 <mask key="constraints">
                                     <exclude reference="TJN-Mc-wXo"/>
                                     <exclude reference="WhH-El-705"/>
                                     <exclude reference="aBI-jR-pxi"/>
                                     <exclude reference="kQX-j8-oYy"/>
+                                    <exclude reference="OXh-CP-HRG"/>
+                                    <exclude reference="cTw-vv-ntE"/>
                                     <exclude reference="AD8-UB-7ko"/>
                                     <exclude reference="b7x-ys-sFe"/>
                                     <exclude reference="rfb-5C-NNO"/>
-                                    <exclude reference="OXh-CP-HRG"/>
-                                    <exclude reference="cTw-vv-ntE"/>
+                                    <exclude reference="Izb-5N-31L"/>
+                                    <exclude reference="XEL-bp-7tN"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="wGL-u5-Nje"/>
+                                </mask>
                                 <mask key="constraints">
                                     <include reference="TJN-Mc-wXo"/>
                                     <include reference="WhH-El-705"/>
                                     <include reference="aBI-jR-pxi"/>
                                     <include reference="kQX-j8-oYy"/>
+                                    <include reference="OXh-CP-HRG"/>
+                                    <include reference="cTw-vv-ntE"/>
                                     <include reference="AD8-UB-7ko"/>
                                     <include reference="b7x-ys-sFe"/>
                                     <include reference="rfb-5C-NNO"/>
-                                    <include reference="OXh-CP-HRG"/>
-                                    <include reference="cTw-vv-ntE"/>
+                                    <include reference="Izb-5N-31L"/>
+                                    <include reference="XEL-bp-7tN"/>
                                 </mask>
                             </variation>
                         </scrollView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="k10-5q-Vh1" secondAttribute="trailing" id="YyU-ts-FHR">
                             <variation key="heightClass=regular-widthClass=compact" constant="20"/>
