@@ -16,8 +16,8 @@
 
 @interface OLVPresentViewController () <OLVBubbleMessageViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *pieChart;
 @property (weak, nonatomic) IBOutlet UILabel *whatsLeftLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContraintForSpentView;
 
 @end
 
@@ -59,6 +59,9 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor healthygreenColor];
+    
+    self.topContraintForSpentView.constant = self.view.bounds.size.height + 63;
+    [self.view layoutIfNeeded];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -73,18 +76,9 @@
     NSDate *toDate = [calendar dateByAddingComponents:dateComponents toDate:[NSDate date] options:0];
     
     double amountSpent = [[OLVUserInfo sharedInfo] getExpenseForMonth:toDate];
-    int amountPercentage = floor(amountSpent/[OLVUserInfo sharedInfo].spendableAmount * 100);
+    float amountPercentage = 1.0 - amountSpent/[OLVUserInfo sharedInfo].spendableAmount;
     
-    PNPieChart *pieChart;
-    if (amountPercentage < 100 && amountPercentage > 0) {
-        NSArray *items = @[[PNPieChartDataItem dataItemWithValue:amountPercentage color:[UIColor healthygreenColor]],
-                           [PNPieChartDataItem dataItemWithValue:100 - amountPercentage color:[UIColor clearColor] description:@""],
-                           ];
-        
-        pieChart = [[PNPieChart alloc] initWithFrame:CGRectInset(self.pieChart.frame, 10, 10) items:items];
-        [pieChart strokeChart];
-//        [self.view addSubview:pieChart];
-    }
+    
     
     [self.view bringSubviewToFront:self.whatsLeftLabel];
     
@@ -96,7 +90,22 @@
     
     [UIView animateWithDuration:0.25 animations:^{
         self.whatsLeftLabel.alpha = 1.0;
+        
     }];
+    
+    [UIView animateWithDuration:0.5 delay:0
+         usingSpringWithDamping:0.75 initialSpringVelocity:5
+                        options:0 animations:^{
+                            if (amountPercentage < 1.0 && amountPercentage > 0) {
+                                self.topContraintForSpentView.constant = amountPercentage * (self.view.bounds.size.height + 63);
+
+                            } else if (amountPercentage > 1.0) {
+                                self.topContraintForSpentView.constant = 0;
+                            } else if (amountPercentage < 0) {
+                                self.topContraintForSpentView.constant = amountPercentage * (self.view.bounds.size.height + 63);
+                            }
+                            [self.view layoutIfNeeded];
+                        } completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
