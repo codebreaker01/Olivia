@@ -8,6 +8,7 @@
 
 #import "OLVPresentViewController.h"
 #import "SWRevealViewController.h"
+#import "OLVBubbleMessageViewController.h"
 
 @interface OLVPresentViewController ()
 
@@ -35,6 +36,7 @@
                                                                               style:UIBarButtonItemStylePlain target:revealController action:@selector(rightRevealToggle:)];
     
     self.navigationItem.rightBarButtonItem = rightRevealButtonItem;
+    [self presentOliviaVC];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,5 +52,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)presentOliviaVC {
+    OLVBubbleMessageViewController *bubbleMessageVC = [[OLVBubbleMessageViewController alloc] init];
+    bubbleMessageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    self.navigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:bubbleMessageVC animated:YES completion:nil];
+}
 
 @end
