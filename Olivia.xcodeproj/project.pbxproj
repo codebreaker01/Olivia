@@ -59,6 +59,7 @@
 		079F877D1AAC503A00283B68 /* white-app-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F877C1AAC503900283B68 /* white-app-icon@3x.png */; };
 		079F877F1AAC5C5E00283B68 /* black-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F877E1AAC5C5E00283B68 /* black-app-icon.png */; };
 		079F87831AAC6C9E00283B68 /* white-app-icon-small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */; };
+		079F87861AAC6E5700283B68 /* UIColor+OLVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
@@ -157,6 +158,8 @@
 		079F877C1AAC503900283B68 /* white-app-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-app-icon@3x.png"; sourceTree = "<group>"; };
 		079F877E1AAC5C5E00283B68 /* black-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-app-icon.png"; sourceTree = "<group>"; };
 		079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-app-icon-small@3x.png"; sourceTree = "<group>"; };
+		079F87841AAC6E5700283B68 /* UIColor+OLVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OLVExtensions.h"; sourceTree = "<group>"; };
+		079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OLVExtensions.m"; sourceTree = "<group>"; };
 		07EC9E201AA9244200ECDBE9 /* Olivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC9E241AA9244200ECDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 				41E620A71AAC10E9009465E5 /* NSDictionary+Olivia.m */,
 				41E620A91AAC2098009465E5 /* OLVTextToSpeech.h */,
 				41E620AA1AAC2098009465E5 /* OLVTextToSpeech.m */,
+				079F87841AAC6E5700283B68 /* UIColor+OLVExtensions.h */,
+				079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -704,6 +709,7 @@
 				07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */,
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,
 				0705FB9A1AAB703300956B9B /* OLVEstimateViewController.m in Sources */,
+				079F87861AAC6E5700283B68 /* UIColor+OLVExtensions.m in Sources */,
 				077330081AABB169008C7FDC /* BEMLine.m in Sources */,
 				0705FBAA1AAB724C00956B9B /* OLVNavigationManager.m in Sources */,
 				41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */,

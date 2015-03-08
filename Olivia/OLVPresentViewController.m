@@ -12,6 +12,7 @@
 #import "PNChart.h"
 #import "OLVUserInfo.h"
 #import "NSString+Olivia.h"
+#import "UIColor+OLVExtensions.h"
 
 @interface OLVPresentViewController () <OLVBubbleMessageViewControllerDelegate>
 
@@ -43,10 +44,7 @@
     
     self.navigationItem.rightBarButtonItem = rightRevealButtonItem;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login) name:@"Login" object:nil];
-    
-    self.pieChart.alpha = 0.0;
-    self.pieChart.layer.cornerRadius = 100;
-    self.pieChart.backgroundColor = PNGreen;
+
     self.whatsLeftLabel.alpha = 0.0;
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -56,19 +54,11 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
-//    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                    [UIColor whiteColor],NSForegroundColorAttributeName,
-//                                    [UIColor whiteColor],NSBackgroundColorAttributeName,
-//                                    [UIFont fontWithName:@"HelveticaNeue-Light" size:24.0f],NSFontAttributeName,
-//                                    nil];
-//    
-//    self.navigationController.navigationBar.titleTextAttributes = textAttributes;
-    
     UIImage* logoImage = [UIImage imageNamed:@"white-app-icon-small"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.view.backgroundColor = UIColorFromRGB(0x2498D6);
+    self.view.backgroundColor = [UIColor healthygreenColor];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -87,13 +77,13 @@
     
     PNPieChart *pieChart;
     if (amountPercentage < 100 && amountPercentage > 0) {
-        NSArray *items = @[[PNPieChartDataItem dataItemWithValue:amountPercentage color:PNGreen],
+        NSArray *items = @[[PNPieChartDataItem dataItemWithValue:amountPercentage color:[UIColor healthygreenColor]],
                            [PNPieChartDataItem dataItemWithValue:100 - amountPercentage color:[UIColor clearColor] description:@""],
                            ];
         
         pieChart = [[PNPieChart alloc] initWithFrame:CGRectInset(self.pieChart.frame, 10, 10) items:items];
         [pieChart strokeChart];
-        [self.view addSubview:pieChart];
+//        [self.view addSubview:pieChart];
     }
     
     [self.view bringSubviewToFront:self.whatsLeftLabel];
@@ -105,8 +95,6 @@
     self.whatsLeftLabel.text = [NSString priceStringFrom:[[OLVUserInfo sharedInfo] whatsLeftAmount:toDate]];
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.pieChart.alpha = 0.6;
-        pieChart.alpha = 0.75;
         self.whatsLeftLabel.alpha = 1.0;
     }];
 }

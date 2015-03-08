@@ -11,6 +11,7 @@
 #import "OLVUserInfo.h"
 
 #import "NSString+Olivia.h"
+#import "UIColor+OLVExtensions.h"
 
 @interface OLVEstimateViewController ()
 
@@ -32,8 +33,9 @@
     
     self.navigationController.navigationBar.hidden = YES;
     
-    self.lineGraphPrediction.colorTop = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
-    self.lineGraphPrediction.colorBottom = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
+    self.view.backgroundColor = UIColorFromRGB(0x2498D6);
+    self.lineGraphPrediction.colorTop = UIColorFromRGB(0x2498D6);
+    self.lineGraphPrediction.colorBottom = UIColorFromRGB(0x2498D6);
     self.lineGraphPrediction.colorLine = [UIColor whiteColor];
     self.lineGraphPrediction.colorXaxisLabel = [UIColor whiteColor];
     self.lineGraphPrediction.widthLine = 1.0;

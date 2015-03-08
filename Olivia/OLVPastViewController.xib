@@ -306,7 +306,7 @@
                                 <constraint firstAttribute="trailing" secondItem="iM3-Pk-4Oh" secondAttribute="trailing" id="b7x-ys-sFe"/>
                                 <constraint firstItem="qKR-Gz-EkS" firstAttribute="top" secondItem="k10-5q-Vh1" secondAttribute="top" constant="20" id="cTw-vv-ntE"/>
                                 <constraint firstItem="S9R-9U-wia" firstAttribute="leading" secondItem="k10-5q-Vh1" secondAttribute="leading" constant="10" id="kQX-j8-oYy"/>
-                                <constraint firstItem="iM3-Pk-4Oh" firstAttribute="top" secondItem="S9R-9U-wia" secondAttribute="bottom" constant="85" id="rfb-5C-NNO"/>
+                                <constraint firstItem="iM3-Pk-4Oh" firstAttribute="top" secondItem="S9R-9U-wia" secondAttribute="bottom" constant="50" id="rfb-5C-NNO"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="subviews">

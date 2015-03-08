@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OLVPresentViewController">
             <connections>
-                <outlet property="pieChart" destination="MH3-Yw-smy" id="Kp1-Q1-8xV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="whatsLeftLabel" destination="7fp-6L-xSD" id="Ash-66-iCK"/>
             </connections>
@@ -88,7 +87,7 @@
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="NEK-Qn-hjd">
-                            <variation key="widthClass=compact" constant="180"/>
+                            <variation key="widthClass=compact" constant="300"/>
                         </constraint>
                         <constraint firstAttribute="height" constant="25" id="UJB-Zl-ISx">
                             <variation key="widthClass=compact" constant="55"/>
@@ -119,9 +118,11 @@
                     <variation key="widthClass=compact" constant="154"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
-                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="LFs-wJ-r4p"/>
+                <constraint firstItem="7fp-6L-xSD" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="MeQ-eN-On2"/>
+                <constraint firstItem="M5q-na-idN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="TdS-ZP-jRk"/>
                 <constraint firstAttribute="centerX" secondItem="M5q-na-idN" secondAttribute="centerX" id="UQG-Y1-0sg"/>
                 <constraint firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="b18-e7-Roh"/>
+                <constraint firstAttribute="centerX" secondItem="7fp-6L-xSD" secondAttribute="centerX" id="jWn-0W-I9C"/>
                 <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>
             </constraints>
             <variation key="default">
@@ -131,27 +132,30 @@
                     <exclude reference="7fp-6L-xSD"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="UQG-Y1-0sg"/>
                     <exclude reference="Egh-l0-cdp"/>
-                    <exclude reference="LFs-wJ-r4p"/>
                     <exclude reference="b18-e7-Roh"/>
+                    <exclude reference="TdS-ZP-jRk"/>
+                    <exclude reference="UQG-Y1-0sg"/>
                     <exclude reference="1lU-I3-C3L"/>
                     <exclude reference="5O6-Fw-h0W"/>
+                    <exclude reference="MeQ-eN-On2"/>
+                    <exclude reference="jWn-0W-I9C"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="MH3-Yw-smy"/>
                     <include reference="M5q-na-idN"/>
                     <include reference="7fp-6L-xSD"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="UQG-Y1-0sg"/>
                     <include reference="Egh-l0-cdp"/>
-                    <include reference="LFs-wJ-r4p"/>
                     <include reference="b18-e7-Roh"/>
+                    <include reference="TdS-ZP-jRk"/>
+                    <include reference="UQG-Y1-0sg"/>
                     <include reference="1lU-I3-C3L"/>
                     <include reference="5O6-Fw-h0W"/>
+                    <include reference="MeQ-eN-On2"/>
+                    <include reference="jWn-0W-I9C"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="190" y="219"/>

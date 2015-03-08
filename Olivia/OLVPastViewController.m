@@ -38,9 +38,9 @@
     [super viewDidLoad];
     
     // Customization of the graph
-    self.view.backgroundColor = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
-    self.lineExpenseGraph.colorTop = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
-    self.lineExpenseGraph.colorBottom = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
+    self.view.backgroundColor = UIColorFromRGB(0x2498D6);
+    self.lineExpenseGraph.colorTop = UIColorFromRGB(0x2498D6);
+    self.lineExpenseGraph.colorBottom = UIColorFromRGB(0x2498D6);
     self.lineExpenseGraph.colorLine = [UIColor whiteColor];
     self.lineExpenseGraph.colorXaxisLabel = [UIColor whiteColor];
     self.lineExpenseGraph.widthLine = 1.0;
