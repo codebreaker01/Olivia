@@ -32,6 +32,34 @@ PODS:
   - JSQMessagesViewController (6.1.3):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - MRProgress (0.8.1):
+    - MRProgress/ActivityIndicator (= 0.8.1)
+    - MRProgress/Blur (= 0.8.1)
+    - MRProgress/Circular (= 0.8.1)
+    - MRProgress/Icons (= 0.8.1)
+    - MRProgress/NavigationBarProgress (= 0.8.1)
+    - MRProgress/Overlay (= 0.8.1)
+  - MRProgress/ActivityIndicator (0.8.1):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.1):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.1):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.1)
+  - MRProgress/Icons (0.8.1)
+  - MRProgress/NavigationBarProgress (0.8.1):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.1):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.1)
+  - MRProgress/Stopable (0.8.1):
+    - MRProgress/Helper
   - PNChart (0.8):
     - UICountingLabel (~> 1.0.0)
   - UICountingLabel (1.0.0)
@@ -41,6 +69,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - ApiAI
   - JSQMessagesViewController
+  - MRProgress
   - PNChart
   - Wit (~> 4.0.0)
 
@@ -50,6 +79,7 @@ SPEC CHECKSUMS:
   CWLSynthesizeSingleton: 6bf23e662713ad65ee7348ba9ef73e6e87a2626d
   JSQMessagesViewController: e93a288a9662d4519c95a28a8c0eec10beae1bfc
   JSQSystemSoundPlayer: 55528c699a283aae2220d3ae7b8b527d2ecef4b4
+  MRProgress: cd12726e001ea25dec133322d34cc4754cbc58f8
   PNChart: 278c48336e911ee661898f5b04f040b2d9c8df26
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9
   Wit: 0142bccd57796f389a777aac6970933a52492514
