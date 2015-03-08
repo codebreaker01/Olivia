@@ -1629,6 +1629,12 @@ const int FrontViewPositionNone = 0xff;
     if ( fromController == toController )
         return ^(void){};
     
+    if ([toController isEqual:self.rearViewController]) {
+        CGRect frame = self.rearViewController.view.frame;
+        frame.size.width = [UIScreen mainScreen].bounds.size.width * 0.85;
+        self.rearViewController.view.frame = frame;
+    }
+    
     if ( toController ) [self addChildViewController:toController];
     
     void (^deployCompletion)() = [self _deployForViewController:toController inView:view];

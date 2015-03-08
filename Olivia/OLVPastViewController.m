@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Jaikumar Bhambhwani. All rights reserved.
 //
 
+#import "OLVDays.h"
 #import "OLVUserInfo.h"
 #import "OLVPastViewController.h"
 #import "BEMSimpleLineGraphView.h"
 #import "SWRevealViewController.h"
+#import "OLVDayBalances.h"
 
 #import "NSString+Olivia.h"
 
@@ -20,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *lineIncomeGraph;
 @property (weak, nonatomic) IBOutlet UILabel *incomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expenselabel;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightMarginContainerConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *netWorthValue;
 
 @property (nonatomic) NSArray *months;
 @property (nonatomic) NSArray *income;
@@ -31,10 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.months  = [self createPastDateArray];
-    self.income  = [self getIncomeForMonths:self.months];
-    self.expense = [self getExpenseForMonths:self.months];
     
     // Customization of the graph
     self.lineExpenseGraph.colorTop = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
@@ -56,6 +57,26 @@
     
     self.lineIncomeGraph.lowerGraph = self.lineExpenseGraph;
     self.lineIncomeGraph.lowerGraphShouldRecognizeTouches = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    self.months  = [self createPastDateArray];
+    self.income  = [self getIncomeForMonths:self.months];
+    self.expense = [self getExpenseForMonths:self.months];
+    
+    [self.lineIncomeGraph reloadGraph];
+    [self.lineExpenseGraph reloadGraph];
+    
+    self.navigationController.navigationBar.hidden = YES;
+    
+    OLVDays *day = (OLVDays *)[[[OLVUserInfo sharedInfo] dayBalances] lastObject];
+    self.netWorthValue.text = [NSString priceStringFrom:day.balance/10000];
+}
+
+- (void)viewDidLayoutSubviews {
+    self.rightMarginContainerConstraint.constant = 0.85 * [UIScreen mainScreen].scale + 25;
+    [self.view layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
