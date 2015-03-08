@@ -15,10 +15,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
-                    <rect key="frame" x="524" y="524" width="76" height="76"/>
+                    <rect key="frame" x="535" y="535" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="76" id="2y5-Iv-9Ev"/>
-                        <constraint firstAttribute="height" constant="76" id="ueA-EG-vcm"/>
+                        <constraint firstAttribute="width" constant="50" id="sBf-v3-Ycy"/>
+                        <constraint firstAttribute="height" constant="50" id="vrB-cB-ejO"/>
                     </constraints>
                     <state key="normal" image="MicBlack-60">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,12 +28,12 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.16470588235294117" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="0.833931188344056" blue="0.34802014778950913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
-                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>
+                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" constant="15" id="md1-vN-LYt"/>
+                <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" constant="15" id="zok-cS-pht"/>
             </constraints>
-            <point key="canvasLocation" x="190" y="219"/>
+            <point key="canvasLocation" x="352" y="176"/>
         </view>
     </objects>
     <resources>

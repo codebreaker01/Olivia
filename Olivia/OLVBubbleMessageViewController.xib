@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OLVBubbleMessageViewController">
             <connections>
+                <outlet property="crossButton" destination="6jc-KV-eKH" id="0QU-CO-XZ6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,8 +14,30 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jc-KV-eKH">
+                    <rect key="frame" x="0.0" y="22" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="0BL-0J-sKc"/>
+                        <constraint firstAttribute="height" constant="40" id="dMQ-Zc-mgP"/>
+                    </constraints>
+                    <state key="normal" image="crossGrey-60">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelPressed:" destination="-1" eventType="touchUpInside" id="27T-Wq-TsW"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="344" y="208"/>
+            <constraints>
+                <constraint firstItem="6jc-KV-eKH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="Ktf-CJ-AIu"/>
+                <constraint firstItem="6jc-KV-eKH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="U3d-ZY-9Xk"/>
+            </constraints>
+            <point key="canvasLocation" x="343" y="216"/>
         </view>
     </objects>
+    <resources>
+        <image name="crossGrey-60" width="60" height="60"/>
+    </resources>
 </document>
