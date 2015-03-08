@@ -15,11 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
-                    <rect key="frame" x="524" y="524" width="76" height="76"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
+                    <rect key="frame" x="535" y="535" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="76" id="2y5-Iv-9Ev"/>
-                        <constraint firstAttribute="height" constant="76" id="ueA-EG-vcm"/>
+                        <constraint firstAttribute="width" constant="50" id="sBf-v3-Ycy"/>
+                        <constraint firstAttribute="height" constant="50" id="vrB-cB-ejO"/>
                     </constraints>
                     <state key="normal" image="MicBlack-60">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

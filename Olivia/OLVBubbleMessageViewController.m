@@ -11,6 +11,8 @@
 #import <ApiAI/ApiAI.h>
 #import <ApiAI/AIVoiceRequest.h>
 #import "ApiAIHelper.h"
+#import "OLVSpeechResponse.h"
+#import "OLVTextToSpeech.h"
 
 @interface OLVBubbleMessageViewController ()
 @property (strong, nonatomic) OLVBubbleChatModel *model;
@@ -20,6 +22,7 @@
 @property (nonatomic, strong) UIButton *micButton;
 @property (nonatomic) BOOL isListening;
 @property (nonatomic) NSInteger buttonSize;
+@property (weak, nonatomic) IBOutlet UIButton *crossButton;
 @end
 
 @implementation OLVBubbleMessageViewController
@@ -34,6 +37,7 @@
  *  Customize your layout.
  *  Look at the properties on `JSQMessagesCollectionViewFlowLayout` to see what is possible.
  */
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,6 +53,9 @@
     // Disable avatars, better way
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+    
+    [self.collectionView addSubview:self.crossButton];
+    [self.collectionView bringSubviewToFront:self.crossButton];
     
     // Set the font
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"OpenSans-Light" size:20];
@@ -66,13 +73,15 @@
     
     self.micButton = [[UIButton alloc] init];
     [self.micButton setImage:[UIImage imageNamed:@"MicBlack-Small-40"] forState:UIControlStateNormal];
+    self.micButton.layer.cornerRadius = 16;
+    self.micButton.layer.masksToBounds = YES;
     [self.micButton addTarget:self action:@selector(toggleListening) forControlEvents:UIControlEventTouchUpInside];
     self.inputToolbar.contentView.leftBarButtonItem = self.micButton;
 
     self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [self.inputToolbar.contentView addSubview:self.activity];
+    [self.inputToolbar addSubview:self.activity];
     
-    self.collectionView.contentInset = UIEdgeInsetsMake(22, 0, 0, 0);
+    self.collectionView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     
     self.apiAI = [ApiAI sharedApiAI];
 }
@@ -106,13 +115,21 @@
     [self.currentVoiceRequest cancel];
 }
 
+- (void)viewWillLayoutSubviews {
+    self.activity.center = self.micButton.center;
+}
+
 # pragma mark - Utility
 - (void)parseText:(NSString *)text {
     // Make the call to Olivia API only if the string is not empty
     if ([text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
         __weak typeof(self) weakSelf = self;
         [[ApiAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
-            [weakSelf addMessage:[response description] byUserID:kIDOlivia];
+            if ([response isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *responseDict = (NSDictionary *)response;
+                OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
+                [weakSelf addMessage:speechResponse.resolvedQuery byUserID:kIDOlivia];
+            }
         }];
     }
 }
@@ -128,6 +145,10 @@
     }
 }
 
+- (IBAction)cancelPressed:(id)sender {
+    [self.delegateModal didDismissViewController:self];
+}
+
 - (void)addMessage:(NSString *)message byUserID:(NSString *)userID {
     // Process only when the message is not empty
     if ([message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0 && userID) {
@@ -139,7 +160,7 @@
         /**
          *  Allow typing indicator to show
          */
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if ([userID isEqualToString:kIDUSer]) {
                 [self didPressSendButton:nil withMessageText:message
                                 senderId:kIDUSer
@@ -150,6 +171,7 @@
                                 senderId:kIDOlivia
                        senderDisplayName:kNameOlivia
                                     date:[NSDate date]];
+                [[OLVTextToSpeech sharedInstance] speakText:message];
             }
         });
     }
@@ -340,11 +362,7 @@
     return cell;
 }
 
-
-
 #pragma mark - JSQMessages collection view flow layout delegate
-
-#pragma mark - Adjusting cell label heights
 
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
@@ -428,7 +446,11 @@
     
     [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf addMessage:[request description] byUserID:kIDUSer];
+        if ([response isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *responseDict = (NSDictionary *)response;
+            OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
+            [strongSelf addMessage:speechResponse.resolvedQuery byUserID:kIDUSer];
+        }
         [strongSelf changeStateToStop];
     } failure:^(AIRequest *request, NSError *error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -454,12 +476,17 @@
 - (void)changeStateToListening
 {
     [self.activity startAnimating];
-    self.inputToolbar.tintColor = [UIColor redColor];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.micButton setBackgroundColor:[UIColor redColor]];
+    }];
 }
 
 - (void)changeStateToStop
 {
     [self.activity stopAnimating];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.micButton setBackgroundColor:[UIColor clearColor]];
+    }];
 }
 
 @end
