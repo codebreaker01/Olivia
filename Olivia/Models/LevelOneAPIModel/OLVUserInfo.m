@@ -27,12 +27,19 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[[self class] alloc] init];
+        [instance fakeEverything];
     });
     return instance;
 }
 
+- (void)fakeEverything {
+    [self fakeGoals];
+    [self fakeIncome];
+    [self fakeRecurringBills];
+}
+
 - (void)fakeIncome {
-    self.monthlyIncome = 6500;
+    self.monthlyIncome = 9500;
 }
 
 - (void)addGoal:(OLVGoals *)goal
@@ -104,7 +111,8 @@
     return monthlyIncome;
 }
 
-- (double)whatsLeftAmount {
+- (double)whatsLeftAmount
+{
     double amount = [self getExpenseForMonth:[NSDate date]];
     return [self spendableAmount] - amount;
 }

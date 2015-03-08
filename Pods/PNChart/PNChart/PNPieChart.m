@@ -49,7 +49,7 @@
     if(self){
         _items = [NSArray arrayWithArray:items];
         _outerCircleRadius  = CGRectGetWidth(self.bounds) / 2;
-        _innerCircleRadius  = CGRectGetWidth(self.bounds) / 6;
+        _innerCircleRadius  = 0;
         
         _descriptionTextColor = [UIColor whiteColor];
         _descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:18.0];
@@ -129,11 +129,11 @@
     NSString *titleText = currentDataItem.textDescription;
     NSString *titleValue;
     
-    if (self.showAbsoluteValues) {
-        titleValue = [NSString stringWithFormat:@"%.0f",currentDataItem.value];
-    }else{
-        titleValue = [NSString stringWithFormat:@"%.0f%%",[self ratioForItemAtIndex:index] * 100];
-    }
+//    if (self.showAbsoluteValues) {
+//        titleValue = [NSString stringWithFormat:@"%.0f",currentDataItem.value];
+//    }else{
+//        titleValue = [NSString stringWithFormat:@"%.0f%%",[self ratioForItemAtIndex:index] * 100];
+//    }
     if(!titleText || self.showOnlyValues){
         descriptionLabel.text = titleValue;
     }
