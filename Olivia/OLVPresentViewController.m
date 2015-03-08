@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "OLVBubbleMessageViewController.h"
 
-@interface OLVPresentViewController ()
+@interface OLVPresentViewController () <OLVBubbleMessageViewControllerDelegate>
 
 @end
 
@@ -42,22 +42,17 @@
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - User Actions
 - (IBAction)activateOlivia:(id)sender {
     OLVBubbleMessageViewController *bubbleMessageVC = [[OLVBubbleMessageViewController alloc] init];
     bubbleMessageVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self.navigationController presentViewController:bubbleMessageVC animated:YES completion:nil];
+    [self.revealViewController.frontViewController presentViewController:bubbleMessageVC animated:YES completion:nil];
+    bubbleMessageVC.delegateModal = self;
+}
+
+- (void)didDismissViewController:(OLVBubbleMessageViewController *)vc {
+    [self dismissViewControllerAnimated:vc completion:nil];
 }
 
 @end

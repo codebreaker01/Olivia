@@ -58,7 +58,6 @@
 		07EC9E341AA9244200ECDBE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E321AA9244200ECDBE9 /* LaunchScreen.xib */; };
 		07EC9E401AA9244200ECDBE9 /* OliviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E3F1AA9244200ECDBE9 /* OliviaTests.m */; };
 		07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E4C1AA985DB00ECDBE9 /* WebServiceHelper.m */; };
-		20AA88A829B07BC28E3AE572 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905E178213183DD07F5CAAD5 /* libPods.a */; };
 		413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413043211AAA5A7400834A89 /* ApiAIHelper.m */; };
 		41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */; };
 		41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */; };
@@ -171,7 +170,6 @@
 			files = (
 				9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */,
 				0705FB811AAAF06800956B9B /* ElastiCode.framework in Frameworks */,
-				20AA88A829B07BC28E3AE572 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
