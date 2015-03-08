@@ -14,6 +14,7 @@
 #import "OLVUserInfo.h"
 #import "OLVTransaction.h"
 #import "NSString+Olivia.h"
+#import "WebServiceHelper.h"
 
 @interface OLVBubbleMessageViewController () <WitAIHelperDelegate>
 @property (strong, nonatomic) OLVBubbleChatModel *model;
@@ -216,6 +217,7 @@
                 if (intent && [intent isEqualToString:kIntentReminder]) {
                     NSString *reminderMessage = [NSString stringWithFormat:@"I will remind you to pay %@ on %@ next",service,date];
                     [weakSelf addMessage:reminderMessage byUserID:kIDOlivia];
+                    [[WebServiceHelper sharedInstance] sendSMS:@"15183688100" text:reminderMessage];
                 }
             }
         }];
