@@ -123,6 +123,7 @@
                                type:ElastiCodeDObjType_string defaultValue:@"relaxedUser"];
     [ElastiCode defineDynamicObject:@"financialSuggestions"
                                type:ElastiCodeDObjType_string defaultValue:@"Based on you profile, you can open an IRA account to save on tax."];
+    
 }
 
 - (void)sessionRestartedNotification {

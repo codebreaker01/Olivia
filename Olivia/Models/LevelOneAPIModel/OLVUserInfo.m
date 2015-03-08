@@ -91,7 +91,7 @@
     
     OLVGoals *goal1 = [[OLVGoals alloc] init];
     goal1.name = @"Trip to Spain";
-    goal1.amount = 5000;
+    goal1.amount = 3000;
     goal1.timePeriod = 6;
     
     OLVGoals *goal2 = [[OLVGoals alloc] init];
@@ -101,7 +101,7 @@
     
     OLVGoals *goal3 = [[OLVGoals alloc] init];
     goal3.name = @"Go to Haiwaii";
-    goal3.amount = 2000;
+    goal3.amount = 1500;
     goal3.timePeriod = 6;
 
     self.goals = @[goal1, goal2, goal3];
@@ -114,10 +114,6 @@
     bill1.merchant = @"GIEKO Insurance";
     bill1.amount = 200;
     
-    OLVRecurringBill *bill2 = [[OLVRecurringBill alloc] init];
-    bill2.merchant = @"Mortgage";
-    bill2.amount = 2500;
-    
     OLVRecurringBill *bill3 = [[OLVRecurringBill alloc] init];
     bill3.merchant = @"PGE";
     bill3.amount = 45;
@@ -126,7 +122,7 @@
     bill4.merchant = @"Comcast";
     bill4.amount = 60;
     
-    self.recurringBills = @[bill1, bill2, bill3, bill4];
+    self.recurringBills = @[bill1, bill3, bill4];
 }
 
 - (double)spendableAmount {
