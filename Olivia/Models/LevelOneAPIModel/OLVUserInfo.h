@@ -26,6 +26,7 @@
 - (double)getIncomeForMonth:(NSDate *)date;
 - (double)getExpenseForMonth:(NSDate *)date;
 
+- (double)spendableAmount;
 - (double)whatsLeftAmount;
 
 @end

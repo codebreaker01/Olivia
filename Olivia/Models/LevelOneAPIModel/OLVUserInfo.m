@@ -91,7 +91,7 @@
     self.recurringBills = @[bill1, bill2, bill3, bill4];
 }
 
-- (double)whatsLeftAmount {
+- (double)spendableAmount {
     
     double monthlyIncome = self.monthlyIncome;
     for (OLVGoals *goal in self.goals) {
@@ -102,6 +102,11 @@
         monthlyIncome = monthlyIncome - recurringBill.amount;
     }
     return monthlyIncome;
+}
+
+- (double)whatsLeftAmount {
+    double amount = [self getExpenseForMonth:[NSDate date]];
+    return [self spendableAmount] - amount;
 }
 
 - (double)getIncomeForMonth:(NSDate *)date {
