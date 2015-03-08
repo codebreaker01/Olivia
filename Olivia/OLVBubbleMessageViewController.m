@@ -54,8 +54,12 @@
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     
-    [self.collectionView addSubview:self.crossButton];
-    [self.collectionView bringSubviewToFront:self.crossButton];
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.collectionView.frame) + 15, self.collectionView.bounds.origin.y + 5, 20, 20)];
+    [closeButton setImage:[UIImage imageNamed:@"close-icon"] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(closePressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.collectionView addSubview:closeButton];
+    [self.collectionView bringSubviewToFront:closeButton];
     
     // Set the font
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"OpenSans-Light" size:20];
@@ -85,6 +89,18 @@
     self.collectionView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     
     self.apiAI = [ApiAI sharedApiAI];
+    self.view.backgroundColor = [UIColor clearColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    blurEffectView.bounds = [UIScreen mainScreen].bounds;
+    CGRect frame = blurEffectView.frame;
+    frame.origin.x = 0;
+    frame.origin.y = 0;
+    blurEffectView.frame = frame;
+    [self.view addSubview:blurEffectView];
+    [self.view sendSubviewToBack:blurEffectView];
 }
 
 - (void)viewWillAppear:(BOOL)animated

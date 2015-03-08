@@ -61,6 +61,7 @@
 		079F87831AAC6C9E00283B68 /* white-app-icon-small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */; };
 		079F87861AAC6E5700283B68 /* UIColor+OLVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */; };
 		079F878A1AAC8D7C00283B68 /* white-mike-small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F87891AAC8D7C00283B68 /* white-mike-small@3x.png */; };
+		079F878C1AAC95DD00283B68 /* close-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F878B1AAC95DD00283B68 /* close-icon@3x.png */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
@@ -162,6 +163,7 @@
 		079F87841AAC6E5700283B68 /* UIColor+OLVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OLVExtensions.h"; sourceTree = "<group>"; };
 		079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OLVExtensions.m"; sourceTree = "<group>"; };
 		079F87891AAC8D7C00283B68 /* white-mike-small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-mike-small@3x.png"; sourceTree = "<group>"; };
+		079F878B1AAC95DD00283B68 /* close-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-icon@3x.png"; sourceTree = "<group>"; };
 		07EC9E201AA9244200ECDBE9 /* Olivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC9E241AA9244200ECDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				0705FBB01AAB991500956B9B /* estimate-icon@3x.png */,
 				0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */,
 				0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */,
+				079F878B1AAC95DD00283B68 /* close-icon@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				0705FBC61AAB9FB300956B9B /* OpenSans-LightItalic.ttf in Resources */,
 				0705FBC11AAB9FB300956B9B /* OpenSans-BoldItalic.ttf in Resources */,
 				0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */,
+				079F878C1AAC95DD00283B68 /* close-icon@3x.png in Resources */,
 				0705FBC81AAB9FB300956B9B /* OpenSans-Semibold.ttf in Resources */,
 				0705FBC51AAB9FB300956B9B /* OpenSans-Light.ttf in Resources */,
 				079F877D1AAC503A00283B68 /* white-app-icon@3x.png in Resources */,
