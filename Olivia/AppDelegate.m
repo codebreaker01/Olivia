@@ -32,7 +32,7 @@
     self.window.rootViewController = [[OLVNavigationManager sharedManager] setUpViewControllersLayout];
     [self.window makeKeyAndVisible];
     
-    [ElastiCode devModeWithLogging:elastiCodeLogLevelErrors];
+//    [ElastiCode devMode WithLogging:elastiCodeLogLevelErrors];
     [ElastiCode startSession:@"tevph9h72figsozoqurwn4f5"];
     
     // Register (listen) to local notification when session started
@@ -117,9 +117,12 @@
 }
 
 #pragma mark - ElasticCode Session
+
 - (void)sessionStartedNotification {
     [ElastiCode defineDynamicObject:@"userType"
                                type:ElastiCodeDObjType_string defaultValue:@"relaxedUser"];
+    [ElastiCode defineDynamicObject:@"financialSuggestions"
+                               type:ElastiCodeDObjType_string defaultValue:@"Based on you profile, you can open an IRA account to save on tax."];
 }
 
 - (void)sessionRestartedNotification {

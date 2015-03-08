@@ -13,12 +13,16 @@
 #import "OLVUserInfo.h"
 #import "NSString+Olivia.h"
 #import "UIColor+OLVExtensions.h"
+#import <ElastiCode/ElastiCode.h>
 
 @interface OLVPresentViewController () <OLVBubbleMessageViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *whatsLeftLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContraintForSpentView;
 @property (weak, nonatomic) IBOutlet UILabel *monthlyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *oliviaThinks;
+@property (weak, nonatomic) IBOutlet UITextView *suggestion;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @end
 
@@ -64,6 +68,10 @@
     [self.view layoutIfNeeded];
     
     self.view.backgroundColor = [UIColor healthygreenColor];
+    
+    self.oliviaThinks.alpha = 0.0;
+    self.suggestion.alpha = 0.0;
+    self.infoButton.alpha = 0.0;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -116,6 +124,27 @@
                             }
                             [self.view layoutIfNeeded];
                         } completion:nil];
+    
+    [ElastiCode shareUserInfo:@{
+                                @"FinancialHealth" : [ElastiCode valueForDynamicObject:@"userType"],
+                                @"Location" : @"(37.700421688980136,-81.84535319999998)"
+                                }];
+    
+    NSString *string = (NSString *)[ElastiCode valueForDynamicObject:@"financialSuggestions"];
+    
+    if (string.length > 0) {
+        self.suggestion.text = string;
+        self.suggestion.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f];
+        self.suggestion.textColor = [UIColor whiteColor];
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             self.suggestion.alpha = 1.0;
+                             self.oliviaThinks.alpha = 1.0;
+                             self.infoButton.alpha = 1.0;
+                         }];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,6 +162,10 @@
 
 - (void)didDismissViewController:(OLVBubbleMessageViewController *)vc {
     [self dismissViewControllerAnimated:vc completion:nil];
+}
+- (IBAction)suggestionSuccessful:(id)sender {
+    [ElastiCode dynamicObjectGoalReached:@"financialSuggestions"];
+    [ElastiCode takeSnapShot:@"financialSuggestions"];
 }
 
 @end
