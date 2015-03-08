@@ -10,6 +10,7 @@
 #import "OLVUserInfo.h"
 #import "OLVTransaction.h"
 #import "OLVRecurringBill.h"
+#import <ElastiCode/ElastiCode.h>
 
 @interface OLVUserInfo ()
 
@@ -33,13 +34,42 @@
 }
 
 - (void)fakeEverything {
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(sessionStarted)
+                                                 name: ELASTICODE_SESSION_STARTED
+                                               object: nil];
+    // Register (listen) to local notification when session restarted
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(sessionStarted)
+                                                 name: ELASTICODE_SESSION_RESTARTED
+                                               object: nil];
+
     [self fakeGoals];
     [self fakeIncome];
     [self fakeRecurringBills];
 }
 
 - (void)fakeIncome {
-    self.monthlyIncome = 8500;
+    self.monthlyIncome = 7500;
+}
+
+- (void)sessionStarted {
+    
+    NSString *userType = (NSString *)[ElastiCode valueForDynamicObject:@"userType"];
+    if ([userType isEqualToString:@"relaxedUser"]) {
+        self.monthlyIncome = 15000;
+    } else if ([userType isEqualToString:@"comfortableUser"]) {
+        self.monthlyIncome = 11000;
+    } else if ([userType isEqualToString:@"midUser"]) {
+        self.monthlyIncome = 9000;
+    } else if ([userType isEqualToString:@"strugglingUser"]) {
+        self.monthlyIncome = 7500;
+    }
+}
+
+- (void)sessionRestartedNotification {
+    
 }
 
 - (void)addGoal:(OLVGoals *)goal

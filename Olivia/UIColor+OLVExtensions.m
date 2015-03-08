@@ -15,11 +15,11 @@
 }
 
 + (UIColor *)okYellowColor {
-    return UIColorFromRGB(0xc29b08);
+    return UIColorFromRGB(0xffba00);
 }
 
 + (UIColor *)mediumOrangeColor {
-    return UIColorFromRGB(0xFFC500);
+    return UIColorFromRGB(0xffaa00);
 }
 
 + (UIColor *)dangerRedColor {
