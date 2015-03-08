@@ -128,8 +128,6 @@
 #pragma mark - ElasticCode Session 
 
 - (void)sessionStartedNotification {
-    [ElastiCode defineDynamicObject:@"showStar"
-                               type:ElastiCodeDObjType_bool defaultValue:@(YES)];
     [ElastiCode defineDynamicObject:@"userType"
                                type:ElastiCodeDObjType_string defaultValue:@"relaxedUser"];
 }

@@ -144,8 +144,7 @@
                                             <exclude reference="l5W-yH-J8A"/>
                                         </mask>
                                     </variation>
-                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="169" y="46" width="62.5" height="25"/>
+                                    <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="constraints">
                                             <include reference="l5W-yH-J8A"/>
                                         </mask>
@@ -222,6 +221,40 @@
                                 </mask>
                             </variation>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep3-Ia-ZcG">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="LfQ-SV-RWm"/>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="XmC-O5-Ra6"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="f6F-TI-lPo"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="gHB-c5-gs8"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wRf-Bz-Puw"/>
+                                <constraint firstAttribute="height" constant="50" id="yAk-Fg-oKa"/>
+                            </constraints>
+                            <state key="normal" image="goals-icon@3x.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="LfQ-SV-RWm"/>
+                                    <exclude reference="XmC-O5-Ra6"/>
+                                    <exclude reference="f6F-TI-lPo"/>
+                                    <exclude reference="gHB-c5-gs8"/>
+                                    <exclude reference="wRf-Bz-Puw"/>
+                                    <exclude reference="yAk-Fg-oKa"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="LfQ-SV-RWm"/>
+                                    <include reference="XmC-O5-Ra6"/>
+                                    <include reference="f6F-TI-lPo"/>
+                                    <include reference="gHB-c5-gs8"/>
+                                    <include reference="wRf-Bz-Puw"/>
+                                    <include reference="yAk-Fg-oKa"/>
+                                </mask>
+                            </variation>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -234,9 +267,11 @@
                         <constraint firstItem="a9E-He-9gv" firstAttribute="leading" secondItem="IHB-KL-rAv" secondAttribute="leading" id="aOF-Bz-aDZ"/>
                         <constraint firstItem="a9E-He-9gv" firstAttribute="top" secondItem="i1Y-LT-IXV" secondAttribute="bottom" constant="20" id="c2e-xj-Qjr"/>
                         <constraint firstItem="CtO-op-nBa" firstAttribute="top" secondItem="i1Y-LT-IXV" secondAttribute="bottom" constant="20" id="emY-Gv-fBq"/>
+                        <constraint firstAttribute="centerX" secondItem="ep3-Ia-ZcG" secondAttribute="centerX" id="flk-9R-pft"/>
                         <constraint firstItem="a9E-He-9gv" firstAttribute="leading" secondItem="IHB-KL-rAv" secondAttribute="leading" id="ibl-Sh-Pb5"/>
                         <constraint firstItem="i1Y-LT-IXV" firstAttribute="leading" secondItem="IHB-KL-rAv" secondAttribute="leading" constant="10" id="lnX-qU-3ai"/>
                         <constraint firstAttribute="centerX" secondItem="CtO-op-nBa" secondAttribute="centerX" id="rq4-kR-QIj"/>
+                        <constraint firstAttribute="bottom" secondItem="ep3-Ia-ZcG" secondAttribute="bottom" constant="25" id="sQ3-L6-mfq"/>
                         <constraint firstAttribute="trailing" secondItem="i1Y-LT-IXV" secondAttribute="trailing" constant="10" id="yd3-Tr-yJi"/>
                         <constraint firstAttribute="centerX" secondItem="w8T-aN-hSh" secondAttribute="centerX" id="z4w-Uf-YJW"/>
                     </constraints>
@@ -247,6 +282,7 @@
                             <exclude reference="CtO-op-nBa"/>
                             <exclude reference="a9E-He-9gv"/>
                             <exclude reference="i1Y-LT-IXV"/>
+                            <exclude reference="ep3-Ia-ZcG"/>
                         </mask>
                         <mask key="constraints">
                             <exclude reference="0lv-XF-uf8"/>
@@ -263,6 +299,8 @@
                             <exclude reference="J8R-88-dLK"/>
                             <exclude reference="emY-Gv-fBq"/>
                             <exclude reference="rq4-kR-QIj"/>
+                            <exclude reference="flk-9R-pft"/>
+                            <exclude reference="sQ3-L6-mfq"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -272,6 +310,7 @@
                             <include reference="CtO-op-nBa"/>
                             <include reference="a9E-He-9gv"/>
                             <include reference="i1Y-LT-IXV"/>
+                            <include reference="ep3-Ia-ZcG"/>
                         </mask>
                         <mask key="constraints">
                             <include reference="0lv-XF-uf8"/>
@@ -288,6 +327,8 @@
                             <include reference="J8R-88-dLK"/>
                             <include reference="emY-Gv-fBq"/>
                             <include reference="rq4-kR-QIj"/>
+                            <include reference="flk-9R-pft"/>
+                            <include reference="sQ3-L6-mfq"/>
                         </mask>
                     </variation>
                 </view>
@@ -324,4 +365,7 @@
             <point key="canvasLocation" x="214" y="456"/>
         </view>
     </objects>
+    <resources>
+        <image name="goals-icon@3x.png" width="243" height="243"/>
+    </resources>
 </document>
