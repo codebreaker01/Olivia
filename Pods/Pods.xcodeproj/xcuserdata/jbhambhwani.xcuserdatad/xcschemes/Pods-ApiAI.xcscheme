@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CA9C8F79A320640EB20EC1C"
+               BlueprintIdentifier = "DD86B74DE207A5F495E2FB74"
                BuildableName = "ApiAI.framework"
                BlueprintName = "Pods-ApiAI"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2043DD2E17B4B95801516495"
+               BlueprintIdentifier = "1053A8BB6A821C4E84D8FD9D"
                BuildableName = "CWLSynthesizeSingleton.framework"
                BlueprintName = "Pods-CWLSynthesizeSingleton"
                ReferencedContainer = "container:Pods.xcodeproj">
