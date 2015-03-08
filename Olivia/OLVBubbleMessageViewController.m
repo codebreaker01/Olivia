@@ -101,10 +101,13 @@
 
 # pragma mark - Utility
 - (void)parseText:(NSString *)text {
-    __weak typeof(self) weakSelf = self;
-    [[ApiAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
-        [weakSelf addMessage:[response description] byUserID:kIDOlivia];
-    }];
+    // Make the call to Olivia API only if the string is not empty
+    if ([text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
+        __weak typeof(self) weakSelf = self;
+        [[ApiAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
+            [weakSelf addMessage:[response description] byUserID:kIDOlivia];
+        }];
+    }
 }
 
 #pragma mark - Actions
@@ -119,27 +122,30 @@
 }
 
 - (void)addMessage:(NSString *)message byUserID:(NSString *)userID {
-    // Show a typing indicator temporarily
-    self.showTypingIndicator = YES;
-    // Scroll to the bottom to show the indicator
-    [self scrollToBottomAnimated:YES];
-  
-    /**
-     *  Allow typing indicator to show
-     */
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([userID isEqualToString:kIDUSer]) {
-            [self didPressSendButton:nil withMessageText:message
-                            senderId:kIDUSer
-                   senderDisplayName:kNameUser
-                                date:[NSDate date]];
-        } else {
-            [self didPressSendButton:nil withMessageText:message
-                            senderId:kIDOlivia
-                   senderDisplayName:kNameOlivia
-                                date:[NSDate date]];
-        }
-    });
+    // Process only when the message is not empty
+    if ([message stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0 && userID) {
+        // Show a typing indicator temporarily
+        self.showTypingIndicator = YES;
+        // Scroll to the bottom to show the indicator
+        [self scrollToBottomAnimated:YES];
+        
+        /**
+         *  Allow typing indicator to show
+         */
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if ([userID isEqualToString:kIDUSer]) {
+                [self didPressSendButton:nil withMessageText:message
+                                senderId:kIDUSer
+                       senderDisplayName:kNameUser
+                                    date:[NSDate date]];
+            } else {
+                [self didPressSendButton:nil withMessageText:message
+                                senderId:kIDOlivia
+                       senderDisplayName:kNameOlivia
+                                    date:[NSDate date]];
+            }
+        });
+    }
 }
 
 # pragma mark - OLVBubbleMessageViewControllerDelegate
@@ -181,7 +187,7 @@
 
 - (void)didPressAccessoryButton:(UIButton *)sender
 {
-    
+    // This is needed to prevent crash
 }
 
 #pragma mark - JSQMessages CollectionView DataSource
