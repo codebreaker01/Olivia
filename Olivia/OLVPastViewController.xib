@@ -211,24 +211,24 @@
                                 </mask>
                                 <mask key="constraints">
                                     <exclude reference="8cv-CS-hff"/>
-                                    <exclude reference="OwY-yw-xpM"/>
-                                    <exclude reference="fm9-lt-ruR"/>
-                                    <exclude reference="vYD-SL-7Ji"/>
+                                    <exclude reference="c7P-RW-sIO"/>
+                                    <exclude reference="963-Yz-5gm"/>
+                                    <exclude reference="NG2-qU-Hzh"/>
+                                    <exclude reference="yJH-aA-5CA"/>
                                     <exclude reference="Phq-Ca-dUM"/>
                                     <exclude reference="Ykh-fz-KAr"/>
                                     <exclude reference="nCK-bb-Lhz"/>
-                                    <exclude reference="5jn-IG-GA4"/>
-                                    <exclude reference="Eue-KB-dRl"/>
-                                    <exclude reference="Ivj-py-WNn"/>
-                                    <exclude reference="qBc-jk-jK2"/>
+                                    <exclude reference="OwY-yw-xpM"/>
+                                    <exclude reference="fm9-lt-ruR"/>
+                                    <exclude reference="vYD-SL-7Ji"/>
                                     <exclude reference="9It-UT-PcL"/>
                                     <exclude reference="ELJ-on-H5r"/>
                                     <exclude reference="FUI-vT-w7V"/>
                                     <exclude reference="b8U-cm-1mw"/>
-                                    <exclude reference="963-Yz-5gm"/>
-                                    <exclude reference="NG2-qU-Hzh"/>
-                                    <exclude reference="yJH-aA-5CA"/>
-                                    <exclude reference="c7P-RW-sIO"/>
+                                    <exclude reference="5jn-IG-GA4"/>
+                                    <exclude reference="Eue-KB-dRl"/>
+                                    <exclude reference="Ivj-py-WNn"/>
+                                    <exclude reference="qBc-jk-jK2"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -242,24 +242,24 @@
                                 </mask>
                                 <mask key="constraints">
                                     <include reference="8cv-CS-hff"/>
-                                    <include reference="OwY-yw-xpM"/>
-                                    <include reference="fm9-lt-ruR"/>
-                                    <include reference="vYD-SL-7Ji"/>
+                                    <include reference="c7P-RW-sIO"/>
+                                    <include reference="963-Yz-5gm"/>
+                                    <include reference="NG2-qU-Hzh"/>
+                                    <include reference="yJH-aA-5CA"/>
                                     <include reference="Phq-Ca-dUM"/>
                                     <include reference="Ykh-fz-KAr"/>
                                     <include reference="nCK-bb-Lhz"/>
-                                    <include reference="5jn-IG-GA4"/>
-                                    <include reference="Eue-KB-dRl"/>
-                                    <include reference="Ivj-py-WNn"/>
-                                    <include reference="qBc-jk-jK2"/>
+                                    <include reference="OwY-yw-xpM"/>
+                                    <include reference="fm9-lt-ruR"/>
+                                    <include reference="vYD-SL-7Ji"/>
                                     <include reference="9It-UT-PcL"/>
                                     <include reference="ELJ-on-H5r"/>
                                     <include reference="FUI-vT-w7V"/>
                                     <include reference="b8U-cm-1mw"/>
-                                    <include reference="963-Yz-5gm"/>
-                                    <include reference="NG2-qU-Hzh"/>
-                                    <include reference="yJH-aA-5CA"/>
-                                    <include reference="c7P-RW-sIO"/>
+                                    <include reference="5jn-IG-GA4"/>
+                                    <include reference="Eue-KB-dRl"/>
+                                    <include reference="Ivj-py-WNn"/>
+                                    <include reference="qBc-jk-jK2"/>
                                 </mask>
                             </variation>
                         </view>

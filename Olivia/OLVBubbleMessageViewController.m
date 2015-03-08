@@ -46,6 +46,13 @@
     self.senderId = kIDUSer;
     self.senderDisplayName = kNameUser;
 
+    // Disable avatars, better way
+    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
+    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
+    
+    // Set the font
+    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"OpenSans-Light" size:20];
+    
     /**
      *  Load up our fake data for the demo
      */

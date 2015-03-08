@@ -30,8 +30,8 @@
         JSQMessagesAvatarImage *userImage = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"user-60"]
                                                                                        diameter:kJSQMessagesCollectionViewAvatarSizeDefault];
         
-        // self.avatars = @{ kIDOlivia : olvImage,
-        //                  kIDUSer : userImage};
+        self.avatars = @{ kIDOlivia : olvImage,
+                          kIDUSer : userImage};
         
         self.users = @{ kIDOlivia : kNameOlivia,
                         kIDUSer : kNameUser};
