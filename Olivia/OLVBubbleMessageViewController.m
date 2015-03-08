@@ -78,8 +78,9 @@
     [self.micButton addTarget:self action:@selector(toggleListening) forControlEvents:UIControlEventTouchUpInside];
     self.inputToolbar.contentView.leftBarButtonItem = self.micButton;
 
-    self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [self.inputToolbar addSubview:self.activity];
+    self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.micButton addSubview:self.activity];
+    self.activity.center = self.micButton.center;
     
     self.collectionView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     
@@ -94,7 +95,7 @@
                                                                                               target:self
                                                                                               action:@selector(closePressed:)];
     }
-    [self addMessage:@"Hello, I am Olivia. How can I help you?" byUserID:kIDOlivia];
+    [self addMessage:@"Hi there, I am Olivia. How may I help you?" byUserID:kIDOlivia];
     self.showTypingIndicator = NO;
 }
 
@@ -113,10 +114,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.currentVoiceRequest cancel];
-}
-
-- (void)viewWillLayoutSubviews {
-    self.activity.center = self.micButton.center;
 }
 
 # pragma mark - Utility
@@ -157,9 +154,7 @@
         // Scroll to the bottom to show the indicator
         [self scrollToBottomAnimated:YES];
         
-        /**
-         *  Allow typing indicator to show
-         */
+        // Add a slight delay to allow typing indicator to show
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if ([userID isEqualToString:kIDUSer]) {
                 [self didPressSendButton:nil withMessageText:message
@@ -454,12 +449,7 @@
         [strongSelf changeStateToStop];
     } failure:^(AIRequest *request, NSError *error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-        [alertView show];
+        NSLog(@"-----------------------Failed listening------------------------");
         [strongSelf changeStateToStop];
     }];
     
