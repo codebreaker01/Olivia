@@ -58,10 +58,11 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.view.backgroundColor = [UIColor healthygreenColor];
     
     self.topContraintForSpentView.constant = self.view.bounds.size.height + 63;
     [self.view layoutIfNeeded];
+    
+    self.view.backgroundColor = [UIColor healthygreenColor];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -78,7 +79,15 @@
     double amountSpent = [[OLVUserInfo sharedInfo] getExpenseForMonth:toDate];
     float amountPercentage = 1.0 - amountSpent/[OLVUserInfo sharedInfo].spendableAmount;
     
-    
+    if (1-amountPercentage < 0.6) {
+        self.view.backgroundColor = [UIColor healthygreenColor];
+    } else if  (1-amountPercentage < 0.7) {
+        self.view.backgroundColor = [UIColor okYellowColor];
+    } else if  (1-amountPercentage < 0.8) {
+        self.view.backgroundColor = [UIColor mediumOrangeColor];
+    } else {
+        self.view.backgroundColor = [UIColor dangerRedColor];
+    }
     
     [self.view bringSubviewToFront:self.whatsLeftLabel];
     

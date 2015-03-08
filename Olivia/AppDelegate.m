@@ -16,6 +16,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MRProgress/MRProgress.h>
 #import "ApiAIHelper.h"
+#import <ElastiCode/ElastiCode.h>
 
 
 @interface AppDelegate ()
@@ -36,6 +37,20 @@
     
     self.window.rootViewController = [[OLVNavigationManager sharedManager] setUpViewControllersLayout];
     [self.window makeKeyAndVisible];
+    
+    [ElastiCode devModeWithLogging:elastiCodeLogLevelErrors];
+    [ElastiCode startSession:@"tevph9h72figsozoqurwn4f5"];
+    
+    // Register (listen) to local notification when session started
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(sessionStartedNotification)
+                                                 name: ELASTICODE_SESSION_STARTED
+                                               object: nil];
+    // Register (listen) to local notification when session restarted
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(sessionRestartedNotification)
+                                                 name: ELASTICODE_SESSION_RESTARTED
+                                               object: nil];
     
     [MRProgressOverlayView showOverlayAddedTo:self.window animated:YES];
     [[WebServiceHelper sharedInstance] loginWithUsername:@"hackdoc@levelmoney.com"
@@ -108,6 +123,19 @@
     configuration.clientAccessToken = kAPIClientAccessToken;
     configuration.subscriptionKey = kAPISubscriptionKey;
     self.apiAI.configuration = configuration;
+}
+
+#pragma mark - ElasticCode Session 
+
+- (void)sessionStartedNotification {
+    [ElastiCode defineDynamicObject:@"showStar"
+                               type:ElastiCodeDObjType_bool defaultValue:@(YES)];
+    [ElastiCode defineDynamicObject:@"userType"
+                               type:ElastiCodeDObjType_string defaultValue:@"relaxedUser"];
+}
+
+- (void)sessionRestartedNotification {
+    
 }
 
 @end
