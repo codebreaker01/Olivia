@@ -115,11 +115,11 @@
             <constraints>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerY" secondItem="MH3-Yw-smy" secondAttribute="centerY" id="1lU-I3-C3L"/>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="5O6-Fw-h0W"/>
-                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="Egh-l0-cdp">
-                    <variation key="widthClass=compact" constant="124"/>
+                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="114" id="Egh-l0-cdp">
+                    <variation key="widthClass=compact" constant="134"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
-                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="10" id="LFs-wJ-r4p"/>
+                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="LFs-wJ-r4p"/>
                 <constraint firstAttribute="centerX" secondItem="M5q-na-idN" secondAttribute="centerX" id="UQG-Y1-0sg"/>
                 <constraint firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="b18-e7-Roh"/>
                 <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>

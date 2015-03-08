@@ -75,7 +75,7 @@
 }
 
 - (void)viewDidLayoutSubviews {
-    self.rightMarginContainerConstraint.constant = 0.85 * [UIScreen mainScreen].scale + 25;
+    self.rightMarginContainerConstraint.constant = 0.10 * [UIScreen mainScreen].bounds.size.width;
     [self.view layoutIfNeeded];
 }
 

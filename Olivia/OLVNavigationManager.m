@@ -29,9 +29,11 @@
     
     OLVPresentViewController *presentViewController = [[OLVPresentViewController alloc] init];
     OLVPastViewController *pastViewController = [[OLVPastViewController alloc] init];
+    OLVEstimateViewController *estimateViewController = [[OLVEstimateViewController alloc] init];
     
     UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:presentViewController];
     UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:pastViewController];
+    UINavigationController *rightNavigationController = [[UINavigationController alloc] initWithRootViewController:estimateViewController];
     
     SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
     revealController.delegate = self;
@@ -40,8 +42,7 @@
     revealController.rightViewRevealWidth = [UIScreen mainScreen].bounds.size.width * 0.85;
     revealController.frontViewShadowOpacity = 0.25;
     
-    OLVEstimateViewController *estimateViewController = [[OLVEstimateViewController alloc] init];
-    revealController.rightViewController = estimateViewController;
+    revealController.rightViewController = rightNavigationController;
     
     return revealController;
 }
