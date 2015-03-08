@@ -53,6 +53,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'CWLSynthesizeSingleton.framework'
   install_framework 'JSQMessagesViewController.framework'
   install_framework 'JSQSystemSoundPlayer.framework'
+  install_framework 'PNChart.framework'
+  install_framework 'UICountingLabel.framework'
   install_framework 'Wit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -61,5 +63,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'CWLSynthesizeSingleton.framework'
   install_framework 'JSQMessagesViewController.framework'
   install_framework 'JSQSystemSoundPlayer.framework'
+  install_framework 'PNChart.framework'
+  install_framework 'UICountingLabel.framework'
   install_framework 'Wit.framework'
 fi
