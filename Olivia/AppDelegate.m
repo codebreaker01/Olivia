@@ -14,7 +14,9 @@
 #import <ApiAI/ApiAI.h>
 #import <APiAI/AIDefaultConfiguration.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MRProgress/MRProgress.h>
 #import "ApiAIHelper.h"
+
 
 @interface AppDelegate ()
 @property(nonatomic, strong) ApiAI *apiAI;
@@ -24,9 +26,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    self.window.rootViewController = [[OLVNavigationManager sharedManager] setUpViewControllersLayout];
+    [self.window makeKeyAndVisible];
+    
+    [MRProgressOverlayView showOverlayAddedTo:self.window animated:YES];
     [[WebServiceHelper sharedInstance] loginWithUsername:@"hackdoc@levelmoney.com"
                                                 password:@"hackathon1"
                                                  success:^(id response) {
+                                                     
+                                                     [MRProgressOverlayView dismissOverlayForView:self.window animated:YES];
                                                      
                                                      [[OLVUserInfo sharedInfo] clearUserInfo];
                                                      
@@ -46,7 +58,9 @@
                                                                                                          }
                                                                                                          failure:nil];
                                                  }
-                                                 failure:nil];
+                                                 failure:^(id response, NSError *error) {
+                                                     [MRProgressOverlayView dismissOverlayForView:self.window animated:YES];
+                                                 }];
     
 //    [[WebServiceHelper sharedInstance] sendSMSToVerifyPhoneNumber:@"15183688100"];
 //    [[WebServiceHelper sharedInstance] sendSMS:@"15183688100" text:@"Test nexmo API"];
@@ -56,13 +70,6 @@
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
     [self setupAPIAI];
-    
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window = window;
-
-    self.window.rootViewController = [[OLVNavigationManager sharedManager] setUpViewControllersLayout];
-    [self.window makeKeyAndVisible];
-    return YES;
     
     return YES;
 }
