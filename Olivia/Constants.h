@@ -17,7 +17,7 @@ typedef void (^parseSuccessBlock) (id response);
 #define kAPISubscriptionKey @"dc86bf0d758046dc9ff55c06ee773e36"
 
 static NSString * const kNameOlivia = @"Olivia";
-static NSString * const kNameUser = @"User";
+static NSString * const kNameUser = @"Me";
 
 static NSString * const kIDOlivia = @"Olivia";
 static NSString * const kIDUSer = @"User";
