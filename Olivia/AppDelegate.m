@@ -6,22 +6,16 @@
 //  Copyright (c) 2015 Jaikumar Bhambhwani. All rights reserved.
 //
 
+
 #import "AppDelegate.h"
+#import "OLVNavigationManager.h"
+#import "OLVSpeechResponse2.h"
 #import "OLVUserInfo.h"
 #import "WebServiceHelper.h"
-#import "OLVNavigationManager.h"
-
-#import <ApiAI/ApiAI.h>
-#import <APiAI/AIDefaultConfiguration.h>
-#import <AVFoundation/AVFoundation.h>
-#import <MRProgress/MRProgress.h>
-#import "ApiAIHelper.h"
+#import "WitAIHelper.h"
 #import <ElastiCode/ElastiCode.h>
-
-
-@interface AppDelegate ()
-@property(nonatomic, strong) ApiAI *apiAI;
-@end
+#import <MRProgress/MRProgress.h>
+#import <Wit/Wit.h>
 
 @implementation AppDelegate
 
@@ -89,7 +83,7 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
-    [self setupAPIAI];
+    [self setupWitAI];
     
     return YES;
 }
@@ -116,17 +110,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)setupAPIAI {
-    // Define API.AI configuration here.
-    self.apiAI = [ApiAI sharedApiAI];
-    id <AIConfiguration> configuration = [[AIDefaultConfiguration alloc] init];
-    configuration.clientAccessToken = kAPIClientAccessToken;
-    configuration.subscriptionKey = kAPISubscriptionKey;
-    self.apiAI.configuration = configuration;
+- (void)setupWitAI {
+    [Wit sharedInstance].accessToken = @"5F32VLESQ64YOYPI7KVSP5YVXXBAH77S";
+    // [Wit sharedInstance].detectSpeechStop = WITVadConfigDetectSpeechStop;
+    [Wit sharedInstance].detectSpeechStop = WITVadConfigFull;
 }
 
-#pragma mark - ElasticCode Session 
-
+#pragma mark - ElasticCode Session
 - (void)sessionStartedNotification {
     [ElastiCode defineDynamicObject:@"userType"
                                type:ElastiCodeDObjType_string defaultValue:@"relaxedUser"];

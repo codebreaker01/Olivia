@@ -8,22 +8,24 @@
 
 #import "OLVBubbleMessageViewController.h"
 #import "OLVBubbleChatModel.h"
-#import <ApiAI/ApiAI.h>
-#import <ApiAI/AIVoiceRequest.h>
-#import "ApiAIHelper.h"
-#import "OLVSpeechResponse.h"
+#import "WitAIHelper.h"
+#import "OLVSpeechResponse2.h"
 #import "OLVTextToSpeech.h"
 
-@interface OLVBubbleMessageViewController ()
+@interface OLVBubbleMessageViewController () <WitAIHelperDelegate>
 @property (strong, nonatomic) OLVBubbleChatModel *model;
-@property (nonatomic, strong) ApiAI *apiAI;
-@property (nonatomic, strong) AIVoiceRequest *currentVoiceRequest;
+@property (strong, nonatomic) WitAIHelper *witAIHelper;
 @property (nonatomic, strong) UIActivityIndicatorView *activity;
 @property (nonatomic, strong) UIButton *micButton;
-@property (nonatomic) BOOL isListening;
 @property (nonatomic) NSInteger buttonSize;
 @property (weak, nonatomic) IBOutlet UIButton *crossButton;
 @end
+
+//[[WitAIHelper sharedInstance] parseText:@"Set the temperature to 70 degrees at 10 PM" withResultBlock:^(id result){
+//    OLVSpeechResponse2 *speechRespone = [OLVSpeechResponse2 modelObjectWithDictionary:result];
+//    NSLog(@"Intent : %@",speechRespone.intent);
+//    NSLog(@"Wit Ai Result - %@",result);
+//}];
 
 @implementation OLVBubbleMessageViewController
 
@@ -88,7 +90,8 @@
     
     self.collectionView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     
-    self.apiAI = [ApiAI sharedApiAI];
+    self.witAIHelper = [WitAIHelper sharedInstance];
+    self.witAIHelper.delegate = self;
     self.view.backgroundColor = [UIColor clearColor];
     self.collectionView.backgroundColor = [UIColor clearColor];
     
@@ -124,40 +127,15 @@
      *  Note: this feature is mostly stable, but still experimental
      */
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
-    [self changeStateToStop];
+    // [self.witAIHelper start];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [self.witAIHelper stop];
     [super viewWillDisappear:animated];
-    [self.currentVoiceRequest cancel];
-}
-
-# pragma mark - Utility
-- (void)parseText:(NSString *)text {
-    // Make the call to Olivia API only if the string is not empty
-    if ([text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
-        __weak typeof(self) weakSelf = self;
-        [[ApiAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
-            if ([response isKindOfClass:[NSDictionary class]]) {
-                NSDictionary *responseDict = (NSDictionary *)response;
-                OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
-                [weakSelf addMessage:speechResponse.resolvedQuery byUserID:kIDOlivia];
-            }
-        }];
-    }
 }
 
 #pragma mark - Actions
-- (void)toggleListening {
-    if (self.isListening) {
-        self.isListening = NO;
-        [self stopListening];
-    } else {
-        self.isListening = YES;
-        [self startListening];
-    }
-}
-
 - (IBAction)cancelPressed:(id)sender {
     [self.delegateModal didDismissViewController:self];
 }
@@ -186,6 +164,88 @@
             }
         });
     }
+}
+
+- (void)toggleListening {
+    if (self.witAIHelper.isListening) {
+        [self stopListening];
+    } else {
+        [self startListening];
+    }
+}
+
+# pragma mark - Voice request
+- (void)startListening
+{
+    [self.witAIHelper start];
+
+    //    AIVoiceRequest *request = (AIVoiceRequest *)[self.apiAI requestWithType:AIRequestTypeVoice];
+    //    request.useVADForAutoCommit = YES;
+    //
+    //    __weak typeof(self) weakSelf = self;
+    //
+    //    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        if ([response isKindOfClass:[NSDictionary class]]) {
+    //            NSDictionary *responseDict = (NSDictionary *)response;
+    //            OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
+    //            [strongSelf addMessage:speechResponse.resolvedQuery byUserID:kIDUSer];
+    //        }
+    //        [strongSelf changeStateToStop];
+    //    } failure:^(AIRequest *request, NSError *error) {
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        NSLog(@"-----------------------Failed listening------------------------");
+    //        [strongSelf changeStateToStop];
+    //    }];
+    //
+    //    self.currentVoiceRequest = request;
+    //    [self.apiAI enqueue:request];
+}
+
+- (void)stopListening
+{
+    [self.witAIHelper stop];
+}
+
+#pragma mark - WitAIHelperDelegate
+- (void)witDidStartListening {
+    [self changeStateToListening];
+}
+
+- (void)witDidStopListening {
+    [self changeStateToStop];
+}
+
+
+# pragma mark - Utility
+- (void)parseText:(NSString *)text {
+    // Make the call to Olivia API only if the string is not empty
+    if ([text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
+        __weak typeof(self) weakSelf = self;
+        [[WitAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
+            if ([response isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *responseDict = (NSDictionary *)response;
+                OLVSpeechResponse2 *speechResponse = [OLVSpeechResponse2 modelObjectWithDictionary:responseDict];
+                [weakSelf addMessage:speechResponse.intent byUserID:kIDOlivia];
+            }
+        }];
+    }
+}
+
+- (void)changeStateToListening
+{
+    [self.activity startAnimating];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.micButton setBackgroundColor:[UIColor redColor]];
+    }];
+}
+
+- (void)changeStateToStop
+{
+    [self.activity stopAnimating];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.micButton setBackgroundColor:[UIColor clearColor]];
+    }];
 }
 
 # pragma mark - OLVBubbleMessageViewControllerDelegate
@@ -443,56 +503,6 @@
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapCellAtIndexPath:(NSIndexPath *)indexPath touchLocation:(CGPoint)touchLocation
 {
     NSLog(@"Tapped cell at %@!", NSStringFromCGPoint(touchLocation));
-}
-
-# pragma mark - Voice request
-- (void)startListening
-{
-    [self changeStateToListening];
-    
-    AIVoiceRequest *request = (AIVoiceRequest *)[self.apiAI requestWithType:AIRequestTypeVoice];
-    request.useVADForAutoCommit = YES;
-    
-    __weak typeof(self) weakSelf = self;
-    
-    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if ([response isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *responseDict = (NSDictionary *)response;
-            OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
-            [strongSelf addMessage:speechResponse.resolvedQuery byUserID:kIDUSer];
-        }
-        [strongSelf changeStateToStop];
-    } failure:^(AIRequest *request, NSError *error) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        NSLog(@"-----------------------Failed listening------------------------");
-        [strongSelf changeStateToStop];
-    }];
-    
-    self.currentVoiceRequest = request;
-    [self.apiAI enqueue:request];
-}
-
-- (void)stopListening
-{
-    [self changeStateToStop];
-    [self.currentVoiceRequest commitVoice];
-}
-
-- (void)changeStateToListening
-{
-    [self.activity startAnimating];
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.micButton setBackgroundColor:[UIColor redColor]];
-    }];
-}
-
-- (void)changeStateToStop
-{
-    [self.activity stopAnimating];
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.micButton setBackgroundColor:[UIColor clearColor]];
-    }];
 }
 
 @end
