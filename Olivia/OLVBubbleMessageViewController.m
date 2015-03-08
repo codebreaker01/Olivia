@@ -12,6 +12,7 @@
 #import <ApiAI/AIVoiceRequest.h>
 #import "ApiAIHelper.h"
 #import "OLVSpeechResponse.h"
+#import "OLVTextToSpeech.h"
 
 @interface OLVBubbleMessageViewController ()
 @property (strong, nonatomic) OLVBubbleChatModel *model;
@@ -72,11 +73,13 @@
     
     self.micButton = [[UIButton alloc] init];
     [self.micButton setImage:[UIImage imageNamed:@"MicBlack-Small-40"] forState:UIControlStateNormal];
+    self.micButton.layer.cornerRadius = 16;
+    self.micButton.layer.masksToBounds = YES;
     [self.micButton addTarget:self action:@selector(toggleListening) forControlEvents:UIControlEventTouchUpInside];
     self.inputToolbar.contentView.leftBarButtonItem = self.micButton;
 
     self.activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [self.inputToolbar.contentView addSubview:self.activity];
+    [self.inputToolbar addSubview:self.activity];
     
     self.collectionView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     
@@ -112,13 +115,21 @@
     [self.currentVoiceRequest cancel];
 }
 
+- (void)viewWillLayoutSubviews {
+    self.activity.center = self.micButton.center;
+}
+
 # pragma mark - Utility
 - (void)parseText:(NSString *)text {
     // Make the call to Olivia API only if the string is not empty
     if ([text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length > 0) {
         __weak typeof(self) weakSelf = self;
         [[ApiAIHelper sharedInstance] parseText:text withResultBlock:^(id response){
-            [weakSelf addMessage:[response description] byUserID:kIDOlivia];
+            if ([response isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *responseDict = (NSDictionary *)response;
+                OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
+                [weakSelf addMessage:speechResponse.resolvedQuery byUserID:kIDOlivia];
+            }
         }];
     }
 }
@@ -160,6 +171,7 @@
                                 senderId:kIDOlivia
                        senderDisplayName:kNameOlivia
                                     date:[NSDate date]];
+                [[OLVTextToSpeech sharedInstance] speakText:message];
             }
         });
     }
@@ -464,12 +476,17 @@
 - (void)changeStateToListening
 {
     [self.activity startAnimating];
-    self.inputToolbar.tintColor = [UIColor redColor];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.micButton setBackgroundColor:[UIColor redColor]];
+    }];
 }
 
 - (void)changeStateToStop
 {
     [self.activity stopAnimating];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.micButton setBackgroundColor:[UIColor clearColor]];
+    }];
 }
 
 @end

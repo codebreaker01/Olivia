@@ -68,6 +68,7 @@
 		41C61ADF1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C61ADD1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib */; };
 		41E620A51AAC10A0009465E5 /* OLVSpeechResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620A41AAC10A0009465E5 /* OLVSpeechResponse.m */; };
 		41E620A81AAC10E9009465E5 /* NSDictionary+Olivia.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620A71AAC10E9009465E5 /* NSDictionary+Olivia.m */; };
+		41E620AB1AAC2098009465E5 /* OLVTextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620AA1AAC2098009465E5 /* OLVTextToSpeech.m */; };
 		9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC1D87E025034EB9431C0D6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -176,6 +177,8 @@
 		41E620A41AAC10A0009465E5 /* OLVSpeechResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVSpeechResponse.m; sourceTree = "<group>"; };
 		41E620A61AAC10E9009465E5 /* NSDictionary+Olivia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Olivia.h"; sourceTree = "<group>"; };
 		41E620A71AAC10E9009465E5 /* NSDictionary+Olivia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Olivia.m"; sourceTree = "<group>"; };
+		41E620A91AAC2098009465E5 /* OLVTextToSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVTextToSpeech.h; sourceTree = "<group>"; };
+		41E620AA1AAC2098009465E5 /* OLVTextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVTextToSpeech.m; sourceTree = "<group>"; };
 		851A4E16C8CAEBF8936C6E7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		905E178213183DD07F5CAAD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -351,6 +354,8 @@
 				0773300D1AABC70A008C7FDC /* NSString+Olivia.m */,
 				41E620A61AAC10E9009465E5 /* NSDictionary+Olivia.h */,
 				41E620A71AAC10E9009465E5 /* NSDictionary+Olivia.m */,
+				41E620A91AAC2098009465E5 /* OLVTextToSpeech.h */,
+				41E620AA1AAC2098009465E5 /* OLVTextToSpeech.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -703,6 +708,7 @@
 				079F87781AAC00E500283B68 /* OLVGoals.m in Sources */,
 				0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */,
 				41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */,
+				41E620AB1AAC2098009465E5 /* OLVTextToSpeech.m in Sources */,
 				41E620A51AAC10A0009465E5 /* OLVSpeechResponse.m in Sources */,
 				07EC9E261AA9244200ECDBE9 /* main.m in Sources */,
 			);
