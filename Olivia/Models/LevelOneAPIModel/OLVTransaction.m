@@ -79,6 +79,12 @@ NSString *const kOLVTransactionRawMerchant = @"raw-merchant";
     return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
 }
 
+- (NSDate *)transactionDate {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    return [dateFormatter dateFromString:self.transactionTime];
+}
+
 #pragma mark - Helper Method
 - (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
 {

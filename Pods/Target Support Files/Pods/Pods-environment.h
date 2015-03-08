@@ -66,12 +66,6 @@
 #define COCOAPODS_VERSION_MINOR_ApiAI_UIKit 0
 #define COCOAPODS_VERSION_PATCH_ApiAI_UIKit 7
 
-// BEMSimpleLineGraph
-#define COCOAPODS_POD_AVAILABLE_BEMSimpleLineGraph
-#define COCOAPODS_VERSION_MAJOR_BEMSimpleLineGraph 3
-#define COCOAPODS_VERSION_MINOR_BEMSimpleLineGraph 3
-#define COCOAPODS_VERSION_PATCH_BEMSimpleLineGraph 0
-
 // CWLSynthesizeSingleton
 #define COCOAPODS_POD_AVAILABLE_CWLSynthesizeSingleton
 #define COCOAPODS_VERSION_MAJOR_CWLSynthesizeSingleton 1

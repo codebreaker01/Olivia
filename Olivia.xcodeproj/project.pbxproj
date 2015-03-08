@@ -25,6 +25,17 @@
 		0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */; };
 		0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */; };
 		0705FBB11AAB991500956B9B /* estimate-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB01AAB991500956B9B /* estimate-icon@3x.png */; };
+		0705FBBF1AAB9FB300956B9B /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB41AAB9FB300956B9B /* Apache License.txt */; };
+		0705FBC01AAB9FB300956B9B /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB51AAB9FB300956B9B /* OpenSans-Bold.ttf */; };
+		0705FBC11AAB9FB300956B9B /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB61AAB9FB300956B9B /* OpenSans-BoldItalic.ttf */; };
+		0705FBC21AAB9FB300956B9B /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB71AAB9FB300956B9B /* OpenSans-ExtraBold.ttf */; };
+		0705FBC31AAB9FB300956B9B /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB81AAB9FB300956B9B /* OpenSans-ExtraBoldItalic.ttf */; };
+		0705FBC41AAB9FB300956B9B /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBB91AAB9FB300956B9B /* OpenSans-Italic.ttf */; };
+		0705FBC51AAB9FB300956B9B /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBBA1AAB9FB300956B9B /* OpenSans-Light.ttf */; };
+		0705FBC61AAB9FB300956B9B /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBBB1AAB9FB300956B9B /* OpenSans-LightItalic.ttf */; };
+		0705FBC71AAB9FB300956B9B /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBBC1AAB9FB300956B9B /* OpenSans-Regular.ttf */; };
+		0705FBC81AAB9FB300956B9B /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBBD1AAB9FB300956B9B /* OpenSans-Semibold.ttf */; };
+		0705FBC91AAB9FB300956B9B /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0705FBBE1AAB9FB300956B9B /* OpenSans-SemiboldItalic.ttf */; };
 		075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DAD1AA9929E00187CC6 /* OLVAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */; };
 		075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DAF1AA992C900187CC6 /* OLVAccount.m */; };
@@ -35,12 +46,19 @@
 		075F5DB91AA9939800187CC6 /* OLVTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DB71AA9939800187CC6 /* OLVTransaction.m */; };
 		075F5DBC1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DBB1AA99D3A00187CC6 /* OLVSimilarTransactions.m */; };
 		075F5DBD1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 075F5DBB1AA99D3A00187CC6 /* OLVSimilarTransactions.m */; };
+		077330061AABB169008C7FDC /* BEMAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 07732FFE1AABB169008C7FDC /* BEMAnimations.m */; };
+		077330071AABB169008C7FDC /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 077330001AABB169008C7FDC /* BEMCircle.m */; };
+		077330081AABB169008C7FDC /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 077330021AABB169008C7FDC /* BEMLine.m */; };
+		077330091AABB169008C7FDC /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 077330041AABB169008C7FDC /* BEMSimpleLineGraphView.m */; };
+		0773300A1AABB169008C7FDC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 077330051AABB169008C7FDC /* LICENSE */; };
+		0773300E1AABC70A008C7FDC /* NSString+Olivia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0773300D1AABC70A008C7FDC /* NSString+Olivia.m */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
 		07EC9E341AA9244200ECDBE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E321AA9244200ECDBE9 /* LaunchScreen.xib */; };
 		07EC9E401AA9244200ECDBE9 /* OliviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E3F1AA9244200ECDBE9 /* OliviaTests.m */; };
 		07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E4C1AA985DB00ECDBE9 /* WebServiceHelper.m */; };
+		20AA88A829B07BC28E3AE572 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905E178213183DD07F5CAAD5 /* libPods.a */; };
 		413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413043211AAA5A7400834A89 /* ApiAIHelper.m */; };
 		41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */; };
 		41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */; };
@@ -88,6 +106,17 @@
 		0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-icon@3x.png"; sourceTree = "<group>"; };
 		0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-graph-icon@3x.png"; sourceTree = "<group>"; };
 		0705FBB01AAB991500956B9B /* estimate-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "estimate-icon@3x.png"; sourceTree = "<group>"; };
+		0705FBB41AAB9FB300956B9B /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
+		0705FBB51AAB9FB300956B9B /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		0705FBB61AAB9FB300956B9B /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0705FBB71AAB9FB300956B9B /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0705FBB81AAB9FB300956B9B /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		0705FBB91AAB9FB300956B9B /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		0705FBBA1AAB9FB300956B9B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		0705FBBB1AAB9FB300956B9B /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		0705FBBC1AAB9FB300956B9B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		0705FBBD1AAB9FB300956B9B /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		0705FBBE1AAB9FB300956B9B /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		075F5DAA1AA9929E00187CC6 /* OLVAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccounts.h; sourceTree = "<group>"; };
 		075F5DAB1AA9929E00187CC6 /* OLVAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVAccounts.m; sourceTree = "<group>"; };
 		075F5DAE1AA992C900187CC6 /* OLVAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVAccount.h; sourceTree = "<group>"; };
@@ -98,6 +127,17 @@
 		075F5DB71AA9939800187CC6 /* OLVTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVTransaction.m; sourceTree = "<group>"; };
 		075F5DBA1AA99D3A00187CC6 /* OLVSimilarTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVSimilarTransactions.h; sourceTree = "<group>"; };
 		075F5DBB1AA99D3A00187CC6 /* OLVSimilarTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVSimilarTransactions.m; sourceTree = "<group>"; };
+		07732FFD1AABB169008C7FDC /* BEMAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimations.h; sourceTree = "<group>"; };
+		07732FFE1AABB169008C7FDC /* BEMAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAnimations.m; sourceTree = "<group>"; };
+		07732FFF1AABB169008C7FDC /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		077330001AABB169008C7FDC /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		077330011AABB169008C7FDC /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		077330021AABB169008C7FDC /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		077330031AABB169008C7FDC /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		077330041AABB169008C7FDC /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		077330051AABB169008C7FDC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0773300C1AABC70A008C7FDC /* NSString+Olivia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Olivia.h"; sourceTree = "<group>"; };
+		0773300D1AABC70A008C7FDC /* NSString+Olivia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Olivia.m"; sourceTree = "<group>"; };
 		07EC9E201AA9244200ECDBE9 /* Olivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC9E241AA9244200ECDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +161,7 @@
 		41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVBubbleMessageViewController.m; sourceTree = "<group>"; };
 		41C61ADD1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OLVBubbleMessageViewController.xib; sourceTree = "<group>"; };
 		851A4E16C8CAEBF8936C6E7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		905E178213183DD07F5CAAD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +171,7 @@
 			files = (
 				9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */,
 				0705FB811AAAF06800956B9B /* ElastiCode.framework in Frameworks */,
+				20AA88A829B07BC28E3AE572 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,11 +237,38 @@
 		0705FBAB1AAB7DB500956B9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0705FBB21AAB9FB300956B9B /* Fonts */,
 				0705FBB01AAB991500956B9B /* estimate-icon@3x.png */,
 				0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */,
 				0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0705FBB21AAB9FB300956B9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0705FBB31AAB9FB300956B9B /* open-sans */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0705FBB31AAB9FB300956B9B /* open-sans */ = {
+			isa = PBXGroup;
+			children = (
+				0705FBB41AAB9FB300956B9B /* Apache License.txt */,
+				0705FBB51AAB9FB300956B9B /* OpenSans-Bold.ttf */,
+				0705FBB61AAB9FB300956B9B /* OpenSans-BoldItalic.ttf */,
+				0705FBB71AAB9FB300956B9B /* OpenSans-ExtraBold.ttf */,
+				0705FBB81AAB9FB300956B9B /* OpenSans-ExtraBoldItalic.ttf */,
+				0705FBB91AAB9FB300956B9B /* OpenSans-Italic.ttf */,
+				0705FBBA1AAB9FB300956B9B /* OpenSans-Light.ttf */,
+				0705FBBB1AAB9FB300956B9B /* OpenSans-LightItalic.ttf */,
+				0705FBBC1AAB9FB300956B9B /* OpenSans-Regular.ttf */,
+				0705FBBD1AAB9FB300956B9B /* OpenSans-Semibold.ttf */,
+				0705FBBE1AAB9FB300956B9B /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = "open-sans";
 			sourceTree = "<group>";
 		};
 		075F5DA01AA9912600187CC6 /* Models */ = {
@@ -236,6 +305,31 @@
 			path = LevelOneAPIModel;
 			sourceTree = "<group>";
 		};
+		07732FFC1AABB169008C7FDC /* BEMSimpleLineGraph */ = {
+			isa = PBXGroup;
+			children = (
+				07732FFD1AABB169008C7FDC /* BEMAnimations.h */,
+				07732FFE1AABB169008C7FDC /* BEMAnimations.m */,
+				07732FFF1AABB169008C7FDC /* BEMCircle.h */,
+				077330001AABB169008C7FDC /* BEMCircle.m */,
+				077330011AABB169008C7FDC /* BEMLine.h */,
+				077330021AABB169008C7FDC /* BEMLine.m */,
+				077330031AABB169008C7FDC /* BEMSimpleLineGraphView.h */,
+				077330041AABB169008C7FDC /* BEMSimpleLineGraphView.m */,
+				077330051AABB169008C7FDC /* LICENSE */,
+			);
+			path = BEMSimpleLineGraph;
+			sourceTree = "<group>";
+		};
+		0773300B1AABC6C5008C7FDC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0773300C1AABC70A008C7FDC /* NSString+Olivia.h */,
+				0773300D1AABC70A008C7FDC /* NSString+Olivia.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		07EC9E171AA9244200ECDBE9 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +353,7 @@
 		07EC9E221AA9244200ECDBE9 /* Olivia */ = {
 			isa = PBXGroup;
 			children = (
+				0773300B1AABC6C5008C7FDC /* Utilities */,
 				0705FBAB1AAB7DB500956B9B /* Resources */,
 				413043241AAA5AB800834A89 /* API */,
 				413043231AAA5A9900834A89 /* Controller */,
@@ -355,9 +450,11 @@
 		6954A1C74F3D40B02F3353F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07732FFC1AABB169008C7FDC /* BEMSimpleLineGraph */,
 				0705FB8B1AAB6F0500956B9B /* SWRevealViewController */,
 				0705FB801AAAF06800956B9B /* ElastiCode.framework */,
 				0BC1D87E025034EB9431C0D6 /* Pods.framework */,
+				905E178213183DD07F5CAAD5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -455,16 +552,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0705FBC01AAB9FB300956B9B /* OpenSans-Bold.ttf in Resources */,
+				0705FBC31AAB9FB300956B9B /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				07EC9E341AA9244200ECDBE9 /* LaunchScreen.xib in Resources */,
+				0773300A1AABB169008C7FDC /* LICENSE in Resources */,
+				0705FBC41AAB9FB300956B9B /* OpenSans-Italic.ttf in Resources */,
 				0705FBA01AAB705D00956B9B /* OLVPresentViewController.xib in Resources */,
 				0705FB9B1AAB703300956B9B /* OLVEstimateViewController.xib in Resources */,
 				0705FB951AAB701000956B9B /* OLVPastViewController.xib in Resources */,
 				41C61ADF1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib in Resources */,
 				0705FBA61AAB709100956B9B /* OLVOliviaViewController.xib in Resources */,
+				0705FBC61AAB9FB300956B9B /* OpenSans-LightItalic.ttf in Resources */,
+				0705FBC11AAB9FB300956B9B /* OpenSans-BoldItalic.ttf in Resources */,
 				0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */,
+				0705FBC81AAB9FB300956B9B /* OpenSans-Semibold.ttf in Resources */,
+				0705FBC51AAB9FB300956B9B /* OpenSans-Light.ttf in Resources */,
 				0705FBB11AAB991500956B9B /* estimate-icon@3x.png in Resources */,
+				0705FBBF1AAB9FB300956B9B /* Apache License.txt in Resources */,
 				07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */,
+				0705FBC91AAB9FB300956B9B /* OpenSans-SemiboldItalic.ttf in Resources */,
 				0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */,
+				0705FBC71AAB9FB300956B9B /* OpenSans-Regular.ttf in Resources */,
+				0705FBC21AAB9FB300956B9B /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,14 +642,19 @@
 				0705FB9F1AAB705D00956B9B /* OLVPresentViewController.m in Sources */,
 				413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */,
 				075F5DB41AA9935900187CC6 /* OLVTransactions.m in Sources */,
+				0773300E1AABC70A008C7FDC /* NSString+Olivia.m in Sources */,
 				0705FB8E1AAB6F0500956B9B /* SWRevealViewController.m in Sources */,
+				077330071AABB169008C7FDC /* BEMCircle.m in Sources */,
+				077330061AABB169008C7FDC /* BEMAnimations.m in Sources */,
 				0705FB881AAAF12300956B9B /* OLVDay.m in Sources */,
 				07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */,
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,
 				0705FB9A1AAB703300956B9B /* OLVEstimateViewController.m in Sources */,
+				077330081AABB169008C7FDC /* BEMLine.m in Sources */,
 				0705FBAA1AAB724C00956B9B /* OLVNavigationManager.m in Sources */,
 				41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */,
 				07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */,
+				077330091AABB169008C7FDC /* BEMSimpleLineGraphView.m in Sources */,
 				075F5DB01AA992C900187CC6 /* OLVAccount.m in Sources */,
 				075F5DBC1AA99D3A00187CC6 /* OLVSimilarTransactions.m in Sources */,
 				0705FBA51AAB709100956B9B /* OLVOliviaViewController.m in Sources */,
