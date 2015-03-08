@@ -27,8 +27,21 @@
 
 - (void)speakText:(NSString *)text {
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:text];
-    [utterance setRate:1.1f];
+    utterance.volume = 1.0;
+    utterance.pitchMultiplier = 1.5;
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
+    [utterance setRate:0.10];
+    
+    [[AVAudioSession sharedInstance] setActive:NO withOptions:0 error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback
+                                     withOptions:AVAudioSessionCategoryOptionDuckOthers
+                                           error:nil];
+    
     [self.synthesizer speakUtterance:utterance];
+    
+    [[AVAudioSession sharedInstance] setActive:NO withOptions:0 error:nil];
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryAmbient withOptions: 0 error: nil];
+    [[AVAudioSession sharedInstance] setActive:YES withOptions: 0 error:nil];
 }
 
 @end
