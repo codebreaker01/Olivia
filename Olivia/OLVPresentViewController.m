@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *whatsLeftLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContraintForSpentView;
+@property (weak, nonatomic) IBOutlet UILabel *monthlyLabel;
 
 @end
 
@@ -46,7 +47,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login) name:@"Login" object:nil];
 
     self.whatsLeftLabel.alpha = 0.0;
-    
+    self.monthlyLabel.alpha = 0.0;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -99,7 +100,7 @@
     
     [UIView animateWithDuration:0.25 animations:^{
         self.whatsLeftLabel.alpha = 1.0;
-        
+        self.monthlyLabel.alpha = 1.0;
     }];
     
     [UIView animateWithDuration:1 delay:0

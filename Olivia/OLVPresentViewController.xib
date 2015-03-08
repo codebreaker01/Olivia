@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OLVPresentViewController">
             <connections>
+                <outlet property="monthlyLabel" destination="Te9-ZP-dG2" id="1U4-Kz-Pcq"/>
                 <outlet property="topContraintForSpentView" destination="Ygj-yZ-RcQ" id="3hp-wb-2k0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="whatsLeftLabel" destination="7fp-6L-xSD" id="Ash-66-iCK"/>
@@ -49,7 +50,7 @@
                         </mask>
                     </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
                     <rect key="frame" x="535" y="535" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="sBf-v3-Ycy"/>
@@ -136,6 +137,28 @@
                         </mask>
                     </variation>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-ZP-dG2">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="JFX-VW-hU1"/>
+                        <constraint firstAttribute="height" constant="35" id="Q5D-jz-YIE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="JFX-VW-hU1"/>
+                            <exclude reference="Q5D-jz-YIE"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="JFX-VW-hU1"/>
+                            <include reference="Q5D-jz-YIE"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -148,7 +171,11 @@
                 <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="134" id="Egh-l0-cdp">
                     <variation key="widthClass=compact" constant="154"/>
                 </constraint>
+                <constraint firstItem="Te9-ZP-dG2" firstAttribute="top" secondItem="7fp-6L-xSD" secondAttribute="bottom" constant="10" id="Ipk-iD-4iv">
+                    <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
+                </constraint>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="MeQ-eN-On2"/>
+                <constraint firstAttribute="centerX" secondItem="Te9-ZP-dG2" secondAttribute="centerX" id="SNB-AG-csP"/>
                 <constraint firstItem="M5q-na-idN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="TdS-ZP-jRk"/>
                 <constraint firstAttribute="centerX" secondItem="M5q-na-idN" secondAttribute="centerX" id="UQG-Y1-0sg"/>
                 <constraint firstItem="bBi-KZ-nwv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Udo-mW-196"/>
@@ -168,8 +195,11 @@
                     <exclude reference="5q0-dQ-yQx"/>
                     <exclude reference="M5q-na-idN"/>
                     <exclude reference="7fp-6L-xSD"/>
+                    <exclude reference="Te9-ZP-dG2"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="45p-GC-5eT"/>
+                    <exclude reference="CJK-8G-Vvb"/>
                     <exclude reference="Egh-l0-cdp"/>
                     <exclude reference="b18-e7-Roh"/>
                     <exclude reference="E0k-lN-Fyf"/>
@@ -183,8 +213,8 @@
                     <exclude reference="5O6-Fw-h0W"/>
                     <exclude reference="MeQ-eN-On2"/>
                     <exclude reference="jWn-0W-I9C"/>
-                    <exclude reference="45p-GC-5eT"/>
-                    <exclude reference="CJK-8G-Vvb"/>
+                    <exclude reference="Ipk-iD-4iv"/>
+                    <exclude reference="SNB-AG-csP"/>
                     <exclude reference="61E-l0-WW5"/>
                 </mask>
             </variation>
@@ -208,15 +238,18 @@
                 <mask key="subviews">
                     <include reference="bBi-KZ-nwv"/>
                     <exclude reference="5q0-dQ-yQx"/>
+                    <include reference="Te9-ZP-dG2"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="45p-GC-5eT"/>
+                    <include reference="CJK-8G-Vvb"/>
                     <include reference="E0k-lN-Fyf"/>
                     <include reference="Udo-mW-196"/>
                     <include reference="YVi-3X-XYF"/>
                     <include reference="Ygj-yZ-RcQ"/>
                     <include reference="aTB-Lp-Bv8"/>
-                    <include reference="45p-GC-5eT"/>
-                    <include reference="CJK-8G-Vvb"/>
+                    <include reference="Ipk-iD-4iv"/>
+                    <include reference="SNB-AG-csP"/>
                     <include reference="61E-l0-WW5"/>
                 </mask>
             </variation>
