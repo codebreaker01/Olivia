@@ -17,10 +17,6 @@
 #import <MRProgress/MRProgress.h>
 #import <Wit/Wit.h>
 
-@interface AppDelegate ()
-@property(nonatomic, strong) ApiAI *apiAI;
-@end
-
 @implementation AppDelegate
 
 
@@ -87,7 +83,6 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
-    [self setupAPIAI];
     [self setupWitAI];
     
     return YES;
