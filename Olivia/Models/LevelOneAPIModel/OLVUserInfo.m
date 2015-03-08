@@ -11,6 +11,7 @@
 #import "OLVTransaction.h"
 #import "OLVRecurringBill.h"
 #import <ElastiCode/ElastiCode.h>
+#import "NSString+Olivia.h"
 
 @interface OLVUserInfo ()
 
@@ -114,16 +115,16 @@
     bill1.amount = 200;
     
     OLVRecurringBill *bill2 = [[OLVRecurringBill alloc] init];
-    bill1.merchant = @"Mortgage";
-    bill1.amount = 2500;
+    bill2.merchant = @"Mortgage";
+    bill2.amount = 2500;
     
     OLVRecurringBill *bill3 = [[OLVRecurringBill alloc] init];
-    bill1.merchant = @"PGE";
-    bill1.amount = 45;
+    bill3.merchant = @"PGE";
+    bill3.amount = 45;
 
     OLVRecurringBill *bill4 = [[OLVRecurringBill alloc] init];
-    bill1.merchant = @"Comcast";
-    bill1.amount = 60;
+    bill4.merchant = @"Comcast";
+    bill4.amount = 60;
     
     self.recurringBills = @[bill1, bill2, bill3, bill4];
 }
@@ -193,6 +194,25 @@
     return -1 * (amount/10000.0);
 }
 
+- (NSArray *)getExpensesForMerchant:(NSString *)merchant aroundAmount:(NSString *)amount {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (OLVTransaction *transaction in self.allTransactions) {
+        if ([transaction.merchant localizedCaseInsensitiveContainsString:merchant]) {
+                [array addObject:transaction];
+        }
+    }
+    return array;
+}
+
+- (NSArray *)getFakeExpensesForMerchant:(NSString *)merchant aroundAmount:(NSString *)amount {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (OLVTransaction *transaction in self.allTransactions) {
+        if ([merchant soundsLikeString:transaction.merchant]) {
+            [array addObject:transaction];
+        }
+    }
+    return array;
+}
 
 - (void)clearUserInfo {
     self.allTransactions = nil;

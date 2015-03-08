@@ -12,4 +12,7 @@
 
 + (NSString *)priceStringFrom:(double)price;
 
+- (NSString *)soundexString;
+- (BOOL)soundsLikeString:(NSString *)aString;
+
 @end

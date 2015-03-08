@@ -23,6 +23,7 @@ static NSString * const kIDOlivia = @"Olivia";
 static NSString * const kIDUSer = @"User";
 
 static NSString * const kIntentRecurringExpense  = @"addRecurringExpense";
+static NSString * const kIntentConfirmation  = @"confirmation";
 
 #endif
 

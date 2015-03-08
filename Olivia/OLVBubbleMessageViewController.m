@@ -11,6 +11,9 @@
 #import "WitAIHelper.h"
 #import "OLVSpeechResponse2.h"
 #import "OLVTextToSpeech.h"
+#import "OLVUserInfo.h"
+#import "OLVTransaction.h"
+#import "NSString+Olivia.h"
 
 @interface OLVBubbleMessageViewController () <WitAIHelperDelegate>
 @property (strong, nonatomic) OLVBubbleChatModel *model;
@@ -172,28 +175,6 @@
 - (void)startListening
 {
     [self.witAIHelper start];
-
-    //    AIVoiceRequest *request = (AIVoiceRequest *)[self.apiAI requestWithType:AIRequestTypeVoice];
-    //    request.useVADForAutoCommit = YES;
-    //
-    //    __weak typeof(self) weakSelf = self;
-    //
-    //    [request setCompletionBlockSuccess:^(AIRequest *request, id response) {
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        if ([response isKindOfClass:[NSDictionary class]]) {
-    //            NSDictionary *responseDict = (NSDictionary *)response;
-    //            OLVSpeechResponse *speechResponse = [OLVSpeechResponse modelObjectWithDictionary:responseDict];
-    //            [strongSelf addMessage:speechResponse.resolvedQuery byUserID:kIDUSer];
-    //        }
-    //        [strongSelf changeStateToStop];
-    //    } failure:^(AIRequest *request, NSError *error) {
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        NSLog(@"-----------------------Failed listening------------------------");
-    //        [strongSelf changeStateToStop];
-    //    }];
-    //
-    //    self.currentVoiceRequest = request;
-    //    [self.apiAI enqueue:request];
 }
 
 - (void)stopListening
@@ -224,9 +205,12 @@
                 NSString *service = speechResponse.service;
                 NSString *amount = speechResponse.amount;
                 if (intent && [intent isEqualToString:kIntentRecurringExpense] && service && amount) {
-                    NSString *oliviaSpeak = [NSString stringWithFormat:@"I am Looking for \"%@\" transactions around %@ in your past transactions", service, amount];
+                    NSString *oliviaSpeak = [NSString stringWithFormat:@"I am Looking for \"%@\" transactions around $%@ in your past transactions", service, amount];
                     [weakSelf addMessage:oliviaSpeak byUserID:kIDOlivia];
-                    [self triggerTransactionSearch];
+                    [self triggerTransactionSearch:service amount:amount];
+                }
+                if (intent && [intent isEqualToString:kIntentConfirmation]) {
+                    [weakSelf addMessage:@"Consider it done!" byUserID:kIDOlivia];
                 }
             }
         }];
@@ -249,8 +233,24 @@
     }];
 }
 
-- (void)triggerTransactionSearch {
-    
+- (void)triggerTransactionSearch:(NSString *)service amount:(NSString *)amount{
+    OLVUserInfo *sharedInfo = [OLVUserInfo sharedInfo];
+    NSArray *matchingTransactions = [sharedInfo getExpensesForMerchant:service aroundAmount:amount];
+    if (matchingTransactions) {
+        NSMutableString *printTransactions = [NSMutableString string];
+        for (OLVTransaction *transaction in matchingTransactions) {
+            NSString *singleTransaction = [NSString stringWithFormat:@"%@ - %@\n",transaction.merchant,[NSString priceStringFrom:(-1*transaction.amount)/10000]];
+            [printTransactions appendString:singleTransaction];
+        }
+        if (printTransactions.length > 0) {
+            [self addMessage:[NSString stringWithFormat:@"I found these transactions:\n%@",printTransactions]
+                    byUserID:kIDOlivia];
+            [self addMessage:[NSString stringWithFormat:@"Would you like me to setup a reminder for %@?",service]
+                    byUserID:kIDOlivia];
+        } else {
+            [self addMessage:@"Sorry I did not find anything to match your request" byUserID:kIDOlivia];
+        }
+    }
 }
 
 # pragma mark - OLVBubbleMessageViewControllerDelegate
