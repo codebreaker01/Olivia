@@ -55,12 +55,56 @@
                         <constraint firstAttribute="width" constant="50" id="sBf-v3-Ycy"/>
                         <constraint firstAttribute="height" constant="50" id="vrB-cB-ejO"/>
                     </constraints>
-                    <state key="normal" image="white-mike-small@3x.png">
+                    <state key="normal" image="voice-icon@3x.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="activateOlivia:" destination="-1" eventType="touchUpInside" id="2Sw-yg-1nA"/>
                     </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q0-dQ-yQx">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="jN7-XY-ET5"/>
+                        <constraint firstAttribute="width" constant="50" id="u4q-jJ-KO4"/>
+                    </constraints>
+                    <state key="normal" image="bills-icon@3x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="jN7-XY-ET5"/>
+                            <exclude reference="u4q-jJ-KO4"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="jN7-XY-ET5"/>
+                            <include reference="u4q-jJ-KO4"/>
+                        </mask>
+                    </variation>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNU-s3-xXh">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="8XY-g6-rpC"/>
+                        <constraint firstAttribute="width" constant="50" id="9v8-3Y-3yA"/>
+                    </constraints>
+                    <state key="normal" image="transactions-icon@3x.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="8XY-g6-rpC"/>
+                            <exclude reference="9v8-3Y-3yA"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="8XY-g6-rpC"/>
+                            <include reference="9v8-3Y-3yA"/>
+                        </mask>
+                    </variation>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Left?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5q-na-idN">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -118,14 +162,18 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerY" secondItem="MH3-Yw-smy" secondAttribute="centerY" id="1lU-I3-C3L"/>
+                <constraint firstAttribute="trailing" secondItem="5q0-dQ-yQx" secondAttribute="trailing" constant="25" id="45p-GC-5eT"/>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="5O6-Fw-h0W"/>
                 <constraint firstAttribute="centerX" secondItem="L6K-7l-hvp" secondAttribute="centerX" id="61E-l0-WW5"/>
+                <constraint firstAttribute="bottom" secondItem="5q0-dQ-yQx" secondAttribute="bottom" constant="25" id="CJK-8G-Vvb"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="bBi-KZ-nwv" secondAttribute="bottom" id="E0k-lN-Fyf"/>
                 <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="134" id="Egh-l0-cdp">
                     <variation key="widthClass=compact" constant="154"/>
                 </constraint>
+                <constraint firstAttribute="bottom" secondItem="kNU-s3-xXh" secondAttribute="bottom" constant="25" id="Jaw-KH-2Jb"/>
                 <constraint firstItem="7fp-6L-xSD" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="20" id="MeQ-eN-On2"/>
                 <constraint firstItem="M5q-na-idN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="TdS-ZP-jRk"/>
+                <constraint firstItem="kNU-s3-xXh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="UDq-dG-zC4"/>
                 <constraint firstAttribute="centerX" secondItem="M5q-na-idN" secondAttribute="centerX" id="UQG-Y1-0sg"/>
                 <constraint firstItem="bBi-KZ-nwv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Udo-mW-196"/>
                 <constraint firstAttribute="bottom" secondItem="bBi-KZ-nwv" secondAttribute="bottom" priority="750" id="YVi-3X-XYF"/>
@@ -141,6 +189,8 @@
                 <mask key="subviews">
                     <exclude reference="bBi-KZ-nwv"/>
                     <exclude reference="MH3-Yw-smy"/>
+                    <exclude reference="5q0-dQ-yQx"/>
+                    <exclude reference="kNU-s3-xXh"/>
                     <exclude reference="M5q-na-idN"/>
                     <exclude reference="7fp-6L-xSD"/>
                 </mask>
@@ -158,6 +208,10 @@
                     <exclude reference="5O6-Fw-h0W"/>
                     <exclude reference="MeQ-eN-On2"/>
                     <exclude reference="jWn-0W-I9C"/>
+                    <exclude reference="Jaw-KH-2Jb"/>
+                    <exclude reference="UDq-dG-zC4"/>
+                    <exclude reference="45p-GC-5eT"/>
+                    <exclude reference="CJK-8G-Vvb"/>
                     <exclude reference="61E-l0-WW5"/>
                 </mask>
             </variation>
@@ -180,6 +234,8 @@
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="bBi-KZ-nwv"/>
+                    <include reference="5q0-dQ-yQx"/>
+                    <include reference="kNU-s3-xXh"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="E0k-lN-Fyf"/>
@@ -187,6 +243,10 @@
                     <include reference="YVi-3X-XYF"/>
                     <include reference="Ygj-yZ-RcQ"/>
                     <include reference="aTB-Lp-Bv8"/>
+                    <include reference="Jaw-KH-2Jb"/>
+                    <include reference="UDq-dG-zC4"/>
+                    <include reference="45p-GC-5eT"/>
+                    <include reference="CJK-8G-Vvb"/>
                     <include reference="61E-l0-WW5"/>
                 </mask>
             </variation>
@@ -194,6 +254,8 @@
         </view>
     </objects>
     <resources>
-        <image name="white-mike-small@3x.png" width="84" height="149"/>
+        <image name="bills-icon@3x.png" width="243" height="243"/>
+        <image name="transactions-icon@3x.png" width="243" height="243"/>
+        <image name="voice-icon@3x.png" width="243" height="243"/>
     </resources>
 </document>

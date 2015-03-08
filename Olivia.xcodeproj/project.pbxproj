@@ -62,6 +62,9 @@
 		079F87861AAC6E5700283B68 /* UIColor+OLVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */; };
 		079F878A1AAC8D7C00283B68 /* white-mike-small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F87891AAC8D7C00283B68 /* white-mike-small@3x.png */; };
 		079F878C1AAC95DD00283B68 /* close-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F878B1AAC95DD00283B68 /* close-icon@3x.png */; };
+		079F87901AAC9F7700283B68 /* bills-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F878D1AAC9F7700283B68 /* bills-icon@3x.png */; };
+		079F87921AAC9F7700283B68 /* voice-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F878F1AAC9F7700283B68 /* voice-icon@3x.png */; };
+		079F87941AACA14D00283B68 /* transactions-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079F87931AACA14D00283B68 /* transactions-icon@3x.png */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
@@ -164,6 +167,9 @@
 		079F87851AAC6E5700283B68 /* UIColor+OLVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OLVExtensions.m"; sourceTree = "<group>"; };
 		079F87891AAC8D7C00283B68 /* white-mike-small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-mike-small@3x.png"; sourceTree = "<group>"; };
 		079F878B1AAC95DD00283B68 /* close-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-icon@3x.png"; sourceTree = "<group>"; };
+		079F878D1AAC9F7700283B68 /* bills-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bills-icon@3x.png"; sourceTree = "<group>"; };
+		079F878F1AAC9F7700283B68 /* voice-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voice-icon@3x.png"; sourceTree = "<group>"; };
+		079F87931AACA14D00283B68 /* transactions-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "transactions-icon@3x.png"; path = "Fonts/open-sans/transactions-icon@3x.png"; sourceTree = "<group>"; };
 		07EC9E201AA9244200ECDBE9 /* Olivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC9E241AA9244200ECDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -275,11 +281,14 @@
 				079F87821AAC6C9E00283B68 /* white-app-icon-small@3x.png */,
 				0705FBB21AAB9FB300956B9B /* Fonts */,
 				079F877C1AAC503900283B68 /* white-app-icon@3x.png */,
+				079F87931AACA14D00283B68 /* transactions-icon@3x.png */,
 				079F877E1AAC5C5E00283B68 /* black-app-icon.png */,
 				0705FBB01AAB991500956B9B /* estimate-icon@3x.png */,
 				0705FBAE1AAB98B600956B9B /* bar-graph-icon@3x.png */,
 				0705FBAC1AAB7DBA00956B9B /* list-icon@3x.png */,
 				079F878B1AAC95DD00283B68 /* close-icon@3x.png */,
+				079F878D1AAC9F7700283B68 /* bills-icon@3x.png */,
+				079F878F1AAC9F7700283B68 /* voice-icon@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -622,11 +631,13 @@
 				0705FB9B1AAB703300956B9B /* OLVEstimateViewController.xib in Resources */,
 				0705FB951AAB701000956B9B /* OLVPastViewController.xib in Resources */,
 				41C61ADF1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib in Resources */,
+				079F87941AACA14D00283B68 /* transactions-icon@3x.png in Resources */,
 				0705FBA61AAB709100956B9B /* OLVOliviaViewController.xib in Resources */,
 				0705FBC61AAB9FB300956B9B /* OpenSans-LightItalic.ttf in Resources */,
 				0705FBC11AAB9FB300956B9B /* OpenSans-BoldItalic.ttf in Resources */,
 				0705FBAF1AAB98B700956B9B /* bar-graph-icon@3x.png in Resources */,
 				079F878C1AAC95DD00283B68 /* close-icon@3x.png in Resources */,
+				079F87921AAC9F7700283B68 /* voice-icon@3x.png in Resources */,
 				0705FBC81AAB9FB300956B9B /* OpenSans-Semibold.ttf in Resources */,
 				0705FBC51AAB9FB300956B9B /* OpenSans-Light.ttf in Resources */,
 				079F877D1AAC503A00283B68 /* white-app-icon@3x.png in Resources */,
@@ -639,6 +650,7 @@
 				0705FBAD1AAB7DBA00956B9B /* list-icon@3x.png in Resources */,
 				0705FBC71AAB9FB300956B9B /* OpenSans-Regular.ttf in Resources */,
 				0705FBC21AAB9FB300956B9B /* OpenSans-ExtraBold.ttf in Resources */,
+				079F87901AAC9F7700283B68 /* bills-icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
