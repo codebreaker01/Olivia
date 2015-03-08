@@ -87,7 +87,9 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fp-6L-xSD">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="NEK-Qn-hjd"/>
+                        <constraint firstAttribute="width" constant="200" id="NEK-Qn-hjd">
+                            <variation key="widthClass=compact" constant="180"/>
+                        </constraint>
                         <constraint firstAttribute="height" constant="25" id="UJB-Zl-ISx">
                             <variation key="widthClass=compact" constant="55"/>
                         </constraint>

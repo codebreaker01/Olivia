@@ -39,7 +39,7 @@
 }
 
 - (void)fakeIncome {
-    self.monthlyIncome = 6500;
+    self.monthlyIncome = 8500;
 }
 
 - (void)addGoal:(OLVGoals *)goal
