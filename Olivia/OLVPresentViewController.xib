@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OLVPresentViewController">
             <connections>
+                <outlet property="pieChart" destination="MH3-Yw-smy" id="Kp1-Q1-8xV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-7l-hvp">
                     <rect key="frame" x="535" y="535" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="sBf-v3-Ycy"/>
@@ -27,13 +28,57 @@
                         <action selector="activateOlivia:" destination="-1" eventType="touchUpInside" id="2Sw-yg-1nA"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-Yw-smy">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="4Ko-0E-8K3">
+                            <variation key="widthClass=compact" constant="240"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="240" id="HoI-B7-9Vb">
+                            <variation key="widthClass=compact" constant="240"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4Ko-0E-8K3"/>
+                            <exclude reference="HoI-B7-9Vb"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="4Ko-0E-8K3"/>
+                            <include reference="HoI-B7-9Vb"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.833931188344056" blue="0.34802014778950913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" constant="15" id="md1-vN-LYt"/>
-                <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" constant="15" id="zok-cS-pht"/>
+                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="Egh-l0-cdp"/>
+                <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
+                <constraint firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="b18-e7-Roh"/>
+                <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>
             </constraints>
-            <point key="canvasLocation" x="352" y="176"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="MH3-Yw-smy"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Egh-l0-cdp"/>
+                    <exclude reference="b18-e7-Roh"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="MH3-Yw-smy"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Egh-l0-cdp"/>
+                    <include reference="b18-e7-Roh"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="190" y="219"/>
         </view>
     </objects>
     <resources>

@@ -44,12 +44,13 @@
                                                      
                                                      [[WebServiceHelper sharedInstance] getAllTransactions:^(NSArray *transactions) {
                                                          
-                                                         [OLVUserInfo sharedInfo].allTransactions = transactions;
-                                                         [[WebServiceHelper sharedInstance] getProjectedTransactions:[NSDate date]
-                                                                                                             success:^(NSArray *transactions) {
-                                                                                                                 [OLVUserInfo sharedInfo].projectedTransactions = transactions;
-                                                                                                             }
-                                                                                                             failure:nil];
+                             [OLVUserInfo sharedInfo].allTransactions = transactions;
+                             [[WebServiceHelper sharedInstance] getProjectedTransactions:[NSDate date]
+                                                                                 success:^(NSArray *transactions) {
+                                                                                     [OLVUserInfo sharedInfo].projectedTransactions = transactions;
+                                                                                     [[NSNotificationCenter defaultCenter] postNotificationName:@"Login" object:nil];
+                                                                                 }
+                                                                                 failure:nil];
                                                                                                    }
                                                                                                    failure:nil];
                                                      [[WebServiceHelper sharedInstance] getDayBalances:[NSDate date]
