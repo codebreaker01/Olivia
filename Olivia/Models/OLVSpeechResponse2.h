@@ -13,6 +13,7 @@
 @property (strong, nonatomic, readonly) NSString *intent;
 @property (strong, nonatomic, readonly) NSString *amount;
 @property (strong, nonatomic, readonly) NSString *service;
+@property (strong, nonatomic, readonly) NSString *date;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

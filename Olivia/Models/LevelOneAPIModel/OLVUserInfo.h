@@ -29,4 +29,6 @@
 - (double)spendableAmount;
 - (double)whatsLeftAmount:(NSDate *)date;
 
+- (NSArray *)getExpensesForMerchant:(NSString *)merchant aroundAmount:(NSString *)amount;
+
 @end

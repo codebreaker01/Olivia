@@ -16,6 +16,7 @@ static NSString * const kIntent = @"intent";
 @property (strong, nonatomic, readwrite) NSString *intent;
 @property (strong, nonatomic, readwrite) NSString *amount;
 @property (strong, nonatomic, readwrite) NSString *service;
+@property (strong, nonatomic, readwrite) NSString *date;
 @end
 
 @implementation OLVSpeechResponse2
@@ -40,13 +41,29 @@ static NSString * const kIntent = @"intent";
         double confidence = [[self objectOrNilForKey:@"confidence" fromDictionary:dict] doubleValue];
         if (confidence >= kConfidenceMin) {
             self.intent = [self objectOrNilForKey:kIntent fromDictionary:dict];
-            NSArray *amountArray = dict[@"entities"][@"amount_of_money"];
-            if (amountArray) {
-                self.amount = [amountArray objectAtIndex:0][@"value"];
+            if ([self.intent isEqualToString:kIntentRecurringExpense]) {
+                NSArray *amountArray = dict[@"entities"][@"amount_of_money"];
+                if (amountArray) {
+                    self.amount = [amountArray objectAtIndex:0][@"value"];
+                }
+                NSArray *serviceArray = dict[@"entities"][@"merchant"];
+                if (serviceArray) {
+                    self.service = [serviceArray objectAtIndex:0][@"value"];
+                }
             }
-            NSArray *serviceArray = dict[@"entities"][@"service"];
-            if (serviceArray) {
-                self.service = [serviceArray objectAtIndex:0][@"value"];
+            if ([self.intent isEqualToString:kIntentConfirmation]) {
+                
+            }
+            if ([self.intent isEqualToString:kIntentReminder]) {
+                NSArray *serviceArray = dict[@"entities"][@"merchant"];
+                if (serviceArray) {
+                    self.service = [serviceArray objectAtIndex:0][@"value"];
+                }
+                NSArray *dateArray = dict[@"entities"][@"datetime"];
+                if (dateArray) {
+                    self.date = [dateArray objectAtIndex:0][@"value"];
+                    self.date = [self.date substringToIndex:10];
+                }
             }
         }
     }
