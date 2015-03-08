@@ -69,12 +69,14 @@
 		07EC9E401AA9244200ECDBE9 /* OliviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E3F1AA9244200ECDBE9 /* OliviaTests.m */; };
 		07EC9E4D1AA985DB00ECDBE9 /* WebServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E4C1AA985DB00ECDBE9 /* WebServiceHelper.m */; };
 		413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413043211AAA5A7400834A89 /* ApiAIHelper.m */; };
+		41442A8F1AACAD7100BAFE13 /* OLVSpeechResponse2.m in Sources */ = {isa = PBXBuildFile; fileRef = 41442A8E1AACAD7100BAFE13 /* OLVSpeechResponse2.m */; };
 		41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */; };
 		41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C61ADC1AAB852C00BE4626 /* OLVBubbleMessageViewController.m */; };
 		41C61ADF1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C61ADD1AAB852C00BE4626 /* OLVBubbleMessageViewController.xib */; };
 		41E620A51AAC10A0009465E5 /* OLVSpeechResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620A41AAC10A0009465E5 /* OLVSpeechResponse.m */; };
 		41E620A81AAC10E9009465E5 /* NSDictionary+Olivia.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620A71AAC10E9009465E5 /* NSDictionary+Olivia.m */; };
 		41E620AB1AAC2098009465E5 /* OLVTextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620AA1AAC2098009465E5 /* OLVTextToSpeech.m */; };
+		41E620AE1AACA673009465E5 /* WitAIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E620AD1AACA673009465E5 /* WitAIHelper.m */; };
 		9742D503241F3BBBB30A4B4F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC1D87E025034EB9431C0D6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -181,6 +183,8 @@
 		413043201AAA5A7400834A89 /* ApiAIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAIHelper.h; sourceTree = "<group>"; };
 		413043211AAA5A7400834A89 /* ApiAIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAIHelper.m; sourceTree = "<group>"; };
 		413043251AAA786800834A89 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		41442A8D1AACAD7100BAFE13 /* OLVSpeechResponse2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVSpeechResponse2.h; sourceTree = "<group>"; };
+		41442A8E1AACAD7100BAFE13 /* OLVSpeechResponse2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVSpeechResponse2.m; sourceTree = "<group>"; };
 		41C61AD51AAB844C00BE4626 /* OLVBubbleChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVBubbleChatModel.h; sourceTree = "<group>"; };
 		41C61AD61AAB844C00BE4626 /* OLVBubbleChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVBubbleChatModel.m; sourceTree = "<group>"; };
 		41C61ADB1AAB852C00BE4626 /* OLVBubbleMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVBubbleMessageViewController.h; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 		41E620A71AAC10E9009465E5 /* NSDictionary+Olivia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Olivia.m"; sourceTree = "<group>"; };
 		41E620A91AAC2098009465E5 /* OLVTextToSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVTextToSpeech.h; sourceTree = "<group>"; };
 		41E620AA1AAC2098009465E5 /* OLVTextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVTextToSpeech.m; sourceTree = "<group>"; };
+		41E620AC1AACA673009465E5 /* WitAIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WitAIHelper.h; sourceTree = "<group>"; };
+		41E620AD1AACA673009465E5 /* WitAIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WitAIHelper.m; sourceTree = "<group>"; };
 		851A4E16C8CAEBF8936C6E7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		905E178213183DD07F5CAAD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -313,6 +319,7 @@
 		075F5DA01AA9912600187CC6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				41442A8C1AACAD4C00BAFE13 /* WitAIModel */,
 				41E620A21AAC1085009465E5 /* ApiAIModel */,
 				41C61AD41AAB841800BE4626 /* BubbleMessageModel */,
 				075F5DA91AA9929900187CC6 /* LevelOneAPIModel */,
@@ -474,8 +481,19 @@
 			children = (
 				413043201AAA5A7400834A89 /* ApiAIHelper.h */,
 				413043211AAA5A7400834A89 /* ApiAIHelper.m */,
+				41E620AC1AACA673009465E5 /* WitAIHelper.h */,
+				41E620AD1AACA673009465E5 /* WitAIHelper.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		41442A8C1AACAD4C00BAFE13 /* WitAIModel */ = {
+			isa = PBXGroup;
+			children = (
+				41442A8D1AACAD7100BAFE13 /* OLVSpeechResponse2.h */,
+				41442A8E1AACAD7100BAFE13 /* OLVSpeechResponse2.m */,
+			);
+			name = WitAIModel;
 			sourceTree = "<group>";
 		};
 		41C61AD31AAB840400BE4626 /* BubbleMessageController */ = {
@@ -718,6 +736,7 @@
 				075F5DB81AA9939800187CC6 /* OLVTransaction.m in Sources */,
 				0705FB9A1AAB703300956B9B /* OLVEstimateViewController.m in Sources */,
 				079F87861AAC6E5700283B68 /* UIColor+OLVExtensions.m in Sources */,
+				41442A8F1AACAD7100BAFE13 /* OLVSpeechResponse2.m in Sources */,
 				077330081AABB169008C7FDC /* BEMLine.m in Sources */,
 				0705FBAA1AAB724C00956B9B /* OLVNavigationManager.m in Sources */,
 				41C61ADE1AAB852C00BE4626 /* OLVBubbleMessageViewController.m in Sources */,
@@ -730,6 +749,7 @@
 				075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */,
 				0705FB891AAAF12300956B9B /* OLVDayBalances.m in Sources */,
 				0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */,
+				41E620AE1AACA673009465E5 /* WitAIHelper.m in Sources */,
 				079F877B1AAC042500283B68 /* OLVRecurringBill.m in Sources */,
 				079F87781AAC00E500283B68 /* OLVGoals.m in Sources */,
 				0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */,

@@ -15,8 +15,9 @@
 #import <APiAI/AIDefaultConfiguration.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MRProgress/MRProgress.h>
-#import "ApiAIHelper.h"
-
+#import <Wit/Wit.h>
+#import "WitAIHelper.h"
+#import "OLVSpeechResponse2.h"
 
 @interface AppDelegate ()
 @property(nonatomic, strong) ApiAI *apiAI;
@@ -75,6 +76,7 @@
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     
     [self setupAPIAI];
+    [self setupWitAI];
     
     return YES;
 }
@@ -108,6 +110,12 @@
     configuration.clientAccessToken = kAPIClientAccessToken;
     configuration.subscriptionKey = kAPISubscriptionKey;
     self.apiAI.configuration = configuration;
+}
+
+- (void)setupWitAI {
+    [Wit sharedInstance].accessToken = @"5F32VLESQ64YOYPI7KVSP5YVXXBAH77S";
+    // [Wit sharedInstance].detectSpeechStop = WITVadConfigDetectSpeechStop;
+    [Wit sharedInstance].detectSpeechStop = WITVadConfigFull;
 }
 
 @end
