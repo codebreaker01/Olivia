@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *merchant;
 @property (nonatomic, strong) NSString *accountId;
 @property (nonatomic, strong) NSString *rawMerchant;
+@property (nonatomic, strong) NSDate *transactionDate;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

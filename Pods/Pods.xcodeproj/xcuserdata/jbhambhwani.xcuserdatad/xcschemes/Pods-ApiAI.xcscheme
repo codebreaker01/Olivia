@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F6A07E5270721000D685D9E"
+               BlueprintIdentifier = "7CA9C8F79A320640EB20EC1C"
                BuildableName = "ApiAI.framework"
                BlueprintName = "Pods-ApiAI"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F6A07E5270721000D685D9E"
-            BuildableName = "ApiAI.framework"
-            BlueprintName = "Pods-ApiAI"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

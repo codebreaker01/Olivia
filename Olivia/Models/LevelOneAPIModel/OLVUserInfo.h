@@ -18,4 +18,7 @@
 @property (nonatomic) NSArray *projectedTransactions;
 @property (nonatomic) NSArray *dayBalances;
 
+- (double)getIncomeForMonth:(NSDate *)date;
+- (double)getExpenseForMonth:(NSDate *)date;
+
 @end
