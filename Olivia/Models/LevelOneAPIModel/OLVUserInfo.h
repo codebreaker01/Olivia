@@ -27,6 +27,6 @@
 - (double)getExpenseForMonth:(NSDate *)date;
 
 - (double)spendableAmount;
-- (double)whatsLeftAmount;
+- (double)whatsLeftAmount:(NSDate *)date;
 
 @end

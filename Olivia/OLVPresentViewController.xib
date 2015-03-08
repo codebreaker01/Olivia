@@ -3,11 +3,17 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OLVPresentViewController">
             <connections>
                 <outlet property="pieChart" destination="MH3-Yw-smy" id="Kp1-Q1-8xV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="whatsLeftLabel" destination="7fp-6L-xSD" id="Ash-66-iCK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,10 +39,10 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="240" id="4Ko-0E-8K3">
-                            <variation key="widthClass=compact" constant="240"/>
+                            <variation key="widthClass=compact" constant="200"/>
                         </constraint>
                         <constraint firstAttribute="width" constant="240" id="HoI-B7-9Vb">
-                            <variation key="widthClass=compact" constant="240"/>
+                            <variation key="widthClass=compact" constant="200"/>
                         </constraint>
                     </constraints>
                     <variation key="default">
@@ -52,30 +58,98 @@
                         </mask>
                     </variation>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Left?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5q-na-idN">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="uMX-Tq-IA3">
+                            <variation key="widthClass=compact" constant="30"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="121" id="ubc-4j-Jpx">
+                            <variation key="widthClass=compact" constant="140"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="uMX-Tq-IA3"/>
+                            <exclude reference="ubc-4j-Jpx"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="uMX-Tq-IA3"/>
+                            <include reference="ubc-4j-Jpx"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fp-6L-xSD">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="NEK-Qn-hjd"/>
+                        <constraint firstAttribute="height" constant="25" id="UJB-Zl-ISx">
+                            <variation key="widthClass=compact" constant="55"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="42"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="NEK-Qn-hjd"/>
+                            <exclude reference="UJB-Zl-ISx"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="NEK-Qn-hjd"/>
+                            <include reference="UJB-Zl-ISx"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="Egh-l0-cdp"/>
+                <constraint firstItem="7fp-6L-xSD" firstAttribute="centerY" secondItem="MH3-Yw-smy" secondAttribute="centerY" id="1lU-I3-C3L"/>
+                <constraint firstItem="7fp-6L-xSD" firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="5O6-Fw-h0W"/>
+                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="104" id="Egh-l0-cdp">
+                    <variation key="widthClass=compact" constant="124"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="L6K-7l-hvp" secondAttribute="trailing" id="EzT-Xf-nSf"/>
+                <constraint firstItem="MH3-Yw-smy" firstAttribute="top" secondItem="M5q-na-idN" secondAttribute="bottom" constant="10" id="LFs-wJ-r4p"/>
+                <constraint firstAttribute="centerX" secondItem="M5q-na-idN" secondAttribute="centerX" id="UQG-Y1-0sg"/>
                 <constraint firstAttribute="centerX" secondItem="MH3-Yw-smy" secondAttribute="centerX" id="b18-e7-Roh"/>
                 <constraint firstAttribute="bottom" secondItem="L6K-7l-hvp" secondAttribute="bottom" id="vcZ-ae-j5F"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="MH3-Yw-smy"/>
+                    <exclude reference="M5q-na-idN"/>
+                    <exclude reference="7fp-6L-xSD"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="UQG-Y1-0sg"/>
                     <exclude reference="Egh-l0-cdp"/>
+                    <exclude reference="LFs-wJ-r4p"/>
                     <exclude reference="b18-e7-Roh"/>
+                    <exclude reference="1lU-I3-C3L"/>
+                    <exclude reference="5O6-Fw-h0W"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="MH3-Yw-smy"/>
+                    <include reference="M5q-na-idN"/>
+                    <include reference="7fp-6L-xSD"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="UQG-Y1-0sg"/>
                     <include reference="Egh-l0-cdp"/>
+                    <include reference="LFs-wJ-r4p"/>
                     <include reference="b18-e7-Roh"/>
+                    <include reference="1lU-I3-C3L"/>
+                    <include reference="5O6-Fw-h0W"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="190" y="219"/>

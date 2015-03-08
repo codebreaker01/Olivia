@@ -11,10 +11,12 @@
 #import "OLVBubbleMessageViewController.h"
 #import "PNChart.h"
 #import "OLVUserInfo.h"
+#import "NSString+Olivia.h"
 
 @interface OLVPresentViewController () <OLVBubbleMessageViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *pieChart;
+@property (weak, nonatomic) IBOutlet UILabel *whatsLeftLabel;
 
 @end
 
@@ -43,8 +45,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(login) name:@"Login" object:nil];
     
     self.pieChart.alpha = 0.0;
-    self.pieChart.layer.cornerRadius = 120;
+    self.pieChart.layer.cornerRadius = 100;
     self.pieChart.backgroundColor = PNGreen;
+    self.whatsLeftLabel.alpha = 0.0;
 }
 
 - (void)login {
@@ -54,19 +57,32 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *toDate = [calendar dateByAddingComponents:dateComponents toDate:[NSDate date] options:0];
     
-    double amountSpent = ([OLVUserInfo sharedInfo].spendableAmount - [[OLVUserInfo sharedInfo] getExpenseForMonth:toDate]);
-    int amountPercentage = floor((amountSpent/[OLVUserInfo sharedInfo].spendableAmount) * 100);
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:amountPercentage color:PNGreen],
-                       [PNPieChartDataItem dataItemWithValue:100 - amountPercentage color:[UIColor clearColor] description:@""],
-                       ];
+    double amountSpent = [[OLVUserInfo sharedInfo] getExpenseForMonth:toDate];
+    int amountPercentage = floor(amountSpent/[OLVUserInfo sharedInfo].spendableAmount * 100);
     
-    PNPieChart *pieChart = [[PNPieChart alloc] initWithFrame:CGRectInset(self.pieChart.frame, 15, 15) items:items];
-    [pieChart strokeChart];
-    [self.view addSubview:pieChart];
+    PNPieChart *pieChart;
+    if (amountPercentage < 100 && amountPercentage > 0) {
+        NSArray *items = @[[PNPieChartDataItem dataItemWithValue:amountPercentage color:PNGreen],
+                           [PNPieChartDataItem dataItemWithValue:100 - amountPercentage color:[UIColor clearColor] description:@""],
+                           ];
+        
+        pieChart = [[PNPieChart alloc] initWithFrame:CGRectInset(self.pieChart.frame, 10, 10) items:items];
+        [pieChart strokeChart];
+        [self.view addSubview:pieChart];
+    }
     
+    [self.view bringSubviewToFront:self.whatsLeftLabel];
+    
+    self.whatsLeftLabel.numberOfLines = 1;
+    self.whatsLeftLabel.minimumScaleFactor = 0;
+    self.whatsLeftLabel.adjustsFontSizeToFitWidth = YES;
+    
+    self.whatsLeftLabel.text = [NSString priceStringFrom:[[OLVUserInfo sharedInfo] whatsLeftAmount:toDate]];
     
     [UIView animateWithDuration:0.25 animations:^{
         self.pieChart.alpha = 0.6;
+        pieChart.alpha = 0.75;
+        self.whatsLeftLabel.alpha = 1.0;
     }];
 }
 

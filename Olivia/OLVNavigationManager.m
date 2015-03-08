@@ -63,52 +63,52 @@
 
 - (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
 {
-    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+
 }
 
 - (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
 {
-    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+
 }
 
 - (void)revealController:(SWRevealViewController *)revealController animateToPosition:(FrontViewPosition)position
 {
-    NSLog( @"%@: %@", NSStringFromSelector(_cmd), [self stringFromFrontViewPosition:position]);
+
 }
 
 - (void)revealControllerPanGestureBegan:(SWRevealViewController *)revealController;
 {
-    NSLog( @"%@", NSStringFromSelector(_cmd) );
+    
 }
 
 - (void)revealControllerPanGestureEnded:(SWRevealViewController *)revealController;
 {
-    NSLog( @"%@", NSStringFromSelector(_cmd) );
+    
 }
 
 - (void)revealController:(SWRevealViewController *)revealController panGestureBeganFromLocation:(CGFloat)location progress:(CGFloat)progress
 {
-    NSLog( @"%@: %f, %f", NSStringFromSelector(_cmd), location, progress);
+
 }
 
 - (void)revealController:(SWRevealViewController *)revealController panGestureMovedToLocation:(CGFloat)location progress:(CGFloat)progress
 {
-    NSLog( @"%@: %f, %f", NSStringFromSelector(_cmd), location, progress);
+
 }
 
 - (void)revealController:(SWRevealViewController *)revealController panGestureEndedToLocation:(CGFloat)location progress:(CGFloat)progress
 {
-    NSLog( @"%@: %f, %f", NSStringFromSelector(_cmd), location, progress);
+
 }
 
 - (void)revealController:(SWRevealViewController *)revealController willAddViewController:(UIViewController *)viewController forOperation:(SWRevealControllerOperation)operation animated:(BOOL)animated
 {
-    NSLog( @"%@: %@, %d", NSStringFromSelector(_cmd), viewController, operation);
+
 }
 
 - (void)revealController:(SWRevealViewController *)revealController didAddViewController:(UIViewController *)viewController forOperation:(SWRevealControllerOperation)operation animated:(BOOL)animated
 {
-    NSLog( @"%@: %@, %d", NSStringFromSelector(_cmd), viewController, operation);
+
 }
 
 @end

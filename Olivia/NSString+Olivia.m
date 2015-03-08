@@ -10,8 +10,13 @@
 
 @implementation NSString (Olivia)
 
-+ (NSString *)priceStringFrom:(double)price {
-    return [NSString stringWithFormat:@"$%0.2f",price];
++ (NSString *)priceStringFrom:(double)price
+{
+    price = [[NSString stringWithFormat:@"%.2f",price]floatValue];
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString *formatted = [formatter stringFromNumber:[NSNumber numberWithFloat:price]];
+    return [NSString stringWithFormat:@"$%@",formatted];
 }
 
 @end

@@ -39,7 +39,7 @@
 }
 
 - (void)fakeIncome {
-    self.monthlyIncome = 9500;
+    self.monthlyIncome = 6500;
 }
 
 - (void)addGoal:(OLVGoals *)goal
@@ -111,9 +111,9 @@
     return monthlyIncome;
 }
 
-- (double)whatsLeftAmount
+- (double)whatsLeftAmount:(NSDate *)date
 {
-    double amount = [self getExpenseForMonth:[NSDate date]];
+    double amount = [self getExpenseForMonth:date];
     return [self spendableAmount] - amount;
 }
 
