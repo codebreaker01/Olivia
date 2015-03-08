@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OLVAccount.h"
 
 @interface OLVUserInfo : NSObject
 
 + (instancetype)sharedInfo;
 - (void)clearUserInfo;
 
+@property (nonatomic) double monthlyIncome;
+@property (nonatomic) OLVAccount *account;
 @property (nonatomic) NSArray *allTransactions;
 @property (nonatomic) NSArray *accounts;
 @property (nonatomic) NSArray *projectedTransactions;
 @property (nonatomic) NSArray *dayBalances;
+@property (nonatomic) NSArray *recurringBills;
+@property (nonatomic) NSArray *goals;
 
 - (double)getIncomeForMonth:(NSDate *)date;
 - (double)getExpenseForMonth:(NSDate *)date;

@@ -52,6 +52,10 @@
 		077330091AABB169008C7FDC /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 077330041AABB169008C7FDC /* BEMSimpleLineGraphView.m */; };
 		0773300A1AABB169008C7FDC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 077330051AABB169008C7FDC /* LICENSE */; };
 		0773300E1AABC70A008C7FDC /* NSString+Olivia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0773300D1AABC70A008C7FDC /* NSString+Olivia.m */; };
+		079F87741AABFDB500283B68 /* OLVTransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F87721AABFDB500283B68 /* OLVTransactionsViewController.m */; };
+		079F87751AABFDB500283B68 /* OLVTransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079F87731AABFDB500283B68 /* OLVTransactionsViewController.xib */; };
+		079F87781AAC00E500283B68 /* OLVGoals.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F87771AAC00E500283B68 /* OLVGoals.m */; };
+		079F877B1AAC042500283B68 /* OLVRecurringBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 079F877A1AAC042500283B68 /* OLVRecurringBill.m */; };
 		07EC9E261AA9244200ECDBE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E251AA9244200ECDBE9 /* main.m */; };
 		07EC9E291AA9244200ECDBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9E281AA9244200ECDBE9 /* AppDelegate.m */; };
 		07EC9E311AA9244200ECDBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EC9E301AA9244200ECDBE9 /* Images.xcassets */; };
@@ -137,6 +141,13 @@
 		077330051AABB169008C7FDC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0773300C1AABC70A008C7FDC /* NSString+Olivia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Olivia.h"; sourceTree = "<group>"; };
 		0773300D1AABC70A008C7FDC /* NSString+Olivia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Olivia.m"; sourceTree = "<group>"; };
+		079F87711AABFDB500283B68 /* OLVTransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVTransactionsViewController.h; sourceTree = "<group>"; };
+		079F87721AABFDB500283B68 /* OLVTransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVTransactionsViewController.m; sourceTree = "<group>"; };
+		079F87731AABFDB500283B68 /* OLVTransactionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OLVTransactionsViewController.xib; sourceTree = "<group>"; };
+		079F87761AAC00E500283B68 /* OLVGoals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVGoals.h; sourceTree = "<group>"; };
+		079F87771AAC00E500283B68 /* OLVGoals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVGoals.m; sourceTree = "<group>"; };
+		079F87791AAC042500283B68 /* OLVRecurringBill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLVRecurringBill.h; sourceTree = "<group>"; };
+		079F877A1AAC042500283B68 /* OLVRecurringBill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLVRecurringBill.m; sourceTree = "<group>"; };
 		07EC9E201AA9244200ECDBE9 /* Olivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EC9E241AA9244200ECDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EC9E251AA9244200ECDBE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,6 +209,9 @@
 				0705FB911AAB701000956B9B /* OLVPastViewController.h */,
 				0705FB921AAB701000956B9B /* OLVPastViewController.m */,
 				0705FB931AAB701000956B9B /* OLVPastViewController.xib */,
+				079F87711AABFDB500283B68 /* OLVTransactionsViewController.h */,
+				079F87721AABFDB500283B68 /* OLVTransactionsViewController.m */,
+				079F87731AABFDB500283B68 /* OLVTransactionsViewController.xib */,
 			);
 			name = PastViewController;
 			sourceTree = "<group>";
@@ -299,6 +313,10 @@
 				075F5DBB1AA99D3A00187CC6 /* OLVSimilarTransactions.m */,
 				0705FB7D1AAAE54500956B9B /* OLVUserInfo.h */,
 				0705FB7E1AAAE54500956B9B /* OLVUserInfo.m */,
+				079F87761AAC00E500283B68 /* OLVGoals.h */,
+				079F87771AAC00E500283B68 /* OLVGoals.m */,
+				079F87791AAC042500283B68 /* OLVRecurringBill.h */,
+				079F877A1AAC042500283B68 /* OLVRecurringBill.m */,
 			);
 			path = LevelOneAPIModel;
 			sourceTree = "<group>";
@@ -555,6 +573,7 @@
 				07EC9E341AA9244200ECDBE9 /* LaunchScreen.xib in Resources */,
 				0773300A1AABB169008C7FDC /* LICENSE in Resources */,
 				0705FBC41AAB9FB300956B9B /* OpenSans-Italic.ttf in Resources */,
+				079F87751AABFDB500283B68 /* OLVTransactionsViewController.xib in Resources */,
 				0705FBA01AAB705D00956B9B /* OLVPresentViewController.xib in Resources */,
 				0705FB9B1AAB703300956B9B /* OLVEstimateViewController.xib in Resources */,
 				0705FB951AAB701000956B9B /* OLVPastViewController.xib in Resources */,
@@ -637,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079F87741AABFDB500283B68 /* OLVTransactionsViewController.m in Sources */,
 				0705FB9F1AAB705D00956B9B /* OLVPresentViewController.m in Sources */,
 				413043221AAA5A7400834A89 /* ApiAIHelper.m in Sources */,
 				075F5DB41AA9935900187CC6 /* OLVTransactions.m in Sources */,
@@ -660,6 +680,8 @@
 				075F5DAC1AA9929E00187CC6 /* OLVAccounts.m in Sources */,
 				0705FB891AAAF12300956B9B /* OLVDayBalances.m in Sources */,
 				0705FB7F1AAAE54500956B9B /* OLVUserInfo.m in Sources */,
+				079F877B1AAC042500283B68 /* OLVRecurringBill.m in Sources */,
+				079F87781AAC00E500283B68 /* OLVGoals.m in Sources */,
 				0705FB8A1AAAF12300956B9B /* OLVDays.m in Sources */,
 				41C61AD71AAB844C00BE4626 /* OLVBubbleChatModel.m in Sources */,
 				07EC9E261AA9244200ECDBE9 /* main.m in Sources */,

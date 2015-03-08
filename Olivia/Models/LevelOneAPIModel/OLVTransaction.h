@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *accountId;
 @property (nonatomic, strong) NSString *rawMerchant;
 @property (nonatomic, strong) NSDate *transactionDate;
+@property (nonatomic) BOOL isRecurring;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

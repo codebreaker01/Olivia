@@ -6,8 +6,18 @@
 //  Copyright (c) 2015 Jaikumar Bhambhwani. All rights reserved.
 //
 
+#import "OLVGoals.h"
 #import "OLVUserInfo.h"
 #import "OLVTransaction.h"
+#import "OLVRecurringBill.h"
+
+@interface OLVUserInfo ()
+
+- (void)fakeIncome;
+- (void)fakeRecurringBills;
+- (void)fakeGoals;
+
+@end
 
 @implementation OLVUserInfo
 
@@ -20,6 +30,49 @@
     });
     return instance;
 }
+
+- (void)fakeIncome {
+    self.monthlyIncome = 6500;
+}
+
+- (void)fakeGoals {
+    
+    OLVGoals *goal1 = [[OLVGoals alloc] init];
+    goal1.name = @"Trip to Spain";
+    goal1.amount = 5000;
+    goal1.timePeriod = 6;
+    
+    OLVGoals *goal2 = [[OLVGoals alloc] init];
+    goal2.name = @"Buy Apple Watch";
+    goal2.amount = 350;
+    goal2.timePeriod = 3;
+    
+    OLVGoals *goal3 = [[OLVGoals alloc] init];
+    goal3.name = @"Go to Haiwaii";
+    goal3.amount = 2000;
+    goal3.timePeriod = 6;
+
+    self.goals = @[goal1, goal2, goal3];
+    
+}
+
+- (void)fakeRecurringBills {
+    
+    OLVRecurringBill *bill1 = [[OLVRecurringBill alloc] init];
+    bill1.merchant = @"Trip to Spain";
+    bill1.amount = 5000;
+    
+    OLVRecurringBill *bill2 = [[OLVRecurringBill alloc] init];
+    bill1.merchant = @"Buy Apple Watch";
+    bill1.amount = 350;
+    
+    OLVRecurringBill *bill3 = [[OLVRecurringBill alloc] init];
+    bill1.merchant = @"Go to Haiwaii";
+    bill1.amount = 2000;
+    
+    self.recurringBills = @[bill1, bill2, bill3];   
+}
+
 
 - (double)getIncomeForMonth:(NSDate *)date {
     
